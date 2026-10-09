@@ -53,6 +53,14 @@ def test_rbac_route_permissions():
     assert check_route_permission(coordenacao, "/coordenacao") is True
     assert check_route_permission(coordenacao, "/campo") is True
 
+    # Diretoria acessa relatórios, coordenação, triagem, campo (visão executiva ampla)
+    diretoria = INSTITUTIONAL_USERS["diretoria@institutoebenezer.org"]
+    assert check_route_permission(diretoria, "/relatorios") is True
+    assert check_route_permission(diretoria, "/coordenacao") is True
+    assert check_route_permission(diretoria, "/campo") is True
+    assert check_route_permission(diretoria, "/triagem") is True
+    assert check_route_permission(diretoria, "/psicologia") is False
+
 def test_unauthenticated_access_redirects_to_login():
     res = client.get("/campo", follow_redirects=False)
     assert res.status_code == 303

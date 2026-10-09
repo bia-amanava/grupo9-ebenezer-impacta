@@ -49,8 +49,8 @@ INSTITUTIONAL_USERS: Dict[str, Dict[str, Any]] = {
         "senha": "senha123",
         "nome": "Marcos Oliveira",
         "role": "DIRETORIA",
-        "cargo": "Diretoria & Captação Institucional",
-        "allowed_prefixes": ["/relatorios"],
+        "cargo": "Diretoria & Governança Institucional",
+        "allowed_prefixes": ["/relatorios", "/coordenacao", "/triagem", "/campo", "/cadastro", "/participante", "/multiplas-matriculas", "/pendencias", "/perfis"],
         "default_route": "/relatorios"
     },
     "admin@institutoebenezer.org": {
