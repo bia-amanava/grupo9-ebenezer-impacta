@@ -1,5 +1,5 @@
 """
-Serviço do Módulo de Vivência Terapêutica (Psicologia):
+Serviço do Módulo de Vivência Terapêutica (Psicologia) — PRD v2.0 (FR-020 / US-05):
 Assegura que apenas metadados agregados sejam salvos, sem qualquer anotação clínica individual.
 """
 
@@ -27,10 +27,12 @@ class TherapyService:
         record = {
             "vivencia_id": session_id,
             "data": str(session.data_sessao),
+            "realizada": session.realizada,
             "psicologa_responsavel": session.psicologa_id,
             "duracao_minutos": session.duracao_minutos,
             "total_presentes_agregado": session.total_presentes_agregado,
-            "topicos_pedagogicos": session.topicos_pedagogicos
+            "checklist_infra": session.checklist_infra,
+            "topicos_pedagogicos": session.topicos_pedagogicos or []
         }
         sessions.append(record)
 
@@ -40,9 +42,10 @@ class TherapyService:
         return {
             "status": "sucesso",
             "vivencia_id": session_id,
+            "realizada": session.realizada,
             "total_presentes_agregado": session.total_presentes_agregado,
             "duracao_minutos": session.duracao_minutos,
-            "mensagem": "Sessão registrada com sucesso em estrita conformidade com o Código de Ética do CFP."
+            "mensagem": "Sessão registrada com sucesso em estrita conformidade bioética (CFP/LGPD)."
         }
 
 therapy_service = TherapyService()

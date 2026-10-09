@@ -218,11 +218,13 @@
     e.preventDefault();
 
     const payload = {
+      realizada: encounterStatus === 'SIM',
       data_sessao: '2026-08-30',
       psicologa_id: 'CRP-06/98765-SP (Dra. Camila Nunes)',
       duracao_minutos: 60,
       total_presentes_agregado: participantsCount,
-      topicos_pedagogicos: ['VINCULO_COMUNITARIO', 'REGULACAO_EMOCIONAL']
+      checklist_infra: ['SALA_COM_PRIVACIDADE_ACUSTICA'],
+      topicos_pedagogicos: ['CONVIVENCIA_E_VINCULO', 'REGULACAO_EMOCIONAL']
     };
 
     try {

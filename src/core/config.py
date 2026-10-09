@@ -1,5 +1,6 @@
 """
-Configurações globais e limites de conformidade ética da plataforma Ebenézer Impacta.
+Configurações globais, zonas de sensibilidade e limites de conformidade ética (PRD v2.0).
+Plataforma Ebenézer Impacta.
 """
 
 from pathlib import Path
@@ -15,13 +16,18 @@ QUARANTINE_DIR = DATA_DIR / "quarantine"
 for path in [DATA_DIR, SCHEMAS_DIR, SYNTHETIC_DIR, QUARANTINE_DIR]:
     path.mkdir(parents=True, exist_ok=True)
 
-# Parâmetros e Limiares Constitucionais
-MAX_COLLECTION_TIME_SECONDS = 180  # Meta de 3 minutos (<180s)
+# Parâmetros Constitucionais e Metas Operacionais (PRD v2.0)
+MAX_COLLECTION_TIME_SECONDS = 180       # Meta de regime: < 3 minutos (<180s)
+PILOT_MAX_COLLECTION_TIME_SECONDS = 240 # Meta de piloto: < 4 minutos (<240s)
 MAX_STUDENTS_PER_CLASS = 20
 MIN_INDICATOR_SCORE = 1
 MAX_INDICATOR_SCORE = 5
 
-# Programas Institucionais
+# Regra Mandatória de Supressão para Salvaguarda de Privacidade (FR-034 / Seção 8.2)
+# Não exibir agregações com amostras inferiores a este limite para mitigar reidentificação
+SUPPRESSION_MIN_N = 10
+
+# Programas Institucionais do Instituto Social Ebenézer
 PROGRAMS = [
     {
         "id": "PROG-SONHOS",
@@ -49,11 +55,19 @@ PROGRAMS = [
         "nome": "Vivências Terapêuticas",
         "dia": "Sábado",
         "carga_horaria_minutos": 60,
-        "eixo": "Suporte Psicossocial em Grupo (Restrito CFP)"
+        "eixo": "Suporte Psicossocial em Grupo (Restrito CFP - Somente Metadados)"
     }
 ]
 
-# Tópicos Permitidos no Módulo de Psicologia (Taxonomia Fechada)
+# Checklist de Infraestrutura para Módulo de Vivência Terapêutica (FR-020 / US-05)
+PSYCHOLOGY_INFRA_CHECKLIST = [
+    "SALA_COM_PRIVACIDADE_ACUSTICA",
+    "MATERIAIS_LUDICOS_E_EXPRESSIVOS",
+    "VENTILACAO_E_AGUA_POTAVEL",
+    "DISPOSICAO_EM_RODA_ADEQUADA"
+]
+
+# Tópicos Socioeducativos Fechados para Módulo de Psicologia (Opcional - Taxonomia Estrita)
 ALLOWED_THERAPY_TOPICS = [
     "AUTOCUIDADO_E_HIGIENE",
     "REGULACAO_EMOCIONAL",
@@ -63,7 +77,15 @@ ALLOWED_THERAPY_TOPICS = [
     "ESCUTA_E_EXPRESSAO_DE_SENTIMENTOS"
 ]
 
-# Estados da Fila de Triagem
+# Estados de Aprovação de Relatórios (Zona D - FR-035)
+REPORT_APPROVAL_STATUSES = [
+    "GERADO",
+    "REVISADO_COORDENACAO",
+    "APROVADO_DIRETORIA",
+    "ARQUIVADO"
+]
+
+# Estados da Fila de Triagem (Módulo Opcional E - Fora do MVP / Portão G5)
 TRIAGE_STATUSES = [
     "RECEBIDO",
     "EM_TRIAGEM",

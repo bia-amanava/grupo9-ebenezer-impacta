@@ -306,27 +306,7 @@
     "horario_inicio": "09:00",
     "horario_fim": "11:00",
     "educador_id": "VOL-SABADO-01",
-    "data_envio_registro": "2026-10-08T17:38:03.691326",
-    "status_lancamento": "D0_NO_PRAZO"
-  },
-  {
-    "encontro_id": "ENC-PROG-INFANCIA-20261006",
-    "programa_id": "PROG-INFANCIA",
-    "data_encontro": "2026-10-06",
-    "horario_inicio": "09:00",
-    "horario_fim": "11:00",
-    "educador_id": "VOL-SABADO-01",
-    "data_envio_registro": "2026-10-06T01:41:58.260848",
-    "status_lancamento": "D0_NO_PRAZO"
-  },
-  {
-    "encontro_id": "ENC-PROG-REFORCO-20261006",
-    "programa_id": "PROG-REFORCO",
-    "data_encontro": "2026-10-06",
-    "horario_inicio": "09:00",
-    "horario_fim": "11:00",
-    "educador_id": "VOL-SABADO-01",
-    "data_envio_registro": "2026-10-06T01:42:28.469789",
+    "data_envio_registro": "2026-10-09T15:22:42.360346+00:00",
     "status_lancamento": "D0_NO_PRAZO"
   }
 ]

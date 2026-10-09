@@ -590,17 +590,31 @@
             <div>
               <h4 class="font-extrabold text-gold text-xs font-outfit uppercase tracking-wider flex items-center space-x-1.5">
                 <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
-                <span>Sustentabilidade Financeira</span>
+                <span>Governança & Salvaguarda Ética</span>
               </h4>
               <p class="text-[#dcece5] leading-relaxed text-[11px] mt-1" id="donorRetencaoTexto">
-                A prestação de contas transparente mitiga o cancelamento, protegendo cerca de R$ 16.000,00/ano em receita recorrente.
+                Relatório analítico agregado (Zona C) com supressão mandatória de amostras menores que 10 educandos (FR-034) para salvaguarda de privacidade.
               </p>
             </div>
             
-            <div class="pt-2 border-t border-white/10 text-[10px] text-gold2 font-medium">
-              <strong>Alavancagem Institucional:</strong> Habilitação para captação de R$ 15.000 a R$ 35.000 em projetos incentivados.
+            <div class="pt-2 border-t border-white/10 text-[10px] text-gold2 font-medium" id="donorAprovacaoBadge">
+              <strong>Homologação Humana (FR-035):</strong> Status: REVISADO_COORDENACAO · Versão v2.0-piloto (Requer aprovação final da Diretoria).
             </div>
           </div>
+        </div>
+
+        <!-- Seção Obrigatória de Limitações Metodológicas (FR-033) -->
+        <div class="bg-paper border border-line rounded-2xl p-3.5 space-y-1.5 text-ink">
+          <h4 class="font-extrabold text-terracotta text-xs font-outfit uppercase tracking-wider flex items-center space-x-1.5">
+            <i data-lucide="alert-circle" class="w-3.5 h-3.5"></i>
+            <span>O que este relatório não afirma (Limitações Metodológicas)</span>
+          </h4>
+          <ul id="donorLimitacoesList" class="space-y-1 text-muted text-[10px] list-disc list-inside leading-snug">
+            <li>Não afirma relação de causalidade: mudanças observadas não são atribuídas exclusivamente às oficinas.</li>
+            <li>Não constitui avaliação psicológica, diagnóstico de saúde mental ou prontuário clínico individual.</li>
+            <li>Não projeta receita financeira nem garante captação automática em leis de incentivo fiscal.</li>
+            <li>Dados brutos e falas individuais literais foram suprimidos para proteção da identidade das crianças.</li>
+          </ul>
         </div>
       </div>
 
@@ -737,9 +751,19 @@
       const resDonor = await fetch('/api/relatorios/donor-success');
       const dataDonor = await resDonor.json();
       document.getElementById('donorEvolucao').innerText = `+${dataDonor.evolucao_pontos_percentuais}%`;
-      document.getElementById('donorRetencaoTexto').innerText = dataDonor.retencao_doadores_impacto;
+      if (dataDonor.retencao_doadores_impacto) {
+        document.getElementById('donorRetencaoTexto').innerText = dataDonor.retencao_doadores_impacto;
+      }
+      const destaques = dataDonor.destaques_observados || dataDonor.destaques || [];
       const destList = document.getElementById('donorDestaquesList');
-      destList.innerHTML = dataDonor.destaques.map(d => `<li>${d}</li>`).join('');
+      destList.innerHTML = destaques.map(d => `<li>${d}</li>`).join('');
+
+      if (dataDonor.o_que_este_relatorio_nao_afirma) {
+        const limList = document.getElementById('donorLimitacoesList');
+        if (limList) {
+          limList.innerHTML = dataDonor.o_que_este_relatorio_nao_afirma.map(l => `<li>${l}</li>`).join('');
+        }
+      }
 
       if (window.lucide) lucide.createIcons();
     } catch (e) {

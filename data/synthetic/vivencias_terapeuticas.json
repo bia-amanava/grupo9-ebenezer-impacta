@@ -116,158 +116,28 @@
     ]
   },
   {
-    "vivencia_id": "VIV-20261005",
-    "data": "2026-10-05",
-    "psicologa_responsavel": "CRP-06/98765-SP",
-    "duracao_minutos": 120,
-    "total_presentes_agregado": 25,
-    "topicos_pedagogicos": [
-      "CONVIVENCIA_E_VINCULO",
-      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
-    ]
-  },
-  {
     "vivencia_id": "VIV-20261003",
     "data": "2026-10-03",
+    "realizada": true,
     "psicologa_responsavel": "CRP-06/98765-SP",
     "duracao_minutos": 90,
     "total_presentes_agregado": 21,
+    "checklist_infra": [],
     "topicos_pedagogicos": [
       "AUTOCUIDADO_E_HIGIENE",
       "REGULACAO_EMOCIONAL"
     ]
   },
   {
-    "vivencia_id": "VIV-20261005",
-    "data": "2026-10-05",
+    "vivencia_id": "VIV-20261009",
+    "data": "2026-10-09",
+    "realizada": true,
     "psicologa_responsavel": "CRP-06/98765-SP",
     "duracao_minutos": 120,
     "total_presentes_agregado": 25,
-    "topicos_pedagogicos": [
-      "CONVIVENCIA_E_VINCULO",
-      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
-    ]
-  },
-  {
-    "vivencia_id": "VIV-20261003",
-    "data": "2026-10-03",
-    "psicologa_responsavel": "CRP-06/98765-SP",
-    "duracao_minutos": 90,
-    "total_presentes_agregado": 21,
-    "topicos_pedagogicos": [
-      "AUTOCUIDADO_E_HIGIENE",
-      "REGULACAO_EMOCIONAL"
-    ]
-  },
-  {
-    "vivencia_id": "VIV-20261005",
-    "data": "2026-10-05",
-    "psicologa_responsavel": "CRP-06/98765-SP",
-    "duracao_minutos": 120,
-    "total_presentes_agregado": 25,
-    "topicos_pedagogicos": [
-      "CONVIVENCIA_E_VINCULO",
-      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
-    ]
-  },
-  {
-    "vivencia_id": "VIV-20261006",
-    "data": "2026-10-06",
-    "psicologa_responsavel": "CRP-06/98765-SP",
-    "duracao_minutos": 90,
-    "total_presentes_agregado": 20,
-    "topicos_pedagogicos": [
-      "AUTOCUIDADO_E_HIGIENE",
-      "REGULACAO_EMOCIONAL",
-      "CONVIVENCIA_E_VINCULO",
-      "RESOLUCAO_PACIFICA_DE_CONFLITOS",
-      "PROJETO_DE_VIDA_E_SONHOS",
-      "ESCUTA_E_EXPRESSAO_DE_SENTIMENTOS"
-    ]
-  },
-  {
-    "vivencia_id": "VIV-20261003",
-    "data": "2026-10-03",
-    "psicologa_responsavel": "CRP-06/98765-SP",
-    "duracao_minutos": 90,
-    "total_presentes_agregado": 21,
-    "topicos_pedagogicos": [
-      "AUTOCUIDADO_E_HIGIENE",
-      "REGULACAO_EMOCIONAL"
-    ]
-  },
-  {
-    "vivencia_id": "VIV-20261005",
-    "data": "2026-10-05",
-    "psicologa_responsavel": "CRP-06/98765-SP",
-    "duracao_minutos": 120,
-    "total_presentes_agregado": 25,
-    "topicos_pedagogicos": [
-      "CONVIVENCIA_E_VINCULO",
-      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
-    ]
-  },
-  {
-    "vivencia_id": "VIV-20261003",
-    "data": "2026-10-03",
-    "psicologa_responsavel": "CRP-06/98765-SP",
-    "duracao_minutos": 90,
-    "total_presentes_agregado": 21,
-    "topicos_pedagogicos": [
-      "AUTOCUIDADO_E_HIGIENE",
-      "REGULACAO_EMOCIONAL"
-    ]
-  },
-  {
-    "vivencia_id": "VIV-20261005",
-    "data": "2026-10-05",
-    "psicologa_responsavel": "CRP-06/98765-SP",
-    "duracao_minutos": 120,
-    "total_presentes_agregado": 25,
-    "topicos_pedagogicos": [
-      "CONVIVENCIA_E_VINCULO",
-      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
-    ]
-  },
-  {
-    "vivencia_id": "VIV-20261003",
-    "data": "2026-10-03",
-    "psicologa_responsavel": "CRP-06/98765-SP",
-    "duracao_minutos": 90,
-    "total_presentes_agregado": 21,
-    "topicos_pedagogicos": [
-      "AUTOCUIDADO_E_HIGIENE",
-      "REGULACAO_EMOCIONAL"
-    ]
-  },
-  {
-    "vivencia_id": "VIV-20261008",
-    "data": "2026-10-08",
-    "psicologa_responsavel": "CRP-06/98765-SP",
-    "duracao_minutos": 120,
-    "total_presentes_agregado": 25,
-    "topicos_pedagogicos": [
-      "CONVIVENCIA_E_VINCULO",
-      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
-    ]
-  },
-  {
-    "vivencia_id": "VIV-20261003",
-    "data": "2026-10-03",
-    "psicologa_responsavel": "CRP-06/98765-SP",
-    "duracao_minutos": 90,
-    "total_presentes_agregado": 21,
-    "topicos_pedagogicos": [
-      "AUTOCUIDADO_E_HIGIENE",
-      "REGULACAO_EMOCIONAL"
-    ]
-  },
-  {
-    "vivencia_id": "VIV-20261008",
-    "data": "2026-10-08",
-    "psicologa_responsavel": "CRP-06/98765-SP",
-    "duracao_minutos": 120,
-    "total_presentes_agregado": 25,
+    "checklist_infra": [
+      "VENTILACAO_E_AGUA_POTAVEL"
+    ],
     "topicos_pedagogicos": [
       "CONVIVENCIA_E_VINCULO",
       "RESOLUCAO_PACIFICA_DE_CONFLITOS"

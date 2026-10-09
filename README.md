@@ -1,51 +1,63 @@
-# Ebenézer Impacta
+# Ebenézer Impacta (v2.0)
 
-> **Plataforma de Monitoramento Ético e Emissão do Relatório de Transparência e Captação**  
+> **Plataforma de Acompanhamento Ético de Trajetórias em Oficinas Socioeducativas e Prestação de Contas Agregada**  
 > *Instituto Social Ebenézer • Jardim Ângela (São Paulo)*  
-> *MBA em IA & Dados para Negócios (Inteli) — Artefato Técnico da Semana 10 (Versão 1.1)*
+> *MBA em IA & Dados para Negócios (Inteli) — Módulo 3 (PRD v2.0 revisado)*
 
 ---
 
-## 1. Visão Geral e Problema Central
+## 1. Visão Geral e Fronteiras do Produto
 
-O **Instituto Social Ebenézer** atua no Jardim Ângela oferecendo oficinas socioeducativas e apoio psicossocial para mais de 120 crianças e suas famílias. 
-Historicamente, o registro limitava-se a listas manuais de presença em papel e notas escolares anuais. Não havia acompanhamento sistemático da evolução socioemocional dos educandos, dificultando a demonstração de impacto longitudinal para mantenedores e inviabilizando captações em leis de incentivo fiscal (Lei Rouanet e empresas em Lucro Real).
+O **Instituto Social Ebenézer** atua no Jardim Ângela oferecendo oficinas socioeducativas e apoio psicossocial para crianças, adolescentes e suas famílias. Historicamente, os registros limitavam-se a listas manuais de chamada e notas escolares anuais. Não havia série longitudinal de observações pedagógicas que permitisse responder com evidências verificáveis "o que mudou na participação e na convivência das crianças?".
 
-O **Ebenézer Impacta** soluciona essa assimetria através de uma plataforma integrada de governança, coleta ágil em campo (<3 minutos), módulo clínico blindado sob sigilo profissional (CFP) e emissão automatizada de evidências auditáveis de impacto com **custo direto de licença zero**.
+O **Ebenézer Impacta** transforma registros rápidos e não clínicos de oficinas em **trajetórias programáticas agregadas, verificáveis e protegidas**, apoiando a gestão pedagógica e a prestação de contas do Instituto sem jamais expor a vida clínica das crianças.
 
----
-
-## 2. Pilares Constitucionais da Solução
-
-1. **Blindagem Ética e Conformidade (LGPD, ECA e CFP)**:
-   - Segregação rigorosa entre registros pedagógicos e prontuários clínicos.
-   - O módulo de psicologia NUNCA armazena prontuários ou diagnósticos individuais, registrando unicamente metadados agregados (duração em minutos, volume total de presentes e tópicos socioeducativos em taxonomia fechada).
-   - Base de dados civis fisicamente apartada do banco analítico; educandos identificados unicamente por códigos alfanuméricos pseudonimizados (Golden Record `EBZ-xxx`).
-   - Escalas fechadas (1 a 5) nos indicadores de Autonomia, Convivência em Grupo e Participação Ativa, impedindo a criação de rótulos estigmatizantes.
-2. **Custo de Licença Zero Garantido (RNF-01)**:
-   - 100% suportado no ecossistema sem fins lucrativos: **Google Workspace for Nonprofits**, **AppSheet Free Tier/Core** e **Looker Studio**.
-   - Tempo operacional semanal da coordenação reduzido para menos de 1 hora ("Painel de Pendências D0").
-3. **Interface Mobile-First de Baixo Atrito (< 3 minutos)**:
-   - Voluntário de sábado completa a chamada e a avaliação de 3 indicadores de 15 alunos pelo celular em menos de 180 segundos.
-   - Suporte nativo a operação offline com sincronização automática (*flush*).
-4. **Evidências Auditáveis e Captação**:
-   - Curvas longitudinais de evolução socioemocional por coorte e programa.
-   - Geração sob demanda do Caderno de Evidências Fiscais (Lei Rouanet e Lucro Real).
-   - Relatório Executivo sintetizado de 2 páginas (*Donor Success* / "Impacto do Seu Investimento") para retenção de doadores (mitigando perda de receita estimada em R$ 16.000,00/ano).
-5. **Canais Opcionais Segregados e Moderação Humana (RF-05, RF-06 e RF-07)**:
-   - Mensagens facultativas de famílias e oficineiros ficam em quarentena isolada.
-   - Triagem humana obrigatória: `RECEBIDO` → `EM_TRIAGEM` → [`APROVEITADO` | `DESCARTADO` | `PROTOCOLO_EXTERNO`].
-   - Conteúdo sensível é expurgado do fluxo analítico e encaminhado à rede de assistência social externa.
+> **Importante (Alinhamento PRD v2.0):** Retenção de doadores, captação por incentivos fiscais e custo zero de licenças são **hipóteses de benefício** a serem comprovadas, não promessas do software. O produto entrega dados de execução e observação pedagógica agregados; não demonstra impacto causal.
 
 ---
 
-## 3. Estrutura do Repositório
+## 2. Princípios Inegociáveis (A Constituição da Solução)
+
+1. **Melhor Interesse da Criança:** Prevalece sobre qualquer métrica, relatório ou meta de captação.
+2. **Minimização:** Coleta estritamente restrita ao que possui finalidade documentada no dicionário de dados.
+3. **Fronteira Clínica:** Nenhum dado clínico entra no sistema. O módulo de psicologia NUNCA registra prontuários, diagnósticos ou narrativas de acolhimento; apenas metadados agregados (ocorrência, duração, volume de presentes e checklist de infraestrutura).
+4. **Pseudonimização ≠ Anonimização:** O ID pseudonimizado (`EBZ-###`) não torna o dado anônimo; o acesso aos dados pseudonimizados permanece restrito e controlado.
+5. **Separação por Zonas Físicas de Sensibilidade:** Permissões em planilhas/arquivos expõem o arquivo todo; logo, a separação é física (arquivos e projetos apartados), em 5 zonas:
+   - **Zona A (Restrita):** Dados civis identificáveis (nome completo, filiação, telefone).
+   - **Zona B (Operacional):** IDs pseudonimizados, presenças e 3 indicadores em escalas fechadas (1 a 5).
+   - **Zona C (Analítica):** Dados agregados com supressão mandatória de pequenas amostras ($n < 10$).
+   - **Zona D (Publicada):** Arquivos estáticos imutáveis (PDFs) devidamente aprovados por humanos.
+   - **Zona E (Opcional):** Relatos e gravações (fora do MVP / Portão G5).
+6. **Revisão Humana Prévia:** Nenhum relatório externo é gerado direto da base viva, e é vedada a publicação de links vivos ou dinâmicos conectados à base.
+7. **Afirmações com Evidência:** Rejeição explícita de valores sem base empírica (rejeitados R$ 16k/ano, R$ 15-35k e conformidade fiscal garantida). Inclusão obrigatória de seção de limitações metodológicas ("O que este relatório não afirma").
+8. **Simplicidade Proporcional:** Rotina da coordenação planejada para $\le 1$ h/semana (hipótese a medir no piloto).
+9. **Saída Possível:** Exportação completa em formato aberto (CSV) para assegurar portabilidade.
+10. **Dados Sintéticos Obrigatórios até o Portão G2:** O ambiente opera 100% com dados sintéticos até parecer jurídico e homologação de piloto real.
+
+---
+
+## 3. Portões de Decisão (Decision Gates)
+
+```
+[Portão G0: Fundação] ──► [Portão G1: Piloto Sintético] ──► [Portão G2: Piloto Real] ──► [Portão G3: Expansão] ──► [Portão G4: Publicação] ──► [Portão G5: Módulo E]
+```
+
+- **G0 (Fundação):** ADR-001 a ADR-006 registrados; PoC offline validada; elegibilidade de licenças (H-03); rubricas v0; dicionário de dados v0.
+- **G1 (Piloto Sintético):** Validação técnica integral com 100% dados sintéticos; teste de usabilidade; matriz de acessos; ensaio de backup/restauração.
+- **G2 (Piloto Real Controlado):** Parecer jurídico formal LGPD/ECA; autorização da diretoria; política de descarte; treinamento de voluntários da turma piloto.
+- **G3 (Expansão):** Metas do piloto atingidas (D0 > 80%, tempo < 4 min); calibração de rubricas.
+- **G4 (Publicação Externa):** Regras de supressão ($n < 10$) aplicadas; aprovação formal da diretoria; PDF estático imutável gerado.
+- **G5 (Módulo Opcional E - Escuta de Famílias e Voz):** Fora do MVP; requer parecer específico, orçamento próprio de transcrição e capacidade de triagem comprovada.
+
+---
+
+## 4. Estrutura do Repositório
 
 ```text
 ├── data/
 │   ├── schemas/
-│   │   └── dictionary.json          # Dicionário de dados e esquemas para Google Sheets / AppSheet
-│   └── synthetic/                   # Datasets sintéticos do MVP acadêmico (130 educandos, 10 semanas)
+│   │   └── dictionary.json          # Dicionário de dados organizado pelas Zonas A a D
+│   └── synthetic/                   # Datasets sintéticos do piloto acadêmico (120+ educandos)
 │       ├── mdm_participantes.json
 │       ├── cadastro_civil_segregado.json
 │       ├── encontros_operacionais.json
@@ -54,35 +66,30 @@ O **Ebenézer Impacta** soluciona essa assimetria através de uma plataforma int
 ├── src/
 │   ├── app.py                       # Servidor web integrado FastAPI
 │   ├── core/
-│   │   ├── config.py                # Configurações e limites constitucionais
-│   │   ├── models.py                # Modelos de dados e validações Pydantic
-│   │   ├── mdm.py                   # Master Data Management (Golden Record & segregação civil)
-│   │   └── metrics.py               # Motor de cálculo de curvas longitudinais e dossiê fiscal
+│   │   ├── config.py                # Configurações, limiar de supressão (n < 10) e limites
+│   │   ├── models.py                # Modelos Pydantic com validação bioética e Zona D
+│   │   ├── mdm.py                   # Golden Record e segregação civil física
+│   │   └── metrics.py               # Motor de cálculo com supressão e limitações metodológicas
 │   ├── services/
-│   │   ├── collection_service.py    # Serviço de coleta de campo do voluntário
-│   │   ├── coordination_service.py  # Serviço de pendências D0 da gestão
-│   │   ├── therapy_service.py       # Serviço operacional blindado da psicologia
-│   │   └── triage_service.py        # Serviço de triagem e moderação em quarentena
-│   ├── api/                         # Endpoints RESTful dos módulos
-│   └── templates/                   # Interfaces responsivas (HTML5 + Tailwind CSS):
-│       ├── campo_voluntario.html    # Interface mobile de campo (<3 min)
-│       ├── coordenacao_d0.html      # Painel de pendências e saneamento D0
-│       ├── vivencia_psicologia.html # Módulo blindado de vivência terapêutica
-│       ├── triagem_escuta.html      # Fila privada de moderação de áudio/texto
-│       └── relatorios_captacao.html # Emissão de relatórios e dossiê Rouanet
-├── specs/001-ebenezer-impacta/      # Especificações completas geradas via GitHub Spec Kit
-│   ├── spec.md                      # Requisitos de produto e personas
-│   ├── plan.md                      # Plano de arquitetura e tecnologia
-│   ├── data-model.md                # Modelo lógico de entidades
+│   │   ├── collection_service.py    # Serviço de chamada e escalas fechadas em campo
+│   │   ├── coordination_service.py  # Serviço de monitoramento de pendências D0
+│   │   ├── therapy_service.py       # Serviço restrito a metadados da psicologia (FR-020)
+│   │   └── triage_service.py        # Módulo Opcional E isolado em quarentena (Portão G5)
+│   ├── api/                         # Endpoints RESTful
+│   └── templates/                   # Interfaces responsivas com alertas de governança
+├── specs/001-ebenezer-impacta/      # Especificações alinhadas ao GitHub Spec Kit
+│   ├── spec.md                      # Especificação funcional aderente ao PRD v2.0
+│   ├── plan.md                      # Plano de arquitetura, ADRs e Zonas Físicas
+│   ├── data-model.md                # Modelo lógico por Zonas de Sensibilidade
 │   ├── quickstart.md                # Guia de validação rápida
-│   ├── contracts/                   # Contratos formais de interface
-│   └── tasks.md                     # Decomposição em tarefas acionáveis
+│   ├── contracts/                   # Contratos de interfaces
+│   └── tasks.md                     # Tarefas organizadas por Portões G0 a G5
 └── tests/                           # Bateria de testes automatizados com pytest
 ```
 
 ---
 
-## 4. Como Executar o Protótipo Interativo
+## 5. Como Executar a Aplicação Localmente
 
 ### 1. Pré-requisitos
 - Python 3.10 ou superior instalado.
@@ -91,31 +98,24 @@ O **Ebenézer Impacta** soluciona essa assimetria através de uma plataforma int
   pip install -r requirements.txt
   ```
 
-### 2. Iniciar a Aplicação Localmente
+### 2. Iniciar o Servidor
 ```bash
 python -m uvicorn src.app:app --reload --port 8000
 ```
 Acesse no seu navegador: **[http://localhost:8000](http://localhost:8000)**
 
-### 3. Navegação pelos Módulos
-- **📱 Voluntário de Campo (`/campo`)**: Simule a realização da chamada e pontuação dos 3 indicadores observáveis em menos de 3 minutos, com cronômetro em tempo real e teste de modo offline.
-- **📊 Coordenação Geral (`/coordenacao`)**: Visualize o status dos lançamentos do sábado em tempo real, pendências e acionamento de cobrança em 1 clique.
-- **🛡️ Psicologia (`/psicologia`)**: Registre sessões de acolhimento sob estrita blindagem bioética (sem prontuários ou diagnósticos individuais).
-- **📥 Fila de Triagem (`/triagem`)**: Gerencie a moderação humana dos relatos facultativos de familiares e educadores.
-- **📜 Transparência & Captação (`/relatorios`)**: Analise as trajetórias longitudinais semana a semana, gere o Dossiê para a Lei Rouanet e o resumo de 2 páginas *Donor Success*.
+### 3. Módulos Disponíveis
+- **📱 Voluntário de Campo (`/campo`)**: Chamada rápida e 3 indicadores em escalas fechadas (1 a 5) com suporte a "Não observado" e modo offline.
+- **📊 Coordenação Geral (`/coordenacao`)**: Painel de acompanhamento de pendências D0 para cobrança em < 1 minuto.
+- **🛡️ Psicologia (`/psicologia`)**: Registro restrito de metadados agregados e checklist de infraestrutura (CFP/LGPD).
+- **📥 Fila de Triagem (`/triagem`)**: Módulo Opcional E (Fora do MVP / Portão G5).
+- **📜 Transparência & Captação (`/relatorios`)**: Trajetórias longitudinais com supressão de amostras pequenas ($n < 10$), caderno de evidências e limitações metodológicas explícitas.
 
 ---
 
-## 5. Como Executar a Bateria de Testes Automatizados
+## 6. Como Executar a Bateria de Testes Automatizados
 
-Para validar contratos, limites de tempo, cálculos matemáticos e regras de conformidade:
 ```bash
 python -m pytest
 ```
-
----
-
-## 6. Conformidade e Aprovação Técnica
-
-- **Ambiente de Demonstração Acadêmica**: Opera estritamente com **dados sintéticos** e simulações fictícias de áudio/texto, garantindo 0% de exposição de crianças reais.
-- **Ingresso em Produção Real**: O uso em ambiente de produção com dados reais está condicionado a parecer jurídico prévio, termo de consentimento dos responsáveis com base na LGPD e formalização da política de retenção e descarte pela diretoria institucional.
+Os testes validam contratos de API, supressão de pequenas amostras, isolamento civil e conformidade com as fronteiras éticas do PRD v2.0.

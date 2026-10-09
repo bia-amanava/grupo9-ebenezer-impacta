@@ -4,7 +4,7 @@ Processa chamadas e avaliações socioemocionais em escalas fechadas, com valida
 """
 
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, Any, List
 from src.core.config import SYNTHETIC_DIR
@@ -39,7 +39,7 @@ class CollectionService:
             with open(self.evaluations_file, "r", encoding="utf-8") as f:
                 avaliacoes = json.load(f)
 
-        now_str = datetime.utcnow().isoformat()
+        now_str = datetime.now(timezone.utc).isoformat()
         total_presentes = 0
 
         for item in batch.avaliacoes:

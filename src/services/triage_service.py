@@ -4,7 +4,7 @@ Isolamento absoluto de relatos de áudio e texto livres em quarentena com fluxo 
 """
 
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, Any, List
 from src.core.config import SYNTHETIC_DIR
@@ -67,13 +67,13 @@ class TriageService:
                 "tipo_origem": "RESPONSAVEL_FAMILIAR",
                 "tipo_midia": "TEXTO",
                 "conteudo_ou_referencia": "Registro de teste",
-                "data_recebimento": datetime.utcnow().isoformat()
+                "data_recebimento": datetime.now(timezone.utc).isoformat()
             }
             items.append(item)
 
         item["status_triagem"] = action.decisao
         item["coordenador_aprovador_id"] = action.coordenador_id
-        item["data_moderacao"] = datetime.utcnow().isoformat()
+        item["data_moderacao"] = datetime.now(timezone.utc).isoformat()
 
         if action.decisao == "APROVEITADO_CATEGORIA_PEDAGOGICA":
             item["categoria_fechada"] = action.categoria_fechada
@@ -87,7 +87,7 @@ class TriageService:
                 "feedback_id": action.feedback_id,
                 "categoria_fechada": action.categoria_fechada,
                 "coordenador_id": action.coordenador_id,
-                "data_aprovacao": datetime.utcnow().isoformat()
+                "data_aprovacao": datetime.now(timezone.utc).isoformat()
             })
             with open(self.synthesis_file, "w", encoding="utf-8") as f:
                 json.dump(sinteses, f, indent=2, ensure_ascii=False)

@@ -1,129 +1,83 @@
-# Implementation Tasks: Ebenézer Impacta
+# Implementation Tasks: Ebenézer Impacta (v2.0)
 
-**Feature**: `001-ebenezer-impacta`
-**Date**: 2026-10-05
-**Plan**: [plan.md](file:///c:/Users/serra/OneDrive/%C3%81rea%20de%20Trabalho/0%20-%20amanava/G9%20-%20Instituto%20Eben%C3%A9zer/specs/001-ebenezer-impacta/plan.md)
+**Feature**: `001-ebenezer-impacta` | **PRD Reference**: PRD v2.0 (revisado)  
+**Date**: 2026-10-09  
+**Plan**: [plan.md](file:///c:/Users/serra/OneDrive/%C3%81rea%20de%20Trabalho/0%20-%20amanava/G9%20-%20Instituto%20Eben%C3%A9zer/specs/001-ebenezer-impacta/plan.md)  
 **Spec**: [spec.md](file:///c:/Users/serra/OneDrive/%C3%81rea%20de%20Trabalho/0%20-%20amanava/G9%20-%20Instituto%20Eben%C3%A9zer/specs/001-ebenezer-impacta/spec.md)
 
-## Phase 1: Setup (Shared Infrastructure)
+---
 
-**Purpose**: Project initialization, directory structure and shared dependencies.
+## Estrutura de Entrega Orientada a Portões de Decisão (Decision Gates)
 
-- [X] T001 Create project directories for schemas, synthetic data, services, templates and tests in `src/` and `data/`
-- [X] T002 Initialize project dependencies in `requirements.txt` with FastAPI, Uvicorn, Pydantic, Pandas and Jinja2
-- [X] T003 [P] Configure environment settings and constants in `src/core/config.py`
+```
+[Portão G0: Fundação] ──► [Portão G1: Piloto Sintético] ──► [Portão G2: Piloto Real] ──► [Portão G3: Expansão] ──► [Portão G4: Publicação] ──► [Portão G5: Módulo E]
+```
 
 ---
 
-## Phase 2: Foundational (Blocking Prerequisites)
+## Portão G0: Fundação Técnica e Metodológica (Semana 11)
 
-**Purpose**: Core data schemas, domain entities and synthetic data generation required by all user stories.
+**Objetivo**: Estabelecer a arquitetura de dados com custo zero de licença sob o Google Workspace for Nonprofits / AppSheet, registrar ADRs, definir esquemas tabulares por zonas físicas e elaborar rubricas iniciais.
 
-- [X] T004 Setup Google Sheets / AppSheet relational schema definitions and data dictionary in `data/schemas/dictionary.json`
-- [X] T005 [P] Implement core Pydantic data models for participants, attendance, sessions and triage in `src/core/models.py`
-- [X] T006 [P] Implement MDM service managing Golden Record pseudonimization (EBZ-xxx) and civil data segregation in `src/core/mdm.py`
-- [X] T007 Implement synthetic data generator producing 120+ students, 4 programs, classes and 10 weeks of historical records in `data/synthetic/generate_data.py`
-- [X] T008 [P] Configure base responsive HTML template with mobile viewport and Tailwind CSS in `src/templates/base.html`
-
----
-
-## Phase 3: User Story 1 - Coleta de Chamada e Avaliação Mobile em Campo (<3 min) (Priority: P1) 🎯 MVP
-
-**Goal**: Permitir que voluntários em campo realizem chamada e pontuem 3 indicadores socioemocionais (Autonomia, Convivência, Participação) de até 15 alunos em < 3 minutos via celular com suporte offline.
-
-**Independent Test**: Simular envio de lote de 15 alunos com medição de tempo < 180s e assertividade de gravação.
-
-### Tests for User Story 1
-- [X] T009 [P] [US1] Create automated contract and benchmark test for 15-student batch collection and <180s telemetry in `tests/test_field_collection.py`
-
-### Implementation for User Story 1
-- [X] T010 [P] [US1] Implement attendance and socioemotional evaluation service in `src/services/collection_service.py`
-- [X] T011 [US1] Implement mobile-first volunteer collection interface with offline LocalStorage support in `src/templates/campo_voluntario.html`
-- [X] T012 [US1] Implement API endpoints for volunteer class loading and batch attendance submission in `src/api/routes_volunteer.py`
+- [X] **T001 [G0]** Registrar formalmente as Decisões Arquiteturais **ADR-001 a ADR-006** (Google Sheets, AppSheet, Looker Interno, PDF Estático, Exclusão de Áudio no MVP, Scripts de Agregação).
+- [X] **T002 [G0]** Mapear as 5 Zonas de Sensibilidade Físicas (A: Restrita, B: Operacional, C: Analítica, D: Publicada, E: Quarentena) no arquivo `data/schemas/dictionary.json`.
+- [X] **T003 [G0]** [P] Definir parâmetros constitucionais de supressão ($n < 10$), metas de tempo (< 4 min piloto / < 3 min regime) e constantes éticas em `src/core/config.py`.
+- [X] **T004 [G0]** [P] Implementar modelos Pydantic com validação estrita de fronteira clínica (CFP/LGPD), suporte a "Não observado" e bloqueio de campos livres em `src/core/models.py`.
+- [X] **T005 [G0]** Documentar as rubricas v0 dos 3 indicadores observáveis (Autonomia, Convivência em Grupo e Participação Ativa) e escalas fechadas em `specs/001-ebenezer-impacta/contracts/field_collection.md`.
 
 ---
 
-## Phase 4: User Story 2 - Cadastro Mestre (MDM) e Painel de Saneamento D0 da Coordenação (Priority: P2)
+## Portão G1: Piloto Sintético e Simulação de Campo (Semana 12)
 
-**Goal**: Fornecer painel em tempo real para a coordenação identificar turmas faltantes em D0 com 1 clique e manter o Golden Record unificado entre programas.
+**Objetivo**: Validar todo o fluxo técnico e a experiência do usuário com 100% de dados sintéticos (120+ crianças, 4 programas, 10 semanas simuladas), sem expor qualquer dado real.
 
-**Independent Test**: Verificar se turmas sem envio no sábado são listadas no painel com ação de cobrança em 1 clique e se duplicidades de cadastro são impedidas.
-
-### Tests for User Story 2
-- [X] T013 [P] [US2] Create test for MDM multi-program deduplication and D0 pending detection in `tests/test_coordination_d0.py`
-
-### Implementation for User Story 2
-- [X] T014 [P] [US2] Implement coordination monitoring service for D0 pending sessions and weekly reconciliation in `src/services/coordination_service.py`
-- [X] T015 [US2] Implement coordination D0 dashboard and MDM registry view in `src/templates/coordenacao_d0.html`
-- [X] T016 [US2] Implement API endpoints for coordination dashboard and MDM reconciliation in `src/api/routes_coordination.py`
+- [X] **T006 [G1]** Gerar base 100% sintética aderente às Zonas A e B em `data/synthetic/generate_data.py`.
+- [X] **T007 [G1]** [P] Implementar serviço mestre de participantes (MDM) com ID pseudonimizado (`EBZ-###`) e isolamento civil em `src/core/mdm.py`.
+- [X] **T008 [G1]** [P] Implementar serviço de coleta de campo com escalas fechadas e medição de telemetria em `src/services/collection_service.py`.
+- [X] **T009 [G1]** Implementar interface mobile-first do voluntário com suporte offline nativo em `src/templates/campo_voluntario.html` e rotas em `src/api/routes_volunteer.py`.
+- [X] **T010 [G1]** Implementar painel D0 da coordenação para identificação de pendências em < 1 minuto em `src/templates/coordenacao_d0.html` e `src/services/coordination_service.py`.
+- [X] **T011 [G1]** Implementar módulo restrito da psicologia com metadados agregados e checklist de infraestrutura em `src/templates/vivencia_psicologia.html` e `src/services/therapy_service.py`.
+- [X] **T012 [G1]** [P] Criar bateria de testes automatizados com pytest (`test_field_collection.py`, `test_coordination_d0.py`, `test_therapy_privacy.py`, `test_e2e_flow.py`).
 
 ---
 
-## Phase 5: User Story 3 - Módulo Operacional Blindado da Vivência Terapêutica (Priority: P3)
+## Portão G2: Piloto Real Controlado (Semanas 13 a 17)
 
-**Goal**: Garantir interface exclusiva para a psicóloga registrar apenas metadados agregados de sessões (duração, participantes presentes, temas), bloqueando prontuários e diagnósticos individuais.
+**Objetivo**: Habilitar comitê de ética e validação jurídica (LGPD/ECA) antes de qualquer coleta de dados de crianças reais em 1 turma piloto (15–20 crianças no Laboratório de Sonhos).
 
-**Independent Test**: Submeter registro com metadados e verificar rejeição programática de campos nominais ou notas clínicas.
-
-### Tests for User Story 3
-- [X] T017 [P] [US3] Create test for clinical privacy gate asserting rejection of clinical notes and acceptance of aggregated metadata in `tests/test_therapy_privacy.py`
-
-### Implementation for User Story 3
-- [X] T018 [P] [US3] Implement therapy session service validating CFP/LGPD metadata rules in `src/services/therapy_service.py`
-- [X] T019 [US3] Implement restricted psychology session logging interface in `src/templates/vivencia_psicologia.html`
-- [X] T020 [US3] Implement API endpoint for therapy session submission in `src/api/routes_therapy.py`
+- [ ] **T013 [G2]** Elaborar parecer preliminar de privacidade e minuta de termo de consentimento/informação aos responsáveis legais.
+- [ ] **T014 [G2]** Formalizar política de retenção e cronograma de descarte de registros para as Zonas A e B.
+- [ ] **T015 [G2]** Realizar teste de penetração/vazamento verificando que voluntários não têm acesso à Zona A sob nenhuma circunstância.
+- [ ] **T016 [G2]** Conduzir workshop prático de 30 minutos com voluntários da turma piloto e entrega do runbook de contingência (lista de papel para casos de falha).
+- [ ] **T017 [G2]** Cronometrar em campo a rotina semanal da coordenação (meta: <= 1 hora/semana) para validar a Hipótese H-06.
 
 ---
 
-## Phase 6: User Story 4 - Emissão de Relatórios de Transparência, Captação e Dossiês Fiscais (Priority: P4)
+## Portão G3: Expansão Programática (Semanas 19 a 22)
 
-**Goal**: Gerar em 1 clique curvas longitudinais por coorte, caderno de evidências para Lei Rouanet / Lucro Real e relatório de 2 páginas ("Impacto do Seu Investimento" / Donor Success).
+**Objetivo**: Expandir a coleta para as demais oficinas (Reforço Escolar, Primeira Infância e Vivências) após confirmação dos indicadores de adoção do piloto.
 
-**Independent Test**: Executar motor de cálculo sobre 10 semanas de histórico e validar emissão das curvas e demonstrativos em PDF/HTML.
-
-### Tests for User Story 4
-- [X] T021 [P] [US4] Create test for longitudinal curve calculations and fiscal evidence metrics in `tests/test_reports_metrics.py`
-
-### Implementation for User Story 4
-- [X] T022 [P] [US4] Implement metrics and reporting engine in `src/core/metrics.py`
-- [X] T023 [US4] Implement interactive reporting interface with charts, Rouanet/Lucro Real dossier and Donor Success 2-page print in `src/templates/relatorios_captacao.html`
-- [X] T024 [US4] Implement API endpoints for report data export in `src/api/routes_reports.py`
+- [ ] **T018 [G3]** Avaliar métricas do piloto (taxa de registro D0 > 80%, tempo por turma < 4 min, CSAT > 4,0/5).
+- [ ] **T019 [G3]** Realizar sessão de calibração entre avaliadores das rubricas dos 3 indicadores para assegurar consistência da série longitudinal.
+- [ ] **T020 [G3]** Expandir o onboarding para o conjunto dos 12 voluntários das 4 oficinas ativas.
 
 ---
 
-## Phase 7: User Story 5 - Canais Opcionais Segregados de Escuta e Fila de Triagem Humana (Priority: P5)
+## Portão G4: Publicação e Prestação de Contas Externa (Semana 23 / D+90)
 
-**Goal**: Oferecer canal de escuta para famílias e educadores com fila privada de triagem da coordenação, impedindo exposição de dados sensíveis e garantindo encaminhamento institucional externo quando necessário.
+**Objetivo**: Gerar artefatos analíticos agregados e relatórios de prestação de contas com revisão e aprovação humana registrada, sem links vivos à base.
 
-**Independent Test**: Submeter mensagem de teste, verificar status `RECEBIDO` e testar transições para `APROVEITADO`, `DESCARTADO` e `PROTOCOLO_EXTERNO`.
-
-### Tests for User Story 5
-- [X] T025 [P] [US5] Create test for feedback triage state machine and quarantine isolation in `tests/test_triage_quarantine.py`
-
-### Implementation for User Story 5
-- [X] T026 [P] [US5] Implement isolated triage and pedagogical synthesis service in `src/services/triage_service.py`
-- [X] T027 [US5] Implement private coordination triage interface and feedback submission form in `src/templates/triagem_escuta.html`
-- [X] T028 [US5] Implement API endpoints for optional feedback submission and moderation actions in `src/api/routes_triage.py`
+- [X] **T021 [G4]** [P] Implementar no motor de métricas (`src/core/metrics.py`) a regra mandatória de **supressão de pequenas células ($n < 10$)** para mitigar riscos de reidentificação.
+- [X] **T022 [G4]** [P] Inserir seção obrigatória de **Limitações Metodológicas** ("O que este relatório não afirma") e expurgar do código afirmações monetárias/fiscais desprovidas de base (rejeitar R$ 16k/ano, conformidade automática Rouanet).
+- [X] **T023 [G4]** Implementar fluxo formal de aprovação (`GERADO` → `REVISADO_COORDENACAO` → `APROVADO_DIRETORIA` → `ARQUIVADO`) na emissão do relatório estático em `src/templates/relatorios_captacao.html`.
+- [X] **T024 [G4]** Validar rotina de exportação completa em formato aberto (CSV) garantindo o princípio de Saída Possível (portabilidade).
 
 ---
 
-## Phase 8: Polish, Integration & System Assembly
+## Portão G5: Módulo Opcional E — Escuta de Famílias e Voz (Pós-MVP)
 
-**Purpose**: Montagem final da aplicação integrada, testes ponta a ponta e documentação executável.
+**Objetivo**: Canal opcional condicionado a parecer jurídico independente, teste de segurança, orçamento específico para custos de mídia/transcrição e equipe capacitada de triagem.
 
-- [X] T029 Assemble FastAPI main application integrating all routes and static assets in `src/app.py`
-- [X] T030 [P] Create full end-to-end integration test running through all personas in `tests/test_e2e_flow.py`
-- [X] T031 [P] Create standalone launcher script and execution guide in `README.md`
-
----
-
-## Dependencies & Execution Order
-
-- **Phase 1 (Setup)**: Concluída com sucesso.
-- **Phase 2 (Foundational)**: Concluída com sucesso.
-- **Phase 3 (US1 - MVP)**: Concluída e testada.
-- **Phase 4 (US2)**: Concluída e testada.
-- **Phase 5 (US3)**: Concluída e testada.
-- **Phase 6 (US4)**: Concluída e testada.
-- **Phase 7 (US5)**: Concluída e testada.
-- **Phase 8 (Polish & Assembly)**: Concluída com 100% de cobertura nos testes E2E.
+- [X] **T025 [G5]** Isolar componentes de quarentena e fila de triagem de áudio/texto fora do fluxo padrão do MVP (`src/templates/triagem_escuta.html` e `src/services/triage_service.py`), sinalizando o status "Fora do MVP / Portão G5".
+- [ ] **T026 [G5]** Elaborar estudo de impacto à proteção de dados (RIPD) específico para coleta de manifestações por voz de responsáveis.
+- [ ] **T027 [G5]** Dimensionar orçamento dedicado para eventuais custos de transcrição e armazenamento criptografado de mídias.

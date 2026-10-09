@@ -96,5 +96,40 @@
     "categoria_fechada": "ENGAJAMENTO_FAMILIAR_POSITIVO",
     "coordenador_id": "COORD-MARIA",
     "data_aprovacao": "2026-10-08T17:38:03.748208"
+  },
+  {
+    "sintese_id": "SINT-FB-TEST-01",
+    "feedback_id": "FB-TEST-01",
+    "categoria_fechada": "ENGAJAMENTO_FAMILIAR_POSITIVO",
+    "coordenador_id": "COORD-MARIA",
+    "data_aprovacao": "2026-10-09T15:20:45.293125"
+  },
+  {
+    "sintese_id": "SINT-FB-E2E-001",
+    "feedback_id": "FB-E2E-001",
+    "categoria_fechada": "ENGAJAMENTO_FAMILIAR_POSITIVO",
+    "coordenador_id": "COORD-MARIA",
+    "data_aprovacao": "2026-10-09T15:22:16.677090+00:00"
+  },
+  {
+    "sintese_id": "SINT-FB-TEST-01",
+    "feedback_id": "FB-TEST-01",
+    "categoria_fechada": "ENGAJAMENTO_FAMILIAR_POSITIVO",
+    "coordenador_id": "COORD-MARIA",
+    "data_aprovacao": "2026-10-09T15:22:16.697452+00:00"
+  },
+  {
+    "sintese_id": "SINT-FB-E2E-001",
+    "feedback_id": "FB-E2E-001",
+    "categoria_fechada": "ENGAJAMENTO_FAMILIAR_POSITIVO",
+    "coordenador_id": "COORD-MARIA",
+    "data_aprovacao": "2026-10-09T15:22:42.386681+00:00"
+  },
+  {
+    "sintese_id": "SINT-FB-TEST-01",
+    "feedback_id": "FB-TEST-01",
+    "categoria_fechada": "ENGAJAMENTO_FAMILIAR_POSITIVO",
+    "coordenador_id": "COORD-MARIA",
+    "data_aprovacao": "2026-10-09T15:22:42.408058+00:00"
   }
 ]
