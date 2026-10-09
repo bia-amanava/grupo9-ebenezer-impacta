@@ -82,15 +82,18 @@ def index(request: Request):
     return RedirectResponse(url="/login", status_code=303)
 
 @app.get("/login", response_class=HTMLResponse)
-def page_login(request: Request):
+def page_login(request: Request, force: bool = False):
     user = get_current_user_from_request(request)
-    if user:
+    if user and not force:
         return RedirectResponse(url=user["default_route"], status_code=303)
-    return templates.TemplateResponse(request=request, name="login.html", context={})
+    resp = templates.TemplateResponse(request=request, name="login.html", context={})
+    if force:
+        resp.delete_cookie(key=SESSION_COOKIE_NAME)
+    return resp
 
 @app.get("/logout")
 def logout(response: Response):
-    resp = RedirectResponse(url="/login", status_code=303)
+    resp = RedirectResponse(url="/login?force=true", status_code=303)
     resp.delete_cookie(key=SESSION_COOKIE_NAME)
     return resp
 
