@@ -1,99 +1,123 @@
 {% extends "base.html" %}
 
-{% block title %}Selecione seu Perfil • Ebenézer Impacta{% endblock %}
+{% block title %}Alternar Perfil de Acesso • Ebenézer Impacta{% endblock %}
 
 {% block content %}
 <div class="max-w-md mx-auto space-y-6 pt-2">
 
-  <!-- Header Institucional -->
-  <div class="flex items-center space-x-2.5">
-    <div class="w-10 h-10 rounded-2xl bg-[#ea580c] text-white flex items-center justify-center font-extrabold text-sm font-outfit shadow-sm">
-      IE
+  <!-- Header Institucional com Badge -->
+  <div class="flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <img
+        src="/static/logo.svg"
+        alt="Instituto Ebenézer"
+        width="160"
+        height="30"
+        class="h-7 w-auto object-contain"
+      />
     </div>
-    <span class="font-outfit font-extrabold text-base text-forest2">
-      Instituto Ebenézer
+    <span class="px-2.5 py-0.5 rounded-[300px] text-[10px] font-black uppercase tracking-wider bg-[#101625] text-[#00FB00] border border-[#00FB00]/30 shadow-xs">
+      Matriz RBAC
     </span>
   </div>
 
   <!-- Saudação e Título -->
   <div class="space-y-1">
-    <h1 class="text-3xl font-black text-forest2 font-outfit tracking-tight">
-      Olá, Ana Beatriz
+    <h1 class="text-2xl font-black text-[#101625] font-montserrat tracking-tight">
+      Alternar Perfil de Acesso
     </h1>
-    <p class="text-xs text-muted font-medium">
-      Selecione seu perfil de acesso hoje:
+    <p class="text-xs text-slate-500 font-medium">
+      Selecione um perfil homologado para alternar sua visão no ambiente demonstrativo:
     </p>
   </div>
 
   <!-- Grid de Perfis de Acesso (2x2) -->
-  <div class="grid grid-cols-2 gap-3.5 pt-2">
+  <div class="grid grid-cols-2 gap-3.5 pt-1">
+    
     <!-- Card Voluntário -->
-    <a href="/campo" class="bg-white rounded-3xl p-5 border border-line shadow-xs hover:border-forest transition flex flex-col justify-between space-y-4 group">
-      <div class="w-10 h-10 rounded-2xl bg-[#fff7ed] text-[#ea580c] flex items-center justify-center">
+    <button type="button" onclick="switchProfile('VOLUNTARIO')" class="bg-white rounded-[24px] p-5 border border-slate-200 shadow-xs hover:border-[#101625] hover:shadow-md transition flex flex-col justify-between space-y-4 text-left group">
+      <div class="w-10 h-10 rounded-full bg-[#101625] text-[#00FB00] flex items-center justify-center font-black text-sm">
         <i data-lucide="hand-heart" class="w-5 h-5"></i>
       </div>
       <div>
-        <h2 class="font-outfit font-extrabold text-sm text-forest2 group-hover:text-forest transition">Voluntário</h2>
-        <p class="text-[11px] text-muted leading-snug mt-1">
-          Registrar chamada e indicadores de oficina.
+        <h2 class="font-montserrat font-extrabold text-sm text-[#101625] group-hover:text-[#00DB00] transition">Voluntário</h2>
+        <p class="text-[11px] text-slate-500 leading-snug mt-1">
+          Chamada e 3 indicadores da oficina (&lt; 3min).
         </p>
       </div>
-    </a>
+    </button>
 
     <!-- Card Coordenação -->
-    <a href="/coordenacao" class="bg-white rounded-3xl p-5 border border-line shadow-xs hover:border-forest transition flex flex-col justify-between space-y-4 group">
-      <div class="w-10 h-10 rounded-2xl bg-[#ecfdf5] text-forest flex items-center justify-center">
+    <button type="button" onclick="switchProfile('COORDENACAO')" class="bg-white rounded-[24px] p-5 border border-slate-200 shadow-xs hover:border-[#101625] hover:shadow-md transition flex flex-col justify-between space-y-4 text-left group">
+      <div class="w-10 h-10 rounded-full bg-[#00FB00] text-[#101625] flex items-center justify-center font-black text-sm">
         <i data-lucide="clipboard-list" class="w-5 h-5"></i>
       </div>
       <div>
-        <h2 class="font-outfit font-extrabold text-sm text-forest2 group-hover:text-forest transition">Coordenação</h2>
-        <p class="text-[11px] text-muted leading-snug mt-1">
-          Gerenciar cadastros, turmas e pendências.
+        <h2 class="font-montserrat font-extrabold text-sm text-[#101625] group-hover:text-[#00DB00] transition">Coordenação</h2>
+        <p class="text-[11px] text-slate-500 leading-snug mt-1">
+          Pendências D0 e Golden Record MDM.
         </p>
       </div>
-    </a>
+    </button>
 
     <!-- Card Psicóloga -->
-    <a href="/psicologia" class="bg-white rounded-3xl p-5 border border-line shadow-xs hover:border-forest transition flex flex-col justify-between space-y-4 group">
-      <div class="w-10 h-10 rounded-2xl bg-[#eff6ff] text-[#2563eb] flex items-center justify-center">
-        <i data-lucide="shield-check" class="w-5 h-5"></i>
+    <button type="button" onclick="switchProfile('PSICOLOGA')" class="bg-white rounded-[24px] p-5 border border-slate-200 shadow-xs hover:border-[#101625] hover:shadow-md transition flex flex-col justify-between space-y-4 text-left group">
+      <div class="w-10 h-10 rounded-full bg-[#1E2538] text-white flex items-center justify-center font-black text-sm">
+        <i data-lucide="shield-check" class="w-5 h-5 text-[#00FB00]"></i>
       </div>
       <div>
-        <h2 class="font-outfit font-extrabold text-sm text-forest2 group-hover:text-forest transition">Psicóloga</h2>
-        <p class="text-[11px] text-muted leading-snug mt-1">
-          Registro operacional da vivência terapêutica.
+        <h2 class="font-montserrat font-extrabold text-sm text-[#101625] group-hover:text-[#00DB00] transition">Psicóloga</h2>
+        <p class="text-[11px] text-slate-500 leading-snug mt-1">
+          Metadados agregados e checklist CFP.
         </p>
       </div>
-    </a>
+    </button>
 
     <!-- Card Diretoria -->
-    <a href="/relatorios" class="bg-white rounded-3xl p-5 border border-line shadow-xs hover:border-forest transition flex flex-col justify-between space-y-4 group">
-      <div class="w-10 h-10 rounded-2xl bg-[#fefce8] text-[#ca8a04] flex items-center justify-center">
+    <button type="button" onclick="switchProfile('DIRETORIA')" class="bg-white rounded-[24px] p-5 border border-slate-200 shadow-xs hover:border-[#101625] hover:shadow-md transition flex flex-col justify-between space-y-4 text-left group">
+      <div class="w-10 h-10 rounded-full bg-amber-500 text-white flex items-center justify-center font-black text-sm">
         <i data-lucide="trending-up" class="w-5 h-5"></i>
       </div>
       <div>
-        <h2 class="font-outfit font-extrabold text-sm text-forest2 group-hover:text-forest transition">Diretoria</h2>
-        <p class="text-[11px] text-muted leading-snug mt-1">
-          Dashboard executivo e relatórios de impacto.
+        <h2 class="font-montserrat font-extrabold text-sm text-[#101625] group-hover:text-[#00DB00] transition">Diretoria</h2>
+        <p class="text-[11px] text-slate-500 leading-snug mt-1">
+          Dossiê e prestação de contas agregada.
         </p>
       </div>
-    </a>
+    </button>
+
   </div>
 
-  <!-- Box de Segurança e Governança com Cadeado -->
-  <div class="bg-[#edf5f9] border border-[#d0e4f2] rounded-3xl p-4 flex items-start space-x-3 text-xs text-[#204963]">
-    <i data-lucide="lock" class="w-4 h-4 text-forest shrink-0 mt-0.5"></i>
+  <!-- Box de Salvaguarda Ética -->
+  <div class="bg-slate-100 border border-slate-200 rounded-[20px] p-4 flex items-start gap-3 text-xs text-[#2C394C]">
+    <i data-lucide="lock" class="w-4 h-4 text-[#101625] shrink-0 mt-0.5"></i>
     <p class="leading-relaxed text-[11px]">
-      Cada perfil acessa apenas os dados permitidos ao seu papel — nenhum perfil visualiza registros clínicos individuais.
+      Cada perfil opera sob privilégio mínimo (PRD v2.0 · Seção 8.3). Prontuários clínicos individuais permanecem rigorosamente fora da plataforma.
     </p>
   </div>
 
-  <!-- Link Sair da Conta -->
   <div class="text-center pt-2 pb-6">
-    <a href="/login" class="text-xs font-bold text-forest2 hover:underline">
-      Sair da conta
+    <a href="/logout" class="text-xs font-bold text-rose-600 hover:underline">
+      Encerrar sessão segura (Logout)
     </a>
   </div>
 
 </div>
+
+<script>
+  async function switchProfile(role) {
+    try {
+      const res = await fetch('/api/auth/quick-login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ role })
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.detail);
+      window.location.href = data.redirect_url;
+    } catch (e) {
+      alert(e.message);
+    }
+  }
+</script>
 {% endblock %}

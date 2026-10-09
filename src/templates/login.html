@@ -2,119 +2,256 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#101625">
   <title>Login Institucional • Ebenézer Impacta</title>
+
+  <!-- Tipografia Oficial do Design System Ebenézer: Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Montserrat"', '-apple-system', 'sans-serif'],
+            montserrat: ['"Montserrat"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              green: '#00FB00',
+              'green-hover': '#00DB00',
+              navy: '#101625',
+              slate: '#2C394C',
+              ice: '#EFF3F8',
+              surface: '#1E2538',
+            }
+          }
+        }
+      }
+    }
+  </script>
   <script src="https://unpkg.com/lucide@latest"></script>
+
   <style>
     body {
-      font-family: 'DM Sans', sans-serif;
-      background-color: #123b34;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #101625;
+      color: #2C394C;
     }
-    .font-outfit {
-      font-family: 'Outfit', sans-serif;
+    .btn-primary-pill {
+      background-color: #00FB00;
+      color: #101625;
+      font-weight: 700;
+      border-radius: 300px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .btn-primary-pill:hover {
+      background-color: #00DB00;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0, 251, 0, 0.35);
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between">
+<body class="min-h-screen flex flex-col justify-between selection:bg-[#00FB00] selection:text-[#101625]">
 
-  <!-- Topo Escuro Institucional -->
-  <div class="pt-10 pb-8 px-6 text-center text-white space-y-3">
-    <div class="flex items-center justify-center space-x-2.5">
-      <div class="w-11 h-11 rounded-2xl bg-[#ea580c] text-white flex items-center justify-center font-extrabold text-base font-outfit shadow-md">
-        IE
-      </div>
-      <span class="font-outfit font-extrabold text-xl tracking-tight text-white">
-        Instituto Ebenézer
+  <!-- Topo Institucional Escuro -->
+  <header class="pt-8 pb-6 px-6 text-center space-y-3">
+    <div class="flex items-center justify-center gap-3">
+      <img
+        src="/static/logo-white.svg"
+        alt="Instituto Ebenézer"
+        width="220"
+        height="42"
+        class="h-9 w-auto object-contain brightness-0 invert"
+      />
+      <span class="px-2.5 py-0.5 rounded-[300px] text-[10px] font-black uppercase tracking-wider bg-[#1E2538] text-[#00FB00] border border-[#00FB00]/30 shadow-xs">
+        Impacta
       </span>
     </div>
-    <p class="text-xs text-[#dcece5] font-medium tracking-wide">
-      Cuidado que se mede, impacto que se prova.
+    <p class="text-xs text-slate-300 font-medium tracking-wide max-w-sm mx-auto">
+      Plataforma de Monitoramento Ético e Prestação de Contas
     </p>
-  </div>
+  </header>
 
-  <!-- Card Branco Principal de Login (Idêntico ao Mockup) -->
-  <div class="bg-white rounded-t-[36px] px-6 pt-8 pb-10 shadow-2xl flex-1 flex flex-col justify-between max-w-md mx-auto w-full">
-    <div class="space-y-5">
+  <!-- Container Central -->
+  <main class="w-full max-w-md mx-auto px-4 flex-1 flex flex-col justify-center">
+    
+    <!-- Card Branco de Autenticação -->
+    <div class="bg-white rounded-[28px] p-6 sm:p-8 shadow-2xl border border-slate-100 space-y-6">
+      
       <div>
-        <h1 class="text-2xl font-black text-[#123b34] font-outfit">Painel de Registro</h1>
-        <p class="text-xs text-[#58635d] mt-1">Faça login para registrar suas atividades.</p>
+        <h1 class="text-2xl font-black text-[#101625] font-montserrat tracking-tight">
+          Acesso Seguro
+        </h1>
+        <p class="text-xs text-slate-500 mt-1 font-medium">
+          Identifique-se com suas credenciais institucionais autorizadas.
+        </p>
       </div>
 
-      <form onsubmit="handleLogin(event)" class="space-y-4 text-xs">
-        <!-- E-mail Institucional -->
+      <!-- Alerta de Erro -->
+      <div id="loginError" class="hidden bg-rose-50 border border-rose-200 text-rose-700 px-4 py-2.5 rounded-2xl text-xs font-semibold flex items-center gap-2">
+        <i data-lucide="alert-circle" class="w-4 h-4 shrink-0 text-rose-600"></i>
+        <span id="loginErrorText">E-mail ou senha incorretos.</span>
+      </div>
+
+      <!-- Formulário de Login -->
+      <form id="loginForm" onsubmit="handleLoginSubmit(event)" class="space-y-4 text-xs font-semibold">
+        
         <div>
-          <label class="block font-bold text-[#252923] mb-1.5">E-mail institucional</label>
+          <label class="block font-bold text-[#101625] mb-1.5">E-mail institucional</label>
           <div class="relative">
-            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-muted">
-              <i data-lucide="mail" class="w-4 h-4 text-gray-400"></i>
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <i data-lucide="mail" class="w-4 h-4"></i>
             </div>
-            <input type="email" id="emailInput" value="coordenacao@institutoebenezer.org" required placeholder="exemplo@instituto.org" class="w-full bg-[#fcfbf7] border border-[#e7dbc1] rounded-2xl pl-10 pr-4 py-3 text-ink font-medium focus:ring-2 focus:ring-[#1f5849] focus:outline-none">
+            <input
+              type="email"
+              id="emailInput"
+              required
+              value="coordenacao@institutoebenezer.org"
+              placeholder="exemplo@institutoebenezer.org"
+              class="w-full bg-[#F7F9F8] border border-slate-200 rounded-2xl pl-10 pr-4 py-3 text-[#101625] font-semibold focus:ring-2 focus:ring-[#00FB00] focus:outline-none transition"
+            >
           </div>
         </div>
 
-        <!-- Senha -->
         <div>
-          <label class="block font-bold text-[#252923] mb-1.5">Senha</label>
+          <label class="block font-bold text-[#101625] mb-1.5">Senha de acesso</label>
           <div class="relative">
-            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-muted">
-              <i data-lucide="lock" class="w-4 h-4 text-gray-400"></i>
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <i data-lucide="lock" class="w-4 h-4"></i>
             </div>
-            <input type="password" id="passwordInput" value="••••••••••••" required placeholder="Digite sua senha de acesso" class="w-full bg-[#fcfbf7] border border-[#e7dbc1] rounded-2xl pl-10 pr-10 py-3 text-ink font-medium focus:ring-2 focus:ring-[#1f5849] focus:outline-none">
-            <button type="button" onclick="togglePassword()" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-gray-400 hover:text-gray-600">
+            <input
+              type="password"
+              id="passwordInput"
+              required
+              value="senha123"
+              placeholder="Digite sua senha"
+              class="w-full bg-[#F7F9F8] border border-slate-200 rounded-2xl pl-10 pr-10 py-3 text-[#101625] font-semibold focus:ring-2 focus:ring-[#00FB00] focus:outline-none transition"
+            >
+            <button type="button" onclick="togglePasswordVisibility()" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-600">
               <i data-lucide="eye" id="eyeIcon" class="w-4 h-4"></i>
             </button>
           </div>
         </div>
 
-        <!-- Lembrar-me -->
-        <div class="flex items-center space-x-2 pt-1">
-          <input type="checkbox" id="remember" checked class="w-4 h-4 text-[#ea580c] rounded border-gray-300 focus:ring-[#ea580c]">
-          <label for="remember" class="font-bold text-[#252923] text-xs cursor-pointer">Lembrar-me neste dispositivo</label>
-        </div>
-
-        <!-- Botão Entrar -->
-        <div class="pt-2">
-          <button type="submit" class="w-full py-3.5 bg-[#ea580c] hover:bg-[#c2410c] text-white rounded-2xl font-bold text-xs shadow-md transition">
-            Entrar
-          </button>
-        </div>
-
-        <div class="text-center pt-1">
-          <a href="#" class="font-bold text-[#123b34] text-xs hover:underline">
-            Esqueci minha senha
+        <div class="flex items-center justify-between text-[11px] pt-1">
+          <label class="flex items-center gap-2 cursor-pointer text-[#101625] font-semibold">
+            <input type="checkbox" id="rememberMe" checked class="w-4 h-4 rounded text-[#00FB00] focus:ring-[#00FB00]">
+            <span>Lembrar sessão neste aparelho</span>
+          </label>
+          <a href="#" onclick="alert('Contate a Coordenação Geral ou Administrador para recuperação de credenciais institucionais.')" class="text-slate-500 hover:text-[#101625] hover:underline">
+            Esqueceu?
           </a>
         </div>
 
-        <div class="flex items-center my-3">
-          <div class="flex-grow border-t border-gray-200"></div>
-          <span class="px-3 text-gray-400 text-xs font-bold">ou</span>
-          <div class="flex-grow border-t border-gray-200"></div>
-        </div>
-
-        <!-- Botão Google Workspace (Custo Zero) -->
-        <button type="button" onclick="window.location.href='/coordenacao'" class="w-full py-3 border border-[#123b34] text-[#123b34] bg-white hover:bg-gray-50 rounded-2xl font-bold text-xs shadow-xs transition flex items-center justify-center space-x-2">
-          <i data-lucide="shield-check" class="w-4 h-4 text-[#123b34]"></i>
-          <span>Entrar com Google Workspace</span>
+        <button
+          type="submit"
+          id="btnSubmitLogin"
+          class="w-full py-3.5 btn-primary-pill text-xs shadow-md transition flex items-center justify-center gap-2"
+        >
+          <span>Entrar no Sistema</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 text-[#101625]"></i>
         </button>
       </form>
+
+      <!-- Divisor -->
+      <div class="relative my-4">
+        <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-slate-200"></div></div>
+        <div class="relative flex justify-center text-[10px] uppercase font-bold text-slate-400">
+          <span class="bg-white px-3">Ou acesse em 1 clique por perfil</span>
+        </div>
+      </div>
+
+      <!-- Atalhos de Demonstração / Homologação (Matriz RBAC) -->
+      <div class="grid grid-cols-2 gap-2 text-[11px]">
+        <button
+          type="button"
+          onclick="quickLogin('VOLUNTARIO')"
+          class="p-2.5 rounded-2xl border border-slate-200 bg-[#F7F9F8] hover:bg-slate-100 font-bold text-[#101625] flex items-center gap-2 text-left transition hover:border-[#101625]"
+        >
+          <div class="w-6 h-6 rounded-full bg-[#101625] text-[#00FB00] flex items-center justify-center text-[10px] shrink-0 font-extrabold">V</div>
+          <div class="truncate">
+            <span class="block truncate">Voluntário</span>
+            <span class="text-[9px] text-slate-400 font-medium block truncate">Chamada &lt; 3min</span>
+          </div>
+        </button>
+
+        <button
+          type="button"
+          onclick="quickLogin('COORDENACAO')"
+          class="p-2.5 rounded-2xl border border-slate-200 bg-[#F7F9F8] hover:bg-slate-100 font-bold text-[#101625] flex items-center gap-2 text-left transition hover:border-[#101625]"
+        >
+          <div class="w-6 h-6 rounded-full bg-[#00FB00] text-[#101625] flex items-center justify-center text-[10px] shrink-0 font-extrabold">C</div>
+          <div class="truncate">
+            <span class="block truncate">Coordenação</span>
+            <span class="text-[9px] text-slate-400 font-medium block truncate">Painel D0 & MDM</span>
+          </div>
+        </button>
+
+        <button
+          type="button"
+          onclick="quickLogin('PSICOLOGA')"
+          class="p-2.5 rounded-2xl border border-slate-200 bg-[#F7F9F8] hover:bg-slate-100 font-bold text-[#101625] flex items-center gap-2 text-left transition hover:border-[#101625]"
+        >
+          <div class="w-6 h-6 rounded-full bg-[#101625] text-white flex items-center justify-center text-[10px] shrink-0 font-extrabold">Ψ</div>
+          <div class="truncate">
+            <span class="block truncate">Psicóloga</span>
+            <span class="text-[9px] text-slate-400 font-medium block truncate">Metadados CFP</span>
+          </div>
+        </button>
+
+        <button
+          type="button"
+          onclick="quickLogin('DIRETORIA')"
+          class="p-2.5 rounded-2xl border border-slate-200 bg-[#F7F9F8] hover:bg-slate-100 font-bold text-[#101625] flex items-center gap-2 text-left transition hover:border-[#101625]"
+        >
+          <div class="w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center text-[10px] shrink-0 font-extrabold">D</div>
+          <div class="truncate">
+            <span class="block truncate">Diretoria</span>
+            <span class="text-[9px] text-slate-400 font-medium block truncate">Transparência</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="pt-1 text-center">
+        <button
+          type="button"
+          onclick="quickLogin('ADMIN')"
+          class="text-[11px] font-bold text-slate-500 hover:text-[#101625] underline decoration-dotted"
+        >
+          Acessar como Administrador Técnico Geral
+        </button>
+      </div>
+
     </div>
 
-    <!-- Nota de Rodapé LGPD -->
-    <div class="text-center pt-8">
-      <p class="text-[10px] text-gray-400 leading-relaxed">
-        Ambiente demonstrativo com dados sintéticos, em conformidade com a LGPD (Art. 11 e 14).
+    <!-- Aviso de Salvaguarda Ética -->
+    <div class="text-center py-6 text-[11px] text-slate-400 space-y-1">
+      <p class="flex items-center justify-center gap-1.5 font-semibold text-slate-300">
+        <i data-lucide="shield-check" class="w-4 h-4 text-[#00FB00]"></i>
+        <span>Controle de Acesso Baseado em Papéis (RBAC · LGPD/ECA)</span>
       </p>
+      <p>Ambiente demonstrativo — 100% dados sintéticos (Portão G1).</p>
     </div>
-  </div>
+
+  </main>
+
+  <!-- Rodapé Simples -->
+  <footer class="py-4 text-center text-[10px] text-slate-500 font-medium">
+    Instituto de Cultura e Lazer Ebenézer · CNPJ: 30.434.044/0001-90
+  </footer>
 
   <script>
-    lucide.createIcons();
+    if (window.lucide) {
+      lucide.createIcons();
+    }
 
-    function togglePassword() {
+    function togglePasswordVisibility() {
       const p = document.getElementById('passwordInput');
       const eye = document.getElementById('eyeIcon');
       if (p.type === 'password') {
@@ -124,9 +261,64 @@
       }
     }
 
-    function handleLogin(e) {
+    async function handleLoginSubmit(e) {
       e.preventDefault();
-      window.location.href = '/coordenacao';
+      const errBox = document.getElementById('loginError');
+      errBox.classList.add('hidden');
+
+      const email = document.getElementById('emailInput').value.trim();
+      const password = document.getElementById('passwordInput').value;
+      const btn = document.getElementById('btnSubmitLogin');
+
+      btn.disabled = true;
+      btn.innerText = 'Autenticando...';
+
+      try {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          throw new Error(data.detail || 'Falha na autenticação.');
+        }
+
+        // Sucesso: redirecionar para a página permitida
+        const urlParams = new URLSearchParams(window.location.search);
+        const nextUrl = urlParams.get('next') || data.redirect_url || '/coordenacao';
+        window.location.href = nextUrl;
+      } catch (err) {
+        btn.disabled = false;
+        btn.innerHTML = '<span>Entrar no Sistema</span><i data-lucide="arrow-right" class="w-4 h-4"></i>';
+        if (window.lucide) lucide.createIcons();
+        document.getElementById('loginErrorText').innerText = err.message;
+        errBox.classList.remove('hidden');
+      }
+    }
+
+    async function quickLogin(role) {
+      const btn = document.getElementById('btnSubmitLogin');
+      btn.disabled = true;
+      btn.innerText = 'Conectando perfil...';
+
+      try {
+        const res = await fetch('/api/auth/quick-login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ role })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail);
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const nextUrl = urlParams.get('next') || data.redirect_url;
+        window.location.href = nextUrl;
+      } catch (err) {
+        alert(err.message);
+        btn.disabled = false;
+        btn.innerText = 'Entrar no Sistema';
+      }
     }
   </script>
 </body>

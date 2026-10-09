@@ -52,7 +52,6 @@
               800: '#166534',
               900: '#14532d',
             },
-            // Aliases para compatibilidade total com os templates
             paper: '#F7F9F8',
             cream: '#EFF3F8',
             warm: '#e2f9e4',
@@ -231,7 +230,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 h-18 py-3 flex items-center justify-between">
       
       <!-- Logo Oficial com Badge de Impacto -->
-      <a href="/campo" class="flex items-center gap-3 group">
+      <a href="{% if user %}{{ user.default_route }}{% else %}/login{% endif %}" class="flex items-center gap-3 group">
         <img
           src="/static/logo.svg"
           alt="Instituto Ebenézer"
@@ -244,38 +243,83 @@
         </span>
       </a>
 
-      <!-- Status de Conexão & Ações Rápidas -->
+      <!-- Status de Conexão & Sessão do Usuário -->
       <div class="flex items-center gap-2 sm:gap-3">
         <div id="connectionBadge" class="flex items-center gap-1.5 px-3 py-1 rounded-[300px] text-xs font-bold bg-[#EFF3F8] text-[#101625] border border-slate-200">
           <span class="w-2 h-2 rounded-full bg-[#00FB00] animate-pulse"></span>
           <span id="connectionText">Online</span>
         </div>
 
-        <a href="https://ebenezer-impacta-pitch.tess.page/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 btn-primary-pill text-xs px-4 py-2 shadow-xs">
-          <span>Pitch Executivo</span>
-          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        {% if user %}
+        <!-- Usuário Autenticado (RBAC) -->
+        <div class="flex items-center gap-2 sm:gap-3 pl-2 sm:pl-3 border-l border-slate-200">
+          <div class="text-right hidden md:block">
+            <span class="block text-xs font-bold text-[#101625] leading-tight">{{ user.nome }}</span>
+            <span class="block text-[10px] text-slate-500 font-semibold uppercase tracking-wider">{{ user.cargo }}</span>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-[#101625] text-[#00FB00] flex items-center justify-center font-black text-xs border border-[#00FB00]/30 shadow-xs" title="{{ user.nome }} - {{ user.cargo }}">
+            {{ user.nome[:2].upper() }}
+          </div>
+          <a
+            href="/logout"
+            title="Encerrar sessão"
+            class="p-2 rounded-full text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition"
+            onclick="return confirm('Deseja encerrar a sessão segura atual?')"
+          >
+            <i data-lucide="log-out" class="w-4 h-4"></i>
+          </a>
+        </div>
+        {% else %}
+        <!-- Visitante Não Autenticado -->
+        <a href="/login" class="btn-primary-pill text-xs px-4 py-2 shadow-xs flex items-center gap-1.5">
+          <span>Entrar</span>
+          <i data-lucide="log-in" class="w-3.5 h-3.5"></i>
         </a>
+        {% endif %}
       </div>
     </div>
 
-    <!-- Navegação em Abas (Estilo Pill Oficial) -->
+    <!-- Navegação em Abas Filtrada por Matriz RBAC -->
     <nav class="border-t border-slate-100 bg-[#F7F9F8] overflow-x-auto scrollbar-none px-4 sm:px-6 py-2">
       <div class="flex items-center gap-1.5 sm:gap-2 text-xs font-bold whitespace-nowrap max-w-7xl mx-auto">
+        
+        {% if not user or user.role in ['VOLUNTARIO', 'COORDENACAO', 'ADMIN'] %}
         <a href="/campo" class="px-4 py-2 rounded-[300px] transition-all {% if active_page == 'campo' %}bg-[#101625] text-[#00FB00] shadow-xs ring-1 ring-[#00FB00]/30{% else %}text-[#2C394C] hover:text-[#101625] hover:bg-white{% endif %}">
           📱 Voluntário (&lt; 3min)
         </a>
+        {% endif %}
+
+        {% if not user or user.role in ['COORDENACAO', 'ADMIN'] %}
         <a href="/coordenacao" class="px-4 py-2 rounded-[300px] transition-all {% if active_page == 'coordenacao' %}bg-[#101625] text-[#00FB00] shadow-xs ring-1 ring-[#00FB00]/30{% else %}text-[#2C394C] hover:text-[#101625] hover:bg-white{% endif %}">
           📊 Coordenação (D0)
         </a>
+        {% endif %}
+
+        {% if not user or user.role in ['PSICOLOGA', 'ADMIN'] %}
         <a href="/psicologia" class="px-4 py-2 rounded-[300px] transition-all {% if active_page == 'psicologia' %}bg-[#101625] text-[#00FB00] shadow-xs ring-1 ring-[#00FB00]/30{% else %}text-[#2C394C] hover:text-[#101625] hover:bg-white{% endif %}">
           🛡️ Psicologia (Metadados CFP)
         </a>
+        {% endif %}
+
+        {% if not user or user.role in ['COORDENACAO', 'ADMIN'] %}
         <a href="/triagem" class="px-4 py-2 rounded-[300px] transition-all {% if active_page == 'triagem' %}bg-[#101625] text-[#00FB00] shadow-xs ring-1 ring-[#00FB00]/30{% else %}text-[#2C394C] hover:text-[#101625] hover:bg-white{% endif %}">
           📥 Fila de Triagem (Portão G5)
         </a>
+        {% endif %}
+
+        {% if not user or user.role in ['DIRETORIA', 'COORDENACAO', 'ADMIN'] %}
         <a href="/relatorios" class="px-4 py-2 rounded-[300px] transition-all {% if active_page == 'relatorios' %}bg-[#00FB00] text-[#101625] shadow-xs ring-1 ring-[#00DB00]{% else %}text-[#2C394C] hover:text-[#101625] hover:bg-white{% endif %}">
           📜 Transparência & Prestação de Contas
         </a>
+        {% endif %}
+
+        {% if user and user.role in ['COORDENACAO', 'ADMIN'] %}
+        <a href="/perfis" class="ml-auto px-3 py-1.5 rounded-[300px] text-[11px] font-semibold border border-slate-200 text-slate-500 hover:text-[#101625] hover:bg-white transition flex items-center gap-1">
+          <i data-lucide="users" class="w-3.5 h-3.5"></i>
+          <span>Alternar Perfis</span>
+        </a>
+        {% endif %}
+
       </div>
     </nav>
   </header>

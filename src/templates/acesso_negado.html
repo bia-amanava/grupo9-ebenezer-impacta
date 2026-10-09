@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Acesso Restrito • Ebenézer Impacta{% endblock %}
+
+{% block content %}
+<div class="max-w-lg mx-auto py-12 px-4 text-center space-y-6">
+  
+  <div class="w-18 h-18 rounded-full bg-rose-50 text-rose-600 flex items-center justify-center mx-auto border-2 border-rose-200">
+    <i data-lucide="shield-alert" class="w-10 h-10"></i>
+  </div>
+
+  <div class="space-y-2">
+    <span class="px-3 py-1 rounded-[300px] text-[10px] font-black uppercase tracking-wider bg-rose-100 text-rose-800 border border-rose-200">
+      Controle de Acesso RBAC • Zona Protegida
+    </span>
+    <h1 class="text-2xl font-black text-[#101625] font-montserrat tracking-tight">
+      Acesso Não Autorizado
+    </h1>
+    <p class="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
+      Seu perfil atual (<strong>{{ user.cargo if user else 'Não identificado' }}</strong>) não possui permissão para visualizar este recurso.
+    </p>
+  </div>
+
+  <div class="bg-white rounded-[24px] p-5 border border-slate-200 shadow-sm text-left text-xs space-y-2">
+    <div class="font-bold text-[#101625] flex items-center gap-1.5">
+      <i data-lucide="lock" class="w-4 h-4 text-[#101625]"></i>
+      <span>Salvaguardas de Privacidade e Governança:</span>
+    </div>
+    <ul class="text-slate-600 space-y-1 list-disc list-inside text-[11px] leading-relaxed">
+      <li>Voluntários de campo possuem acesso restrito apenas à chamada e indicadores de suas oficinas (Zona B).</li>
+      <li>Dados civis identificáveis de crianças e responsáveis residem em base isolada com acesso mínimo à coordenação (Zona A).</li>
+      <li>Metadados de vivências terapêuticas são de acesso exclusivo da profissional de psicologia (CFP/LGPD).</li>
+    </ul>
+  </div>
+
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+    <a href="{{ user.default_route if user else '/login' }}" class="w-full sm:w-auto px-6 py-3 btn-primary-pill text-xs shadow-md">
+      Voltar para Minha Área Autorizada
+    </a>
+    <a href="/login" class="w-full sm:w-auto px-6 py-3 rounded-[300px] border border-slate-300 font-bold text-[#101625] text-xs hover:bg-slate-100 transition">
+      Trocar de Perfil de Acesso
+    </a>
+  </div>
+
+</div>
+{% endblock %}
