@@ -44,13 +44,45 @@ class MDMService:
         return list(self._participants.values())
 
     def get_civil_record_restricted(self, participant_id: str, requester_role: str) -> Optional[dict]:
-        """Acesso restrito estrito: Somente COORDENACAO_GERAL pode consultar dados civis."""
-        if requester_role != "COORDENACAO_GERAL":
+        """Acesso restrito estrito: Somente perfis autorizados de coordenação/diretoria podem consultar dados civis."""
+        if requester_role not in ["COORDENACAO", "COORDENACAO_GERAL", "DIRETORIA", "ADMIN"]:
             raise PermissionError("Acesso negado: Perfil não autorizado a consultar dados civis identificáveis.")
         return self._civil_registry.get(participant_id)
 
+    def get_all_civil_records_restricted(self, requester_role: str) -> List[dict]:
+        """Acesso restrito estrito: Somente COORDENACAO, DIRETORIA ou ADMIN podem consultar lista civil."""
+        if requester_role not in ["COORDENACAO", "COORDENACAO_GERAL", "DIRETORIA", "ADMIN"]:
+            raise PermissionError("Acesso negado: Perfil não autorizado a consultar dados civis identificáveis.")
+        return list(self._civil_registry.values())
+
     def register_or_update(self, participant: ParticipantMDM):
         self._participants[participant.participant_id] = participant
+
+    def update_participant_status(self, participant_id: str, new_status: str) -> bool:
+        if participant_id in self._participants:
+            part = self._participants[participant_id]
+            self._participants[participant_id] = ParticipantMDM(
+                participant_id=part.participant_id,
+                coorte_ano=part.coorte_ano,
+                faixa_etaria=part.faixa_etaria,
+                matriculas_ativas=part.matriculas_ativas,
+                status=new_status
+            )
+            return True
+        return False
+
+    def update_participant_programs(self, participant_id: str, new_programs: List[str]) -> bool:
+        if participant_id in self._participants:
+            part = self._participants[participant_id]
+            self._participants[participant_id] = ParticipantMDM(
+                participant_id=part.participant_id,
+                coorte_ano=part.coorte_ano,
+                faixa_etaria=part.faixa_etaria,
+                matriculas_ativas=new_programs,
+                status=part.status
+            )
+            return True
+        return False
 
 # Instância singleton
 mdm_service = MDMService()

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fff9ea"><meta name="description" content="Pitch executivo navegável Ebenézer Impacta — monitoramento ético de trajetórias programáticas."><title>Ebenézer Impacta | Pitch atualizado · telas e roadmap</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+:root{--paper:#fffcf2;--cream:#fff5dc;--warm:#f9eacc;--gold:#f3b826;--gold2:#f9cf62;--forest:#1f5849;--forest2:#123b34;--ink:#252923;--muted:#58635d;--line:#e7dbc1;--white:#fff;--red:#9d4f3b;--shadow:0 18px 60px #16332b14;--radius:24px;font-family:'DM Sans',Arial,sans-serif;color:var(--ink);scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:var(--paper)}a{color:inherit}button{font:inherit}button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}h1,h2,h3,p{margin-top:0}h1,h2,h3,.brand{font-family:Outfit,'DM Sans',Arial,sans-serif}h1{font-size:clamp(3rem,7vw,6.65rem);line-height:.98;letter-spacing:-.063em}h2{font-size:clamp(2.35rem,5vw,4.8rem);line-height:1.05;letter-spacing:-.05em}h3{font-size:1.35rem;line-height:1.2}.eyebrow{text-transform:uppercase;color:var(--forest);font-size:.72rem;letter-spacing:.17em;font-weight:800}.lead{font-size:clamp(1.11rem,1.6vw,1.32rem);line-height:1.65;color:var(--muted);max-width:66ch}.topbar{position:fixed;z-index:50;top:0;width:100%;background:#fffcf2e8;backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}.navinner{height:72px;max-width:1510px;padding:0 clamp(20px,4vw,76px);margin:auto;display:flex;align-items:center;gap:24px}.brand{text-decoration:none;font-size:1.16rem;font-weight:800;white-space:nowrap;letter-spacing:-.035em}.brand b{color:var(--forest)}.brand small{font:600 .61rem 'DM Sans',sans-serif;display:block;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.navlinks{display:flex;align-items:center;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}.navlinks a{white-space:nowrap;text-decoration:none;font-size:.77rem;font-weight:700;color:var(--muted);padding:12px 10px;border-radius:100px}.navlinks a:hover,.navlinks a.active{background:var(--forest);color:white}.navcta{white-space:nowrap;border:0;background:var(--gold);border-radius:100px;padding:11px 17px;font-weight:800;cursor:pointer;font-size:.78rem}.progress{height:3px;background:var(--gold);width:0;transition:width .12s}.scene{min-height:min(900px,100svh);padding:122px max(clamp(24px,5vw,84px),calc((100vw - 1450px)/2)) 72px;display:flex;align-items:center;position:relative;scroll-margin-top:65px;overflow:hidden}.scene.alt{background:var(--cream)}.scene.green{background:var(--forest2);color:var(--white)}.scene.green .eyebrow{color:var(--gold2)}.scene.green .lead,.scene.green .small{color:#d4e3d8}.scene .wrap{width:100%;max-width:1410px;margin:auto}.split{display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(32px,6vw,94px);align-items:center}.statement{max-width:860px}.small{color:var(--muted);font-size:.84rem;line-height:1.6}.kicker{display:flex;align-items:center;gap:12px;margin-bottom:25px}.kicker i{width:34px;height:2px;background:var(--gold)}.stamp{border:1px solid var(--line);border-radius:100px;padding:8px 13px;display:inline-block;font-size:.72rem;font-weight:700;color:var(--forest)}.quote{font-family:Outfit,sans-serif;font-size:clamp(2rem,3.6vw,4.5rem);font-weight:700;line-height:1.12;letter-spacing:-.05em}.pill{display:inline-flex;border-radius:100px;padding:9px 15px;background:var(--gold);font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em}.photo{min-height:575px;border-radius:32px;background:linear-gradient(0deg,#092d26aa,#092d2620 60%),url('https://www.institutosocialebenezer.com.br/_astro/criancas-pintura.BCbF_cYp_xj4VN.webp') center/cover,linear-gradient(130deg,#b78651,#ecc762);position:relative;box-shadow:var(--shadow);overflow:hidden}.photo:after{content:'Imagem da página de Transparência do Instituto';position:absolute;left:25px;bottom:18px;color:white;font-size:.67rem}.photo-card{position:absolute;left:25px;right:25px;bottom:58px;background:#fff9edee;backdrop-filter:blur(8px);border-radius:20px;padding:25px;color:var(--forest2);max-width:360px;font:700 clamp(1.3rem,2vw,1.85rem)/1.18 Outfit,sans-serif}.buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.btn{border:0;border-radius:100px;padding:15px 22px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:800;font-size:.89rem;cursor:pointer}.btn.primary{background:var(--forest);color:white}.btn.secondary{border:1px solid var(--forest);color:var(--forest);background:transparent}.green .btn.primary{background:var(--gold);color:var(--ink)}.green .btn.secondary{border-color:#e8f4eb;color:white}.grid{display:grid;gap:18px}.two{grid-template-columns:repeat(2,minmax(0,1fr))}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.four{grid-template-columns:repeat(4,minmax(0,1fr))}.card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 10px 35px #19372909}.card strong{font-family:Outfit,sans-serif;font-size:1.3rem;display:block;margin-bottom:9px}.card p:last-child{margin-bottom:0}.card.dark{background:var(--forest);color:white;border-color:var(--forest)}.card.dark .small{color:#dcece5}.card.gold{background:var(--gold);border-color:var(--gold)}.number{font:800 clamp(2.5rem,5vw,5rem)/1 Outfit,sans-serif;letter-spacing:-.05em;color:var(--forest);display:block;margin:16px 0}.card.gold .number{color:var(--ink)}.no{font-family:Outfit,sans-serif;font-size:3.5rem;font-weight:800;color:var(--gold);line-height:1}.route{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}.route .card{position:relative;min-height:240px}.route .card:not(:last-child):after{content:'→';position:absolute;right:-20px;top:40%;color:var(--forest);font-size:1.5rem;z-index:1}.divider{height:1px;background:var(--line);margin:30px 0}.ribbon{margin-top:29px;padding:17px 22px;border-radius:18px;background:#e7f0e8;color:var(--forest2);font-size:.93rem;font-weight:700}.green .ribbon{background:#ffffff18;color:white}.warning{background:#fff0e8;color:#793d2c}.green .warning{background:#fbdac7;color:#793d2c}.cardsheading{max-width:850px;margin-bottom:28px}.canvas{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:1fr 1fr auto;gap:10px;margin-top:28px}.canvas .tile{border-radius:16px;border:1px solid #d2b76f;background:#fff9e5;padding:16px;min-height:118px}.canvas .tile.yellow{background:var(--gold)}.canvas .tile b{font:700 .93rem Outfit,sans-serif;display:block;margin-bottom:11px}.canvas .tile p{font-size:.78rem;line-height:1.55;margin:0}.canvas .problem{grid-column:1;grid-row:1/3}.canvas .solution{grid-column:2;grid-row:1}.canvas .metrics{grid-column:2;grid-row:2}.canvas .value{grid-column:3;grid-row:1/3}.canvas .edge{grid-column:4;grid-row:1}.canvas .channel{grid-column:4;grid-row:2}.canvas .segments{grid-column:5;grid-row:1/3}.canvas .cost{grid-column:1/3;grid-row:3}.canvas .revenue{grid-column:3/6;grid-row:3}.canvas .cost,.canvas .revenue{min-height:90px}.tag{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--forest)}.green .tag{color:var(--gold2)}.horizontal{display:flex;align-items:center;gap:18px}.horizontal .no{min-width:50px}.evidence{max-width:780px;margin-top:28px}.evidence li{margin:12px 0;line-height:1.6}.evidence a{color:var(--forest);text-underline-offset:3px}.scene.green a:not(.btn){color:var(--gold2)}.tablewrap{overflow-x:auto;border-radius:20px;border:1px solid var(--line);background:white}table{width:100%;border-collapse:collapse;text-align:left;min-width:660px;font-size:.86rem}th,td{padding:15px 17px;border-bottom:1px solid var(--line);vertical-align:top}th{background:var(--forest);color:white;font:700 .85rem Outfit,sans-serif}tr:last-child td{border-bottom:0}td:first-child{font-weight:700}.ref{font-size:.72rem;color:var(--muted);margin-top:22px;line-height:1.5}.ref a{color:var(--forest)}.source-list{display:grid;gap:11px;margin-top:23px}.source-list a{display:block;border:1px solid var(--line);background:white;border-radius:14px;padding:17px 20px;text-decoration:none;font-size:.86rem}.source-list a:hover{border-color:var(--forest);transform:translateY(-2px)}.sticky-tools{position:fixed;z-index:40;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:8px;background:#183e35ee;backdrop-filter:blur(10px);border:1px solid #ffffff40;border-radius:100px;padding:8px;box-shadow:var(--shadow)}.sticky-tools button{border:0;border-radius:100px;background:transparent;color:white;padding:9px 14px;cursor:pointer;font-size:.82rem;font-weight:700}.sticky-tools button:hover{background:var(--gold);color:var(--ink)}.sr{position:absolute;left:-9999px}.privacy{font-size:.79rem;color:var(--muted)}.scene.green .privacy{color:#d7e4dc}.footer{padding:60px 5% 110px;background:#122e28;color:#dce5dc;text-align:center}.footer a{color:#f9cf62}.footer p{margin:9px auto;max-width:800px}.mini{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.splitbig{grid-template-columns:.9fr 1.1fr}.appear{animation:rise .5s ease both}@keyframes rise{from{opacity:.35;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1050px){.navlinks a{padding:8px}.navinner{gap:12px}.split{gap:30px}.canvas .tile{padding:11px}.canvas .tile p{font-size:.72rem}}
+@media(max-width:780px){.navinner{height:63px}.navlinks{display:none}.navcta{margin-left:auto}.scene{padding:100px 22px 76px;min-height:auto}.scene:first-of-type{min-height:100svh}.split,.two,.three,.four,.splitbig{grid-template-columns:1fr}.photo{min-height:350px}.photo-card{max-width:310px}.route{grid-template-columns:repeat(2,1fr)}.route .card:not(:last-child):after{display:none}.canvas{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}.canvas .tile{grid-column:auto!important;grid-row:auto!important}.canvas .cost,.canvas .revenue{grid-column:1/-1!important}.canvas .tile p{font-size:.85rem}.canvas .tile{min-height:110px}.sticky-tools{width:calc(100% - 26px);justify-content:center}.sticky-tools button{font-size:.75rem;padding:9px 11px}.card{padding:22px}.quote{font-size:2.3rem}}
+@media(max-width:450px){.route{grid-template-columns:1fr}.canvas{grid-template-columns:1fr}.canvas .tile{grid-column:1!important}.brand{font-size:1rem}.navcta{font-size:.68rem;padding:10px}h1{font-size:3.5rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+@media print{.topbar,.sticky-tools,.navcta,.buttons,.scene{min-height:auto;page-break-after:always;padding:38px 25px}.scene.green{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.tile{break-inside:avoid}h2{font-size:2.2rem}.photo{min-height:340px}}
+
+/* === CORREÇÃO DE CONTRASTE: TEXTO EM CARTÕES E BLOCOS === */
+.card {
+  background: #ffffff !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: 0 10px 35px rgba(22, 51, 43, 0.08);
+}
+.card h3, .card strong {
+  color: var(--forest2) !important;
+  font-family: Outfit, sans-serif;
+  display: block;
+  margin-bottom: 8px;
+}
+.card p {
+  color: var(--ink) !important;
+  line-height: 1.6;
+}
+.card p:last-child {
+  margin-bottom: 0;
+}
+.card .small {
+  color: var(--muted) !important;
+}
+.card .tag {
+  color: var(--forest) !important;
+  background: #edf5f1 !important;
+  padding: 4px 10px;
+  border-radius: 100px;
+  display: inline-block;
+  margin-bottom: 12px;
+  font-weight: 800;
+  font-size: 0.75rem;
+}
+.card .tag[style*="var(--red)"] {
+  background: #fdf0ed !important;
+  color: var(--red) !important;
+}
+
+/* Modificador Dark */
+.card.dark {
+  background: var(--forest) !important;
+  color: #ffffff !important;
+  border-color: var(--forest) !important;
+}
+.card.dark h3, .card.dark strong, .card.dark p {
+  color: #ffffff !important;
+}
+.card.dark .small {
+  color: #dcece5 !important;
+}
+.card.dark .tag {
+  color: var(--gold2) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Modificador Gold */
+.card.gold {
+  background: var(--gold) !important;
+  border-color: var(--gold) !important;
+  color: var(--ink) !important;
+}
+.card.gold h3, .card.gold strong, .card.gold p {
+  color: var(--ink) !important;
+}
+.card.gold .number {
+  color: var(--ink) !important;
+}
+
+/* Modificador no Lean Canvas para contraste idêntico à imagem de referência */
+.canvas .tile {
+  background: #fff9e5 !important;
+  border: 1.5px solid #d2b76f !important;
+  color: var(--ink) !important;
+}
+.canvas .tile b {
+  color: var(--ink) !important;
+  font-weight: 800;
+}
+.canvas .tile p {
+  color: #3b423e !important;
+}
+.canvas .tile.yellow {
+  background: #f3b826 !important;
+  border-color: #d99f16 !important;
+}
+.canvas .tile.yellow b {
+  color: #1a201c !important;
+}
+.canvas .tile.yellow p {
+  color: #262c28 !important;
+}
+
+
+/* GARANTIA TOTAL DE CONTRASTE */
+.scene.green .card,
+.scene.alt .card,
+.card {
+  background: #ffffff !important;
+  color: #252923 !important;
+  border: 1px solid #e7dbc1 !important;
+  border-radius: 24px !important;
+  padding: 28px !important;
+  box-shadow: 0 10px 35px rgba(22, 51, 43, 0.08) !important;
+}
+
+.scene.green .card h3,
+.scene.green .card strong,
+.card h3,
+.card strong {
+  color: #123b34 !important;
+  font-family: Outfit, sans-serif !important;
+  display: block !important;
+  margin-bottom: 8px !important;
+}
+
+.scene.green .card p,
+.scene.green .card span:not(.tag):not(.no),
+.card p,
+.card span:not(.tag):not(.no) {
+  color: #2b332f !important;
+  line-height: 1.6 !important;
+}
+
+.scene.green .card .small,
+.card .small {
+  color: #55625c !important;
+}
+
+.scene.green .card .tag,
+.card .tag {
+  color: #1f5849 !important;
+  background: #eef5f1 !important;
+  padding: 5px 12px !important;
+  border-radius: 100px !important;
+  display: inline-block !important;
+  margin-bottom: 12px !important;
+  font-weight: 800 !important;
+  font-size: 0.76rem !important;
+}
+
+.scene.green .card .tag[style*="var(--red)"],
+.card .tag[style*="var(--red)"] {
+  background: #fdf0ed !important;
+  color: #9d4f3b !important;
+}
+
+/* Modificadores específicos quando a classe é explicitamente .dark ou .gold */
+.scene.green .card.dark,
+.card.dark {
+  background: #1f5849 !important;
+  color: #ffffff !important;
+  border-color: #1f5849 !important;
+}
+.scene.green .card.dark h3,
+.scene.green .card.dark strong,
+.scene.green .card.dark p,
+.card.dark h3,
+.card.dark strong,
+.card.dark p {
+  color: #ffffff !important;
+}
+.scene.green .card.dark .small,
+.card.dark .small {
+  color: #dcece5 !important;
+}
+.scene.green .card.dark .tag,
+.card.dark .tag {
+  color: #f9cf62 !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+}
+
+.card.gold {
+  background: #f3b826 !important;
+  border-color: #d99f16 !important;
+  color: #252923 !important;
+}
+.card.gold h3, .card.gold strong, .card.gold p {
+  color: #252923 !important;
+}
+
+
+/* Notas de apresentação e impressão */
+.speech{background:#fff;border:1px solid #e7dbc1;border-radius:16px;padding:20px;margin-top:22px;max-width:900px;color:#252923}
+.speech summary{cursor:pointer;font-weight:800;color:#1f5849}
+.speech p{line-height:1.6;margin:13px 0 0;color:#2b332f}
+@media print{.topbar,.sticky-tools,.navcta,.buttons,.speech{display:none!important}}
+</style><style>
+.screens{display:grid;gap:18px;margin:26px 0;align-items:start}.screens.fourup{grid-template-columns:repeat(4,minmax(0,1fr))}.screens.trio{grid-template-columns:repeat(3,minmax(0,1fr))}.screen{background:#fff;padding:12px;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);margin:0;min-width:0;text-align:center}.screen img{width:100%;height:420px;object-fit:contain;object-position:top;border-radius:11px;background:#f4f7fa}.screen figcaption{font-size:.8rem;color:var(--forest2);font-weight:700;line-height:1.4;padding:12px 5px 4px}.timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin:30px 0}.step{background:white;border:1px solid var(--line);border-top:6px solid var(--gold);border-radius:18px;padding:22px;min-height:230px}.step b{display:block;color:var(--forest);margin-bottom:16px}.step strong{font:700 1.15rem Outfit,sans-serif;color:var(--forest2)}.step p{line-height:1.5;font-size:.9rem;margin:14px 0 0}.scene .screens{max-width:1250px;margin-left:auto;margin-right:auto}#viabilidade .number{font-size:clamp(2.2rem,3.9vw,4rem)}#adocao .route .card{min-height:0}@media(max-width:900px){.screens.fourup,.screens.trio,.timeline{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:550px){.screens.fourup,.screens.trio,.timeline,#adocao .route{grid-template-columns:1fr!important}.screen img{height:480px}}@media print{.screen img{height:325px}.step{min-height:0}}
+</style><style>.v2badge{position:fixed;z-index:49;right:18px;bottom:76px;background:#f3b826;color:#123b34;border:2px solid #123b34;border-radius:99px;padding:9px 13px;font:800 11px Arial,sans-serif;box-shadow:0 3px 16px #123b3444}@media(max-width:700px){.v2badge{position:relative;right:auto;bottom:auto;text-align:center;border-radius:0;margin-top:63px;padding:8px;font-size:10px}}@media print{.v2badge{display:none}}</style></head><body>
+<header class="topbar"><div class="navinner"><a class="brand" href="#inicio" aria-label="Voltar ao início">Ebenézer <b>Impacta</b><small>Pitch executivo · Desafio B</small></a><nav class="navlinks" aria-label="Navegação principal"><a href="#pergunta">Problema</a><a href="#produto">Telas</a><a href="#evidencia">Dashboard</a><a href="#viabilidade">Viabilidade</a><a href="#adocao">Adoção</a><a href="#roadmap">Roadmap</a><a href="#decisao">A decisão</a></nav><a class="navcta" style="text-decoration:none;display:inline-flex;align-items:center;" href="/login">Ir para o App ↗</a></div><div class="progress" id="progress"></div></header>
+<main>
+<div class="v2badge" aria-label="Versão atualizada do pitch">VERSÃO ATUALIZADA · 12 SEÇÕES · TELAS DO APP · DASHBOARD · ROADMAP</div>
+<section class="scene" id="inicio" data-title="Início"><div class="wrap split"><div><div class="kicker"><i></i><span class="eyebrow">Inteli · Instituto Social Ebenézer · Semana 10</span></div><h1>O começo da história merece ser acompanhado.</h1><p class="lead">Uma proposta para transformar registros de oficina em aprendizado institucional — sem confundir observação de programa com informação clínica.</p><div class="mini"><span class="stamp">Desafio B · Monitoramento de Impacto</span><span class="stamp">Proposta acadêmica · sob validação</span></div><div class="buttons"><a class="btn primary" href="#pergunta">Explorar o pitch <span aria-hidden="true">↘</span></a><a class="btn secondary" href="/login">Acessar App Ebenézer ↗</a></div></div><div class="photo" role="img" aria-label="Fotografia institucional de crianças pintando em atividade, publicada no site do Instituto"><div class="photo-card">“Se mudarmos o começo da história, mudamos a história toda.”</div></div></div></section>
+<section class="scene alt" id="pergunta" data-title="A pergunta"><div class="wrap"><div class="eyebrow">01 / A pergunta que muda a conversa</div><h2 class="statement">Ao fim de um sábado, sabemos <em>quem veio.</em><br>Mas o que mudou?</h2><div class="grid two"><article class="card"><div class="no">01</div><strong>Presença é ponto de partida.</strong><p>A planilha informa participação. O dossiê a descreve como o registro mais completo em cobertura e mais limitado em conteúdo.</p></article><article class="card gold"><div class="no">02</div><strong>Trajetória exige continuidade.</strong><p>Sem um instrumento de observação programática, não há série socioemocional comparável ao longo dos encontros.</p></article></div><p class="ref">Fonte: <a href="https://www.institutosocialebenezer.com.br/transparencia/" target="_blank" rel="noopener">Transparência do Instituto</a>; dossiê do módulo, pp. 6 e 8. A pergunta dramatiza a lacuna; não se refere a pessoa real.</p></div></section>
+<section class="scene alt" id="urgencia" data-title="Por que agora"><div class="wrap"><div class="eyebrow">02 / Problema &amp; solução</div><h2>Registrar presença é necessário.<br>Para aprender com o programa, não basta.</h2><p class="lead">O dossiê aponta registros dispersos, desempenho escolar anual restrito a um programa e ausência de série programática compartilhável. A oportunidade é criar uma rotina comparável — sem prometer causalidade, aprovação em editais ou receita adicional.</p><div class="grid three"><div class="card"><span class="tag">Hoje</span><h3>Fragmentação</h3><p>Consolidação manual e dificuldade para distinguir participantes, matrículas e encontros.</p></div><div class="card"><span class="tag">Agora</span><h3>Governança primeiro</h3><p>Definir rubricas, perfis de acesso e critérios de uso antes de qualquer dado real.</p></div><div class="card"><span class="tag">Oportunidade</span><h3>Aprendizado institucional</h3><p>Visões agregadas mais confiáveis para decisões e relatórios, sem garantia de captação.</p></div></div><p class="ref">Fonte: dossiê e documentação da Semana 5. Benefícios ainda dependem de validação pela instituição.</p></div></section>
+<section class="scene" id="solucao" data-title="A solução"><div class="wrap split"><div><div class="eyebrow">03 / O ponto de virada</div><h2>Um registro breve.<br>Uma trajetória acompanhável.</h2><p class="lead">Ebenézer Impacta é a proposta de um fluxo no-code para coletar presença e categorias observáveis aprovadas pela equipe, vinculadas a um identificador interno — com leitura agregada pela coordenação.</p><div class="ribbon">A tecnologia é meio. O produto é uma rotina de observação útil, governada e sustentável depois da Semana 10.</div></div><div class="card" style="padding:36px"><span class="pill">Proposta de valor</span><p class="quote" style="margin:26px 0">“Continuidade para os registros. Proteção para as pessoas.”</p><p class="small">Não é diagnóstico, prontuário, instrumento clínico nem prova de causalidade.</p></div></div></section>
+<section class="scene alt" id="produto" data-title="Produto em ação"><div class="wrap"><div class="eyebrow">04 / Mercado &amp; produto</div><h2>Da oficina ao registro,<br>em poucos toques.</h2><p class="lead">Protótipo navegável da Semana 5: jornada da equipe autorizada. As imagens ilustram o desenho, não uma operação implantada.</p><div class="screens fourup"><figure class="screen "><img loading="lazy" alt="Tela demonstrativa do protótipo: Acessos por perfil" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80"><figcaption>Acessos por perfil · dados sintéticos</figcaption></figure><figure class="screen "><img loading="lazy" alt="Tela demonstrativa do protótipo: Atividade do dia" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=80"><figcaption>Atividade do dia · dados sintéticos</figcaption></figure><figure class="screen "><img loading="lazy" alt="Tela demonstrativa do protótipo: Chamada por toque" src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&auto=format&fit=crop&q=80"><figcaption>Chamada por toque · dados sintéticos</figcaption></figure><figure class="screen "><img loading="lazy" alt="Tela demonstrativa do protótipo: Vivência: somente dados operacionais agregados" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&auto=format&fit=crop&q=80"><figcaption>Vivência: somente dados operacionais agregados · dados sintéticos</figcaption></figure></div><p class="ribbon">Registro em menos de 3 minutos é uma meta de teste — não um resultado confirmado com usuários da instituição.</p></div></section>
+<section class="scene " id="evidencia" data-title="Dashboard e relatório"><div class="wrap"><div class="eyebrow">05 / Produto &amp; evidências</div><h2>A diretoria vê a execução.<br>O relatório torna o método legível.</h2><p class="lead">Visões demonstrativas de indicadores agregados e relatório de execução. Números exibidos nas telas são fictícios e não representam resultados do Instituto.</p><div class="screens trio"><figure class="screen "><img loading="lazy" alt="Tela demonstrativa do protótipo: Painel executivo: visão geral" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80"><figcaption>Painel executivo: visão geral · dados sintéticos</figcaption></figure><figure class="screen "><img loading="lazy" alt="Tela demonstrativa do protótipo: Painel executivo: indicadores agregados" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80"><figcaption>Painel executivo: indicadores agregados · dados sintéticos</figcaption></figure><figure class="screen "><img loading="lazy" alt="Tela demonstrativa do protótipo: Relatório de execução demonstrativo" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80"><figcaption>Relatório de execução demonstrativo · dados sintéticos</figcaption></figure></div><p class="ref">Protótipo da Semana 5, dados sintéticos. Tendências observacionais não demonstram impacto causal; exportação e automação precisam ser implementadas e testadas.</p></div></section>
+<section class="scene green" id="fronteira" data-title="A fronteira ética"><div class="wrap"><div class="eyebrow">06 / A fronteira que não se atravessa</div><h2>Observação de oficina não é prontuário.</h2><div class="grid two"><div class="card"><span class="tag">Dentro</span><h3>Indicador de programa</h3><p>Presença e categorias observáveis definidas com a equipe; circulação interna sob acesso controlado e comunicação externa somente agregada, conforme aprovação.</p></div><div class="card"><span class="tag" style="color:var(--red)">Fora</span><h3>Registro clínico</h3><p>Diagnóstico, narrativa de acolhimento, encaminhamento, histórico de violência e informações da atuação da psicóloga não integram o produto.</p></div></div><div class="ribbon warning"><strong>Regra do dossiê:</strong> protótipo e MVP acadêmicos somente com dados sintéticos. Nenhum registro individual identificável é solicitado, recebido ou manipulado pelo grupo.</div><p class="small" style="margin-top:18px">Cada campo proposto demanda finalidade/base legal, titular, acesso, retenção e descarte definidos e revistos antes de qualquer uso real.</p></div></section>
+<section class="scene alt" id="canvas" data-title="Modelo de valor"><div class="wrap"><div class="eyebrow">07 / Modelo de negócio · adaptação ao terceiro setor</div><h2>Não vendemos software.<br>Propomos capacidade institucional.</h2><div class="grid three"><div class="card"><span class="tag">Usuários</span><h3>Equipe autorizada</h3><p>Voluntários registram; coordenação acompanha; psicóloga preserva a fronteira clínica.</p></div><div class="card"><span class="tag">Beneficiários da evidência</span><h3>Diretoria e apoiadores</h3><p>Recebem dados agregados para gestão e prestação de contas, sem promessa de receita.</p></div><div class="card"><span class="tag">Alternativa atual</span><h3>Planilhas e relatos</h3><p>O ganho proposto é continuidade, qualidade de registro e menor esforço de consolidação.</p></div></div><p class="ribbon">O Lean Canvas completo pertence ao material de apoio. Neste pitch: problema, produto, usuários, custos e decisão.</p></div></section>
+<section class="scene alt" id="viabilidade" data-title="Viabilidade financeira"><div class="wrap"><div class="eyebrow">08 / Time &amp; números</div><h2>O TCO inclui esforço humano.<br>Licença gratuita não significa custo zero.</h2><p class="lead">Horizonte de 1 ano. Valores de referência do Business Case informado pelo grupo, sujeitos à conferência da composição do TCO e das regras de licenciamento.</p><div class="grid three"><div class="card"><span class="tag">TCO anual valorado</span><span class="number">R$ 3.437</span><p>Valor da tabela mais recente. Detalhamento das parcelas deve ser reconciliado antes da versão final.</p></div><div class="card"><span class="tag">Operação da instituição</span><span class="number">1 h / sem.</span><p>Tempo proposto para pendências, acessos e relatórios. Referência de R$ 2.600/ano a R$ 50/h, <em>se</em> a premissa de 52 semanas for confirmada.</p></div><div class="card"><span class="tag">Reserva técnica</span><span class="number">R$ 300 / ano</span><p>Contingência citada no BC; <strong>não</strong> é uma mensalidade de manutenção contratada. Licenças e eventuais upgrades exigem validação.</p></div></div><div class="tablewrap" style="margin-top:24px"><table><thead><tr><th>Somente eficiência valorada*</th><th>Conservador</th><th>Base</th><th>Otimista</th></tr></thead><tbody><tr><td>Horas poupadas / ano</td><td>100 h</td><td>180 h</td><td>220 h</td></tr><tr><td>Benefício teórico a R$ 50/h</td><td>R$ 5.000</td><td>R$ 9.000</td><td>R$ 11.000</td></tr><tr><td>Saldo valorado após TCO</td><td>R$ 1.563</td><td>R$ 5.563</td><td>R$ 7.563</td></tr></tbody></table></div><p class="small" style="margin-top:18px">* Cenários ilustrativos, não resultados observados nem entrada de caixa. Ganhos de captação de R$ 10 mil / R$ 16 mil / R$ 35 mil da tabela recebida <strong>não entram</strong> no argumento central: dependem de evidência causal/comercial que ainda não existe. Os ROI e paybacks da imagem foram calculados com TCO anterior e não são reproduzidos aqui. A economia de horas também precisa de linha de base medida.</p></div></section>
+<section class="scene " id="adocao" data-title="Adoção recomendada"><div class="wrap"><div class="eyebrow">09 / Responsabilidades &amp; riscos</div><h2>A continuidade não depende<br>do grupo do MBA.</h2><p class="lead">O grupo entrega o protótipo sintético e a documentação de transferência. Treinar, acompanhar e operar depois da entrega são decisões e responsabilidades da instituição.</p><div class="grid two"><div class="card"><span class="tag">Até a entrega · grupo MBA</span><h3>Transferir, não implantar</h3><p>Protótipo, explicação das telas, guia de operação, dicionário de campos, roteiro sugerido de treinamento e checklist de pendências. Confirmar o que está efetivamente pronto no handover.</p></div><div class="card"><span class="tag">Pós-entrega · Instituto</span><h3>Designar donos e executar</h3><p>Nomear ponto focal; validar licenças, base legal e retenção; aplicar treinamento; acompanhar registros e decidir se expande o piloto.</p></div></div><div class="route" style="grid-template-columns:repeat(3,1fr)"><div class="card"><span class="tag">1 · Preparar</span><p>Confirmar guardiões dos dados, rubricas e conectividade.</p></div><div class="card"><span class="tag">2 · Treinar</span><p>Instituição conduz simulação breve; guia e roteiro são recomendação, não serviço contratado.</p></div><div class="card"><span class="tag">3 · Medir</span><p>Coordenação acompanha completude, registro no dia e tempo por turma.</p></div></div><p class="ref">Meta sugerida: ≥90% de encontros registrados em D0 e ≥85% de campos elegíveis completos; não são resultados já alcançados.</p></div></section>
+<section class="scene alt" id="roadmap" data-title="Roadmap de 90 dias"><div class="wrap"><div class="eyebrow">11 / Cronograma proposto · pós-entrega</div><h2>Quatro portas de decisão.<br>Uma instituição no comando.</h2><p class="lead">Plano ilustrativo após a Semana 10. Nenhuma atividade futura do grupo MBA é presumida.</p><div class="timeline"><div class="step"><b>Entrega</b><strong>Handover acadêmico</strong><p>Grupo entrega protótipo sintético, documentação e recomendações. Instituto decide se nomeia coordenação responsável.</p></div><div class="step"><b>D+1 a D+14</b><strong>Preparação e treinamento</strong><p>Instituto valida licenças, controles de acesso, base legal e rubricas. Coordenação realiza treinamento simulado.</p></div><div class="step"><b>D+15 a D+60</b><strong>Piloto de 45 dias</strong><p>Um programa, acompanhamento semanal pela coordenação e avaliação dos indicadores de adoção. Dados reais somente após aprovações.</p></div><div class="step"><b>D+61 a D+90</b><strong>Decisão de expansão</strong><p>Diretoria avalia operação e riscos; se aprovar, coordenação amplia gradualmente e prepara relatório agregado inicial.</p></div></div><p class="ribbon">Critérios de parada: ausência de base legal validada, rubricas inadequadas, baixa adesão persistente ou impossibilidade de manter a rotina de gestão.</p></div></section>
+<section class="scene green" id="decisao" data-title="A decisão"><div class="wrap split"><div><div class="eyebrow">12 / O pedido à diretoria</div><h2>Não pedimos fé no impacto.<br><span style="color:var(--gold2)">Pedimos autorização para aprender.</span></h2><p class="lead">Um piloto de 45 dias é uma proposta de validação, não sinal verde automático para tratar dados reais de crianças.</p><div class="buttons"><a href="#canvas" class="btn primary">Rever o modelo ↗</a><a href="#roadmap" class="btn secondary">Ver o cronograma ↗</a></div></div><div class="grid"><div class="card"><span class="tag">01</span><h3>Aprovar o desenho do piloto</h3><p>Um programa, critérios de avanço e parada; protótipo acadêmico sintético.</p></div><div class="card"><span class="tag">02</span><h3>Indicar ponto focal</h3><p>Confirmar tempo semanal, responsáveis e plano de handover.</p></div><div class="card"><span class="tag">03</span><h3>Validar a governança</h3><p>Rubricas, acesso, base legal, retenção, licenças e números financeiros com os responsáveis.</p></div></div></div></section>
+</main><footer class="footer"><p style="font:700 1.4rem Outfit,sans-serif">Ebenézer Impacta <span style="color:var(--gold2)">↗</span></p><p>Portal de pitch acadêmico criado com referência visual à linguagem pública do Instituto. Não é site oficial do Instituto nem plataforma para cadastro de crianças.</p><p><a href="https://www.institutosocialebenezer.com.br/transparencia/" target="_blank" rel="noopener">Visitar a página oficial de transparência</a> · Navegação por teclado: ← / → ou PageUp / PageDown.</p><p class="privacy">Sem formulários, sem coleta de dados pessoais, sem analytics. Fotografia e fontes web exigem conexão; os textos e a navegação básica funcionam localmente.</p></footer>
+<div class="sticky-tools" aria-label="Navegação entre capítulos"><button type="button" onclick="move(-1)" aria-label="Capítulo anterior">← Anterior</button><button type="button" id="current" aria-live="polite" onclick="document.querySelector('.navlinks').scrollIntoView({behavior:'smooth'})">01 / 13</button><button type="button" onclick="move(1)" aria-label="Próximo capítulo">Próximo →</button></div>
+<script>
+const scenes=[...document.querySelectorAll('.scene')], progress=document.getElementById('progress'), current=document.getElementById('current'), navs=[...document.querySelectorAll('.navlinks a')];let index=0;
+const observer=new IntersectionObserver(entries=>{for(const e of entries){if(e.isIntersecting){index=scenes.indexOf(e.target);current.textContent=String(index+1).padStart(2,'0')+' / '+String(scenes.length).padStart(2,'0');navs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}}},{threshold:.43});scenes.forEach(x=>observer.observe(x));
+function move(delta){scenes[Math.min(Math.max(index+delta,0),scenes.length-1)].scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})}
+function update(){const h=document.documentElement;progress.style.width=(100*h.scrollTop/Math.max(1,h.scrollHeight-h.clientHeight))+'%'}addEventListener('scroll',update,{passive:true});update();
+addEventListener('keydown',e=>{if(['INPUT','TEXTAREA','SELECT','BUTTON'].includes(document.activeElement.tagName)||e.ctrlKey||e.altKey||e.metaKey)return;if(['ArrowRight','PageDown'].includes(e.key)){e.preventDefault();move(1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();move(-1)}});
+</script></body></html>

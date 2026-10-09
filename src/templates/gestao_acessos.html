@@ -1,0 +1,630 @@
+{% extends "base.html" %}
+
+{% block title %}Controle de Acessos & Governança • Ebenézer Impacta{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto space-y-6">
+
+  <!-- Header Institucional com Alertas de Governança -->
+  <div class="bg-white border border-slate-200/80 rounded-[24px] p-6 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <div class="flex items-center gap-4">
+      <div class="w-14 h-14 rounded-2xl bg-[#101625] text-[#00FB00] flex items-center justify-center font-black text-2xl shrink-0 shadow-xs border border-[#00FB00]/20">
+        <i data-lucide="shield-check" class="w-7 h-7"></i>
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <h1 class="text-2xl font-black text-[#101625] font-montserrat tracking-tight">
+            Controle de Acessos & Governança
+          </h1>
+          <span class="px-2.5 py-0.5 rounded-[300px] text-[10px] font-black uppercase tracking-wider bg-[#101625] text-[#00FB00] border border-[#00FB00]/30 shadow-xs">
+            Diretoria & Coordenação
+          </span>
+        </div>
+        <p class="text-xs text-slate-500 font-medium mt-1">
+          Gestão centralizada de voluntários, psicólogos, cadastro de crianças (Zonas A e B) e permissões de atividades.
+        </p>
+      </div>
+    </div>
+
+    <!-- Navegação em Abas do Painel -->
+    <div class="flex items-center gap-2 bg-[#F7F9F8] p-1.5 rounded-[300px] border border-slate-200 w-full md:w-auto overflow-x-auto">
+      <button onclick="switchTab('usuarios')" id="tabBtn-usuarios" class="tab-btn px-4 py-1.5 rounded-[300px] text-xs font-bold transition-all bg-[#101625] text-[#00FB00] shadow-xs">
+        👥 Usuários & Perfis
+      </button>
+      <button onclick="switchTab('criancas')" id="tabBtn-criancas" class="tab-btn px-4 py-1.5 rounded-[300px] text-xs font-bold transition-all text-[#2C394C] hover:text-[#101625]">
+        🧒 Cadastro de Crianças (MDM)
+      </button>
+      <button onclick="switchTab('atividades')" id="tabBtn-atividades" class="tab-btn px-4 py-1.5 rounded-[300px] text-xs font-bold transition-all text-[#2C394C] hover:text-[#101625]">
+        🎯 Atividades & Oficinas
+      </button>
+    </div>
+  </div>
+
+  <!-- ABA 1: USUÁRIOS E PERFIS -->
+  <div id="pane-usuarios" class="tab-pane space-y-6">
+    
+    <!-- Barra de Ações: Novo Usuário e Métricas Rápidas -->
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white p-5 rounded-[20px] border border-slate-200">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold">
+          <i data-lucide="users" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="text-xs font-bold text-slate-400 block uppercase tracking-wider">Usuários Ativos</span>
+          <span id="userCountBadge" class="text-lg font-black text-[#101625]">Carregando...</span>
+        </div>
+      </div>
+
+      <button onclick="openNewUserModal()" class="btn-primary-pill text-xs px-5 py-2.5 shadow-xs flex items-center gap-2">
+        <i data-lucide="user-plus" class="w-4 h-4"></i>
+        <span>Novo Voluntário / Profissional</span>
+      </button>
+    </div>
+
+    <!-- Tabela de Usuários -->
+    <div class="bg-white rounded-[24px] border border-slate-200/80 shadow-xs overflow-hidden">
+      <div class="p-5 border-b border-slate-100 flex items-center justify-between">
+        <h3 class="font-extrabold text-sm text-[#101625]">Matriz de Acessos Institucional (RBAC)</h3>
+        <span class="text-xs text-slate-400">Privilégio Mínimo Homologado</span>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-[#F7F9F8] text-slate-500 font-bold uppercase tracking-wider border-b border-slate-100">
+            <tr>
+              <th class="py-3 px-5">Colaborador</th>
+              <th class="py-3 px-4">Perfil (Role)</th>
+              <th class="py-3 px-4">Cargo / Função</th>
+              <th class="py-3 px-4">Atividades Atribuídas</th>
+              <th class="py-3 px-4 text-center">Status</th>
+              <th class="py-3 px-5 text-right">Ações</th>
+            </tr>
+          </thead>
+          <tbody id="usersTableBody" class="divide-y divide-slate-100 font-medium text-[#2C394C]">
+            <tr>
+              <td colspan="6" class="py-8 text-center text-slate-400">
+                <div class="inline-block animate-spin rounded-full h-6 w-6 border-2 border-[#101625] border-t-transparent mb-2"></div>
+                <br>Carregando colaboradores...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ABA 2: CADASTRO DE CRIANÇAS (MDM) -->
+  <div id="pane-criancas" class="tab-pane hidden space-y-6">
+    
+    <!-- Banner de Privacidade Zona A / Zona B -->
+    <div class="bg-[#EFF3F8] border border-slate-200 rounded-[20px] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <i data-lucide="eye-off" class="w-5 h-5 text-[#101625] shrink-0"></i>
+        <div>
+          <span class="text-xs font-bold text-[#101625] block">Controle de Exibição de Dados Civis (Zona A)</span>
+          <span class="text-[11px] text-slate-500">Por padrão, a interface exibe apenas o ID pseudonimizado (Zona B). Exibir nomes reais requer perfil de governança.</span>
+        </div>
+      </div>
+      <label class="flex items-center gap-2 cursor-pointer bg-white px-3 py-1.5 rounded-full border border-slate-300 shadow-xs">
+        <input type="checkbox" id="toggleCivilData" onchange="loadChildrenData()" class="rounded text-[#101625] focus:ring-0">
+        <span class="text-xs font-bold text-[#101625]">Exibir Dados Civis (Zona A)</span>
+      </label>
+    </div>
+
+    <!-- Tabela de Crianças -->
+    <div class="bg-white rounded-[24px] border border-slate-200/80 shadow-xs overflow-hidden">
+      <div class="p-5 border-b border-slate-100 flex items-center justify-between">
+        <h3 class="font-extrabold text-sm text-[#101625]">Participantes Únicos (Golden Record MDM)</h3>
+        <span id="childrenCountBadge" class="text-xs font-bold text-slate-500">...</span>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-[#F7F9F8] text-slate-500 font-bold uppercase tracking-wider border-b border-slate-100">
+            <tr>
+              <th class="py-3 px-5">ID Único</th>
+              <th class="py-3 px-4">Identificação Civil (Zona A)</th>
+              <th class="py-3 px-4">Faixa Etária</th>
+              <th class="py-3 px-4">Matrículas Ativas</th>
+              <th class="py-3 px-4 text-center">Status</th>
+              <th class="py-3 px-5 text-right">Ações</th>
+            </tr>
+          </thead>
+          <tbody id="childrenTableBody" class="divide-y divide-slate-100 font-medium text-[#2C394C]">
+            <tr>
+              <td colspan="6" class="py-8 text-center text-slate-400">Carregando crianças...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ABA 3: ATIVIDADES & OFICINAS -->
+  <div id="pane-atividades" class="tab-pane hidden space-y-6">
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="activitiesGrid">
+      <div class="py-8 text-center text-slate-400 col-span-2">Carregando oficinas...</div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- MODAL: CADASTRAR OU EDITAR USUÁRIO -->
+<div id="userModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-[28px] max-w-md w-full p-6 shadow-2xl space-y-5 border border-slate-100">
+    
+    <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-full bg-[#101625] text-[#00FB00] flex items-center justify-center font-bold text-sm">
+          <i data-lucide="user-check" class="w-4 h-4"></i>
+        </div>
+        <h3 id="modalUserTitle" class="font-extrabold text-base text-[#101625]">Cadastrar Colaborador</h3>
+      </div>
+      <button onclick="closeUserModal()" class="text-slate-400 hover:text-slate-700">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <form id="userForm" onsubmit="handleSaveUser(event)" class="space-y-4 text-xs">
+      <div>
+        <label class="block font-bold text-slate-700 mb-1">Nome Completo:</label>
+        <input type="text" id="modalNome" required placeholder="Ex: Maria Pereira" class="w-full bg-[#F7F9F8] border border-slate-200 rounded-xl px-3 py-2 font-medium focus:ring-2 focus:ring-[#101625] focus:outline-none">
+      </div>
+
+      <div>
+        <label class="block font-bold text-slate-700 mb-1">E-mail Institucional:</label>
+        <input type="email" id="modalEmail" required placeholder="exemplo@institutoebenezer.org" class="w-full bg-[#F7F9F8] border border-slate-200 rounded-xl px-3 py-2 font-medium focus:ring-2 focus:ring-[#101625] focus:outline-none">
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Perfil (Role):</label>
+          <select id="modalRole" required class="w-full bg-[#F7F9F8] border border-slate-200 rounded-xl px-3 py-2 font-bold focus:ring-2 focus:ring-[#101625] focus:outline-none">
+            <option value="VOLUNTARIO">Voluntário</option>
+            <option value="PSICOLOGA">Psicólogo(a)</option>
+            <option value="COORDENACAO">Coordenação</option>
+            <option value="DIRETORIA">Diretoria</option>
+            <option value="ADMIN">Administrador</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Status:</label>
+          <select id="modalStatus" class="w-full bg-[#F7F9F8] border border-slate-200 rounded-xl px-3 py-2 font-bold focus:ring-2 focus:ring-[#101625] focus:outline-none">
+            <option value="ATIVO">Ativo</option>
+            <option value="INATIVO">Inativo</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label class="block font-bold text-slate-700 mb-1">Cargo / Designação:</label>
+        <input type="text" id="modalCargo" placeholder="Ex: Educador de Oficinas Socioeducativas" class="w-full bg-[#F7F9F8] border border-slate-200 rounded-xl px-3 py-2 font-medium focus:ring-2 focus:ring-[#101625] focus:outline-none">
+      </div>
+
+      <div>
+        <label class="block font-bold text-slate-700 mb-1">Atividades & Oficinas Autorizadas:</label>
+        <div class="grid grid-cols-2 gap-2 mt-1">
+          <label class="flex items-center gap-1.5 p-2 bg-[#F7F9F8] rounded-xl border border-slate-200 cursor-pointer">
+            <input type="checkbox" name="atividades" value="PROG-SONHOS" class="rounded text-[#101625]">
+            <span class="text-[11px] font-semibold">Lab. de Sonhos</span>
+          </label>
+          <label class="flex items-center gap-1.5 p-2 bg-[#F7F9F8] rounded-xl border border-slate-200 cursor-pointer">
+            <input type="checkbox" name="atividades" value="PROG-REFORCO" class="rounded text-[#101625]">
+            <span class="text-[11px] font-semibold">Reforço Escolar</span>
+          </label>
+          <label class="flex items-center gap-1.5 p-2 bg-[#F7F9F8] rounded-xl border border-slate-200 cursor-pointer">
+            <input type="checkbox" name="atividades" value="PROG-INFANCIA" class="rounded text-[#101625]">
+            <span class="text-[11px] font-semibold">Primeira Infância</span>
+          </label>
+          <label class="flex items-center gap-1.5 p-2 bg-[#F7F9F8] rounded-xl border border-slate-200 cursor-pointer">
+            <input type="checkbox" name="atividades" value="PROG-VIVENCIAS" class="rounded text-[#101625]">
+            <span class="text-[11px] font-semibold">Vivências Terap.</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="pt-3 flex gap-2">
+        <button type="button" onclick="closeUserModal()" class="flex-1 py-2.5 rounded-full border border-slate-200 text-slate-600 font-bold hover:bg-slate-50 transition">
+          Cancelar
+        </button>
+        <button type="submit" class="flex-1 btn-primary-pill py-2.5 shadow-xs">
+          Salvar Acesso
+        </button>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<!-- MODAL: EDITAR MATRÍCULAS DA CRIANÇA -->
+<div id="childModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-[28px] max-w-sm w-full p-6 shadow-2xl space-y-4 border border-slate-100">
+    <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+      <h3 class="font-extrabold text-sm text-[#101625]" id="childModalTitle">Gerenciar Matrículas</h3>
+      <button onclick="closeChildModal()" class="text-slate-400 hover:text-slate-700">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <input type="hidden" id="childModalId">
+    
+    <div class="space-y-2 text-xs">
+      <label class="block font-bold text-slate-700">Programas Ativos do Participante:</label>
+      <div class="space-y-2">
+        <label class="flex items-center gap-2 p-2.5 bg-[#F7F9F8] rounded-xl border border-slate-200 cursor-pointer">
+          <input type="checkbox" id="cm-prog-sonhos" value="PROG-SONHOS" class="rounded text-[#101625]">
+          <span class="font-bold">Laboratório de Sonhos</span>
+        </label>
+        <label class="flex items-center gap-2 p-2.5 bg-[#F7F9F8] rounded-xl border border-slate-200 cursor-pointer">
+          <input type="checkbox" id="cm-prog-reforco" value="PROG-REFORCO" class="rounded text-[#101625]">
+          <span class="font-bold">Reforço Escolar</span>
+        </label>
+        <label class="flex items-center gap-2 p-2.5 bg-[#F7F9F8] rounded-xl border border-slate-200 cursor-pointer">
+          <input type="checkbox" id="cm-prog-infancia" value="PROG-INFANCIA" class="rounded text-[#101625]">
+          <span class="font-bold">Primeira Infância</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="pt-3 flex gap-2">
+      <button type="button" onclick="closeChildModal()" class="flex-1 py-2 rounded-full border border-slate-200 text-slate-600 font-bold hover:bg-slate-50 transition text-xs">
+        Cancelar
+      </button>
+      <button type="button" onclick="saveChildPrograms()" class="flex-1 btn-primary-pill py-2 shadow-xs text-xs">
+        Salvar Matrículas
+      </button>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  let currentUsers = [];
+  let currentChildren = [];
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadUsersData();
+  });
+
+  function switchTab(tab) {
+    document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.remove('bg-[#101625]', 'text-[#00FB00]', 'shadow-xs');
+      btn.classList.add('text-[#2C394C]');
+    });
+
+    const pane = document.getElementById(`pane-${tab}`);
+    if (pane) pane.classList.remove('hidden');
+
+    const btn = document.getElementById(`tabBtn-${tab}`);
+    if (btn) {
+      btn.classList.remove('text-[#2C394C]');
+      btn.classList.add('bg-[#101625]', 'text-[#00FB00]', 'shadow-xs');
+    }
+
+    if (tab === 'usuarios') loadUsersData();
+    if (tab === 'criancas') loadChildrenData();
+    if (tab === 'atividades') loadActivitiesData();
+  }
+
+  // -----------------------------------------------------------------------
+  // USUÁRIOS
+  // -----------------------------------------------------------------------
+  async function loadUsersData() {
+    try {
+      const res = await fetch('/api/gestao/usuarios');
+      const data = await res.json();
+      currentUsers = data.usuarios || [];
+      document.getElementById('userCountBadge').innerText = `${currentUsers.length} usuários cadastrados`;
+      renderUsersTable(currentUsers);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  function renderUsersTable(users) {
+    const tbody = document.getElementById('usersTableBody');
+    if (!users.length) {
+      tbody.innerHTML = '<tr><td colspan="6" class="py-6 text-center text-slate-400">Nenhum colaborador encontrado.</td></tr>';
+      return;
+    }
+
+    tbody.innerHTML = users.map(u => {
+      const isAtivo = (u.status || 'ATIVO') === 'ATIVO';
+      const roleColor = {
+        'VOLUNTARIO': 'bg-blue-50 text-blue-800 border-blue-200',
+        'PSICOLOGA': 'bg-purple-50 text-purple-800 border-purple-200',
+        'COORDENACAO': 'bg-emerald-50 text-emerald-800 border-emerald-200',
+        'DIRETORIA': 'bg-amber-50 text-amber-800 border-amber-200',
+        'ADMIN': 'bg-slate-900 text-[#00FB00] border-slate-700'
+      }[u.role] || 'bg-slate-100 text-slate-800 border-slate-200';
+
+      const acts = (u.atividades_atribuidas || []).map(a => `<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200">${a.replace('PROG-', '')}</span>`).join(' ') || '<span class="text-slate-400 text-[10px]">Nenhuma</span>';
+
+      return `
+        <tr class="hover:bg-slate-50/80 transition">
+          <td class="py-3 px-5">
+            <div class="font-bold text-[#101625]">${u.nome}</div>
+            <div class="text-[11px] text-slate-400">${u.email}</div>
+          </td>
+          <td class="py-3 px-4">
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider border ${roleColor}">
+              ${u.role}
+            </span>
+          </td>
+          <td class="py-3 px-4 text-slate-600 text-xs font-semibold">${u.cargo || '—'}</td>
+          <td class="py-3 px-4">${acts}</td>
+          <td class="py-3 px-4 text-center">
+            <button onclick="toggleUserStatus('${u.email}', '${isAtivo ? 'INATIVO' : 'ATIVO'}')" class="px-2.5 py-1 rounded-full text-[10px] font-bold transition ${isAtivo ? 'bg-emerald-100 text-emerald-800 hover:bg-rose-100 hover:text-rose-800' : 'bg-slate-200 text-slate-600 hover:bg-emerald-100 hover:text-emerald-800'}">
+              ${isAtivo ? '● Ativo' : '○ Inativo'}
+            </button>
+          </td>
+          <td class="py-3 px-5 text-right">
+            <button onclick='editUser(${JSON.stringify(u)})' class="p-1.5 rounded-lg text-slate-500 hover:text-[#101625] hover:bg-slate-100 transition" title="Editar Permissões">
+              <i data-lucide="edit-3" class="w-4 h-4"></i>
+            </button>
+          </td>
+        </tr>
+      `;
+    }).join('');
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  function openNewUserModal() {
+    document.getElementById('modalUserTitle').innerText = "Cadastrar Colaborador";
+    document.getElementById('modalNome').value = "";
+    document.getElementById('modalEmail').value = "";
+    document.getElementById('modalEmail').removeAttribute('readonly');
+    document.getElementById('modalRole').value = "VOLUNTARIO";
+    document.getElementById('modalStatus').value = "ATIVO";
+    document.getElementById('modalCargo').value = "";
+    document.querySelectorAll('input[name="atividades"]').forEach(c => c.checked = false);
+    document.getElementById('userModal').classList.remove('hidden');
+    if (window.lucide) lucide.createIcons();
+  }
+
+  function editUser(u) {
+    document.getElementById('modalUserTitle').innerText = `Editar: ${u.nome}`;
+    document.getElementById('modalNome').value = u.nome;
+    document.getElementById('modalEmail').value = u.email;
+    document.getElementById('modalEmail').setAttribute('readonly', 'true');
+    document.getElementById('modalRole').value = u.role;
+    document.getElementById('modalStatus').value = u.status || 'ATIVO';
+    document.getElementById('modalCargo').value = u.cargo || '';
+    
+    const assigned = u.atividades_atribuidas || [];
+    document.querySelectorAll('input[name="atividades"]').forEach(c => {
+      c.checked = assigned.includes(c.value);
+    });
+
+    document.getElementById('userModal').classList.remove('hidden');
+    if (window.lucide) lucide.createIcons();
+  }
+
+  function closeUserModal() {
+    document.getElementById('userModal').classList.add('hidden');
+  }
+
+  async function handleSaveUser(e) {
+    e.preventDefault();
+    const atividades = Array.from(document.querySelectorAll('input[name="atividades"]:checked')).map(c => c.value);
+    
+    const payload = {
+      nome: document.getElementById('modalNome').value,
+      email: document.getElementById('modalEmail').value,
+      role: document.getElementById('modalRole').value,
+      status: document.getElementById('modalStatus').value,
+      cargo: document.getElementById('modalCargo').value,
+      atividades_atribuidas: atividades
+    };
+
+    try {
+      const res = await fetch('/api/gestao/usuarios', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      if (res.ok) {
+        closeUserModal();
+        loadUsersData();
+      } else {
+        alert(data.detail || 'Erro ao salvar colaborador.');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Erro de comunicação.');
+    }
+  }
+
+  async function toggleUserStatus(email, newStatus) {
+    if (!confirm(`Deseja alterar o status de ${email} para ${newStatus}?`)) return;
+    try {
+      const res = await fetch('/api/gestao/usuarios/status', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, status: newStatus })
+      });
+      if (res.ok) loadUsersData();
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  // -----------------------------------------------------------------------
+  // CRIANÇAS (MDM)
+  // -----------------------------------------------------------------------
+  async function loadChildrenData() {
+    const includeCivil = document.getElementById('toggleCivilData').checked;
+    try {
+      const res = await fetch(`/api/gestao/criancas?include_civil=${includeCivil}`);
+      const data = await res.json();
+      currentChildren = data.participantes || [];
+      document.getElementById('childrenCountBadge').innerText = `${currentChildren.length} educandos (${data.zona_consultada})`;
+      renderChildrenTable(currentChildren, includeCivil);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  function renderChildrenTable(children, hasCivil) {
+    const tbody = document.getElementById('childrenTableBody');
+    if (!children.length) {
+      tbody.innerHTML = '<tr><td colspan="6" class="py-6 text-center text-slate-400">Nenhuma criança encontrada.</td></tr>';
+      return;
+    }
+
+    tbody.innerHTML = children.slice(0, 50).map(c => {
+      const isAtivo = c.status === 'ATIVO';
+      const civilInfo = hasCivil && c.nome_completo ? `
+        <div class="font-bold text-[#101625]">${c.nome_completo}</div>
+        <div class="text-[10px] text-slate-400">Resp: ${c.nome_responsavel || '—'} · Tel: ${c.telefone_contato || '—'}</div>
+      ` : '<span class="text-slate-400 italic text-[11px]">Protegido (Zona B)</span>';
+
+      const progs = (c.matriculas_ativas || []).map(p => `
+        <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200">
+          ${p.replace('PROG-', '')}
+        </span>
+      `).join(' ');
+
+      return `
+        <tr class="hover:bg-slate-50/80 transition">
+          <td class="py-3 px-5 font-black text-[#101625] font-mono">${c.participant_id}</td>
+          <td class="py-3 px-4">${civilInfo}</td>
+          <td class="py-3 px-4 text-slate-600 text-xs font-semibold">${c.faixa_etaria.replace('_', ' ')}</td>
+          <td class="py-3 px-4">${progs}</td>
+          <td class="py-3 px-4 text-center">
+            <button onclick="toggleChildStatus('${c.participant_id}', '${isAtivo ? 'INATIVO' : 'ATIVO'}')" class="px-2.5 py-1 rounded-full text-[10px] font-bold transition ${isAtivo ? 'bg-emerald-100 text-emerald-800 hover:bg-rose-100 hover:text-rose-800' : 'bg-slate-200 text-slate-600 hover:bg-emerald-100 hover:text-emerald-800'}">
+              ${isAtivo ? '● Ativo' : '○ Inativo'}
+            </button>
+          </td>
+          <td class="py-3 px-5 text-right">
+            <button onclick='openChildModal("${c.participant_id}", ${JSON.stringify(c.matriculas_ativas)})' class="p-1.5 rounded-lg text-slate-500 hover:text-[#101625] hover:bg-slate-100 transition" title="Gerenciar Matrículas">
+              <i data-lucide="layers" class="w-4 h-4"></i>
+            </button>
+          </td>
+        </tr>
+      `;
+    }).join('');
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  async function toggleChildStatus(id, newStatus) {
+    if (!confirm(`Deseja alterar o status de ${id} para ${newStatus}?`)) return;
+    try {
+      const res = await fetch('/api/gestao/criancas/status', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ participant_id: id, status: newStatus })
+      });
+      if (res.ok) loadChildrenData();
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  function openChildModal(id, currentPrograms) {
+    document.getElementById('childModalId').value = id;
+    document.getElementById('childModalTitle').innerText = `Matrículas de ${id}`;
+    document.getElementById('cm-prog-sonhos').checked = currentPrograms.includes('PROG-SONHOS');
+    document.getElementById('cm-prog-reforco').checked = currentPrograms.includes('PROG-REFORCO');
+    document.getElementById('cm-prog-infancia').checked = currentPrograms.includes('PROG-INFANCIA');
+    document.getElementById('childModal').classList.remove('hidden');
+    if (window.lucide) lucide.createIcons();
+  }
+
+  function closeChildModal() {
+    document.getElementById('childModal').classList.add('hidden');
+  }
+
+  async function saveChildPrograms() {
+    const id = document.getElementById('childModalId').value;
+    const progs = [];
+    if (document.getElementById('cm-prog-sonhos').checked) progs.push('PROG-SONHOS');
+    if (document.getElementById('cm-prog-reforco').checked) progs.push('PROG-REFORCO');
+    if (document.getElementById('cm-prog-infancia').checked) progs.push('PROG-INFANCIA');
+
+    try {
+      const res = await fetch('/api/gestao/criancas/matriculas', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ participant_id: id, matriculas_ativas: progs })
+      });
+      if (res.ok) {
+        closeChildModal();
+        loadChildrenData();
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  // -----------------------------------------------------------------------
+  // ATIVIDADES & OFICINAS
+  // -----------------------------------------------------------------------
+  async function loadActivitiesData() {
+    try {
+      const res = await fetch('/api/gestao/atividades');
+      const data = await res.json();
+      renderActivitiesGrid(data.atividades || []);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  function renderActivitiesGrid(activities) {
+    const grid = document.getElementById('activitiesGrid');
+    if (!activities.length) {
+      grid.innerHTML = '<div class="py-6 text-center text-slate-400 col-span-2">Nenhuma atividade cadastrada.</div>';
+      return;
+    }
+
+    grid.innerHTML = activities.map(a => {
+      const educatorsList = a.educadores_vinculados.map(e => `
+        <div class="flex items-center justify-between text-xs py-1.5 border-b border-slate-100 last:border-none">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#00FB00]"></span>
+            <span class="font-bold text-[#101625]">${e.nome}</span>
+          </div>
+          <span class="text-[10px] text-slate-400 font-semibold">${e.cargo}</span>
+        </div>
+      `).join('') || '<div class="text-xs text-slate-400 py-2 italic">Nenhum voluntário vinculado no momento.</div>';
+
+      return `
+        <div class="bg-white rounded-[24px] border border-slate-200/80 p-6 shadow-xs flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-0.5 rounded-[300px] text-[10px] font-black uppercase tracking-wider bg-[#101625] text-[#00FB00] border border-[#00FB00]/30 shadow-xs">
+                ${a.dia} · ${a.carga_horaria_minutos} min
+              </span>
+              <span class="text-xs font-bold text-slate-500">${a.total_matriculados} educandos ativos</span>
+            </div>
+
+            <h3 class="font-black text-lg text-[#101625] font-montserrat mt-2.5">${a.nome}</h3>
+            <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">${a.eixo}</p>
+          </div>
+
+          <div class="bg-[#F7F9F8] rounded-[20px] p-4 border border-slate-200/70 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-black text-slate-500 uppercase tracking-wider">Equipe Autorizada (${a.educadores_vinculados.length})</span>
+            </div>
+            <div class="divide-y divide-slate-100">
+              ${educatorsList}
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    if (window.lucide) lucide.createIcons();
+  }
+</script>
+{% endblock %}

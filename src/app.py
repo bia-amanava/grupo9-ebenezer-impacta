@@ -16,6 +16,7 @@ from src.api.routes_therapy import router as therapy_router
 from src.api.routes_reports import router as reports_router
 from src.api.routes_triage import router as triage_router
 from src.api.routes_auth import router as auth_router
+from src.api.routes_management import router as management_router
 from src.core.auth import (
     get_current_user_from_request,
     check_route_permission,
@@ -40,6 +41,7 @@ templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
 
 # Registrar APIs REST
 app.include_router(auth_router)
+app.include_router(management_router)
 app.include_router(volunteer_router)
 app.include_router(coordination_router)
 app.include_router(therapy_router)
@@ -110,6 +112,10 @@ def page_access_denied(request: Request):
 def page_profiles(request: Request):
     return render_secured_page(request, "selecao_perfil.html", "coordenacao")
 
+@app.get("/pitch", response_class=HTMLResponse)
+def page_pitch(request: Request):
+    return templates.TemplateResponse(request=request, name="pitch.html", context={})
+
 # --------------------------------------------------------------------------
 # Módulos Funcionais Protegidos por RBAC
 # --------------------------------------------------------------------------
@@ -173,6 +179,14 @@ def page_reports(request: Request):
 @app.get("/relatorios/exportar", response_class=HTMLResponse)
 def page_export_options(request: Request):
     return render_secured_page(request, "exportacao_relatorio.html", "relatorios")
+
+@app.get("/tutorial", response_class=HTMLResponse)
+def page_tutorial(request: Request):
+    return render_secured_page(request, "tutorial.html", "tutorial")
+
+@app.get("/gestao-acessos", response_class=HTMLResponse)
+def page_access_management(request: Request):
+    return render_secured_page(request, "gestao_acessos.html", "gestao_acessos")
 
 if __name__ == "__main__":
     import uvicorn

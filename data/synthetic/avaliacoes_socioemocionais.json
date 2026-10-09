@@ -18298,5 +18298,455 @@
     "score_convivencia": 4,
     "score_participacao": 4,
     "timestamp_registro": "2026-09-26T11:45:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-002",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-002",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:00:16.879833+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-003",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-003",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:00:16.879833+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-004",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-004",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:00:16.879833+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-009",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-009",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:00:16.879833+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-012",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-012",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:00:16.879833+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-016",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-016",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:00:16.879833+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-018",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-018",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:00:16.879833+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-019",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-019",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:00:16.879833+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-020",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-020",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:00:16.879833+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-025",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-025",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:00:16.879833+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-027",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-027",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:00:16.879833+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-030",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-030",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:00:16.879833+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-031",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-031",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:00:16.879833+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-036",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-036",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:00:16.879833+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-037",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-037",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:00:16.879833+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-002",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-002",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:07:41.909473+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-003",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-003",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:07:41.909473+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-004",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-004",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:07:41.909473+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-009",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-009",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:07:41.909473+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-012",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-012",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:07:41.909473+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-016",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-016",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:07:41.909473+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-018",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-018",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:07:41.909473+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-019",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-019",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:07:41.909473+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-020",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-020",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:07:41.909473+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-025",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-025",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:07:41.909473+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-027",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-027",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:07:41.909473+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-030",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-030",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:07:41.909473+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-031",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-031",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:07:41.909473+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-036",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-036",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:07:41.909473+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-037",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-037",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:07:41.909473+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-002",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-002",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:08:09.495623+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-003",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-003",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:08:09.495623+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-004",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-004",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:08:09.495623+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-009",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-009",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:08:09.495623+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-012",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-012",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:08:09.495623+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-016",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-016",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:08:09.495623+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-018",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-018",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:08:09.495623+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-019",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-019",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:08:09.495623+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-020",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-020",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:08:09.495623+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-025",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-025",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:08:09.495623+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-027",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-027",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:08:09.495623+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-030",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-030",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:08:09.495623+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-031",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-031",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:08:09.495623+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-036",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-036",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:08:09.495623+00:00"
+  },
+  {
+    "avaliacao_id": "AV-ENC-E2E-TEST-EBZ-037",
+    "encontro_id": "ENC-E2E-TEST",
+    "participant_id": "EBZ-037",
+    "presenca": true,
+    "score_autonomia": 4,
+    "score_convivencia": 5,
+    "score_participacao": 4,
+    "timestamp_registro": "2026-10-09T17:08:09.495623+00:00"
   }
 ]

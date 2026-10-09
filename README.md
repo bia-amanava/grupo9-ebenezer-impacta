@@ -110,6 +110,8 @@ Acesse no seu navegador: **[http://localhost:8000](http://localhost:8000)**
 - **🛡️ Psicologia (`/psicologia`)**: Registro restrito de metadados agregados e checklist de infraestrutura (CFP/LGPD).
 - **📥 Fila de Triagem (`/triagem`)**: Módulo Opcional E (Fora do MVP / Portão G5).
 - **📜 Transparência & Captação (`/relatorios`)**: Trajetórias longitudinais com supressão de amostras pequenas ($n < 10$), caderno de evidências e limitações metodológicas explícitas.
+- **📖 Tutorial & Capacitação Interativa (`/tutorial`)**: Guias passo a passo por perfil, limites bioéticos e simulação interativa da rubrica.
+- **🛡️ Controle de Acessos & Governança (`/gestao-acessos`)**: Gestão de colaboradores (RBAC), controle do cadastro de crianças (Zona A civil vs. Zona B pseudonimizada) e gestão de oficinas.
 
 ---
 

@@ -23,8 +23,10 @@ INSTITUTIONAL_USERS: Dict[str, Dict[str, Any]] = {
         "nome": "Lucas Silva",
         "role": "VOLUNTARIO",
         "cargo": "Educador Voluntário de Sábado",
-        "allowed_prefixes": ["/campo"],
-        "default_route": "/campo"
+        "allowed_prefixes": ["/campo", "/tutorial"],
+        "default_route": "/campo",
+        "status": "ATIVO",
+        "atividades_atribuidas": ["PROG-SONHOS", "PROG-REFORCO"]
     },
     "coordenacao@institutoebenezer.org": {
         "email": "coordenacao@institutoebenezer.org",
@@ -32,8 +34,10 @@ INSTITUTIONAL_USERS: Dict[str, Dict[str, Any]] = {
         "nome": "Renata Souza",
         "role": "COORDENACAO",
         "cargo": "Coordenação Geral de Projetos",
-        "allowed_prefixes": ["/coordenacao", "/cadastro", "/participante", "/multiplas-matriculas", "/pendencias", "/campo", "/triagem", "/perfis"],
-        "default_route": "/coordenacao"
+        "allowed_prefixes": ["/coordenacao", "/cadastro", "/participante", "/multiplas-matriculas", "/pendencias", "/campo", "/triagem", "/perfis", "/tutorial", "/gestao-acessos"],
+        "default_route": "/coordenacao",
+        "status": "ATIVO",
+        "atividades_atribuidas": ["PROG-SONHOS", "PROG-REFORCO", "PROG-INFANCIA", "PROG-VIVENCIAS"]
     },
     "psicologia@institutoebenezer.org": {
         "email": "psicologia@institutoebenezer.org",
@@ -41,8 +45,10 @@ INSTITUTIONAL_USERS: Dict[str, Dict[str, Any]] = {
         "nome": "Dra. Camila Nunes",
         "role": "PSICOLOGA",
         "cargo": "Psicóloga Institucional (CRP-06/98765-SP)",
-        "allowed_prefixes": ["/psicologia"],
-        "default_route": "/psicologia"
+        "allowed_prefixes": ["/psicologia", "/tutorial"],
+        "default_route": "/psicologia",
+        "status": "ATIVO",
+        "atividades_atribuidas": ["PROG-VIVENCIAS"]
     },
     "diretoria@institutoebenezer.org": {
         "email": "diretoria@institutoebenezer.org",
@@ -50,8 +56,10 @@ INSTITUTIONAL_USERS: Dict[str, Dict[str, Any]] = {
         "nome": "Marcos Oliveira",
         "role": "DIRETORIA",
         "cargo": "Diretoria & Governança Institucional",
-        "allowed_prefixes": ["/relatorios", "/coordenacao", "/triagem", "/campo", "/cadastro", "/participante", "/multiplas-matriculas", "/pendencias", "/perfis"],
-        "default_route": "/relatorios"
+        "allowed_prefixes": ["/relatorios", "/coordenacao", "/triagem", "/campo", "/cadastro", "/participante", "/multiplas-matriculas", "/pendencias", "/perfis", "/tutorial", "/gestao-acessos"],
+        "default_route": "/relatorios",
+        "status": "ATIVO",
+        "atividades_atribuidas": ["PROG-SONHOS", "PROG-REFORCO", "PROG-INFANCIA", "PROG-VIVENCIAS"]
     },
     "admin@institutoebenezer.org": {
         "email": "admin@institutoebenezer.org",
@@ -60,9 +68,82 @@ INSTITUTIONAL_USERS: Dict[str, Dict[str, Any]] = {
         "role": "ADMIN",
         "cargo": "Administrador do Sistema (Acesso Completo)",
         "allowed_prefixes": ["/"],
-        "default_route": "/coordenacao"
+        "default_route": "/coordenacao",
+        "status": "ATIVO",
+        "atividades_atribuidas": ["PROG-SONHOS", "PROG-REFORCO", "PROG-INFANCIA", "PROG-VIVENCIAS"]
     }
 }
+
+def get_all_users() -> List[Dict[str, Any]]:
+    """Retorna lista de todos os usuários registrados no sistema."""
+    users_list = []
+    for u in INSTITUTIONAL_USERS.values():
+        copy_u = dict(u)
+        copy_u.pop("senha", None)
+        users_list.append(copy_u)
+    return users_list
+
+def save_or_update_user(user_data: Dict[str, Any]) -> Dict[str, Any]:
+    """Cria ou atualiza um usuário na matriz RBAC institucional."""
+    email = user_data["email"].lower().strip()
+    role = user_data["role"].upper()
+    
+    # Determinar allowed_prefixes padrão por role se não especificado
+    role_defaults = {
+        "VOLUNTARIO": {
+            "allowed_prefixes": ["/campo", "/tutorial"],
+            "default_route": "/campo",
+            "cargo_default": "Educador Voluntário"
+        },
+        "PSICOLOGA": {
+            "allowed_prefixes": ["/psicologia", "/tutorial"],
+            "default_route": "/psicologia",
+            "cargo_default": "Psicóloga Institucional"
+        },
+        "COORDENACAO": {
+            "allowed_prefixes": ["/coordenacao", "/cadastro", "/participante", "/multiplas-matriculas", "/pendencias", "/campo", "/triagem", "/perfis", "/tutorial", "/gestao-acessos"],
+            "default_route": "/coordenacao",
+            "cargo_default": "Coordenação de Projetos"
+        },
+        "DIRETORIA": {
+            "allowed_prefixes": ["/relatorios", "/coordenacao", "/triagem", "/campo", "/cadastro", "/participante", "/multiplas-matriculas", "/pendencias", "/perfis", "/tutorial", "/gestao-acessos"],
+            "default_route": "/relatorios",
+            "cargo_default": "Diretoria Institucional"
+        },
+        "ADMIN": {
+            "allowed_prefixes": ["/"],
+            "default_route": "/coordenacao",
+            "cargo_default": "Administrador"
+        }
+    }
+    
+    config = role_defaults.get(role, role_defaults["VOLUNTARIO"])
+    
+    existing = INSTITUTIONAL_USERS.get(email, {})
+    new_user = {
+        "email": email,
+        "senha": user_data.get("senha") or existing.get("senha") or "senha123",
+        "nome": user_data.get("nome", existing.get("nome", "Novo Usuário")),
+        "role": role,
+        "cargo": user_data.get("cargo", existing.get("cargo", config["cargo_default"])),
+        "allowed_prefixes": user_data.get("allowed_prefixes", existing.get("allowed_prefixes", config["allowed_prefixes"])),
+        "default_route": user_data.get("default_route", existing.get("default_route", config["default_route"])),
+        "status": user_data.get("status", existing.get("status", "ATIVO")),
+        "atividades_atribuidas": user_data.get("atividades_atribuidas", existing.get("atividades_atribuidas", []))
+    }
+    
+    INSTITUTIONAL_USERS[email] = new_user
+    safe_user = dict(new_user)
+    safe_user.pop("senha", None)
+    return safe_user
+
+def update_user_status(email: str, status: str) -> bool:
+    """Ativa ou inativa usuário."""
+    email_clean = email.lower().strip()
+    if email_clean in INSTITUTIONAL_USERS:
+        INSTITUTIONAL_USERS[email_clean]["status"] = status
+        return True
+    return False
 
 def sign_data(data_bytes: bytes) -> str:
     signature = hmac.new(SECRET_KEY.encode(), data_bytes, hashlib.sha256).hexdigest()

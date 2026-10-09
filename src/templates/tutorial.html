@@ -1,0 +1,372 @@
+{% extends "base.html" %}
+
+{% block title %}Tutorial & Capacitação Interativa • Ebenézer Impacta{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto space-y-6">
+
+  <!-- Faixa Superior de Boas-Vindas e Metodologia -->
+  <div class="bg-white border border-slate-200/80 rounded-[24px] p-6 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <div class="flex items-center gap-4">
+      <div class="w-14 h-14 rounded-2xl bg-[#101625] text-[#00FB00] flex items-center justify-center font-black text-2xl shrink-0 shadow-xs border border-[#00FB00]/20">
+        <i data-lucide="book-open-check" class="w-7 h-7"></i>
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <h1 class="text-2xl font-black text-[#101625] font-montserrat tracking-tight">
+            Tutorial & Capacitação Interativa
+          </h1>
+          <span class="px-2.5 py-0.5 rounded-[300px] text-[10px] font-black uppercase tracking-wider bg-[#EFF3F8] text-[#101625] border border-slate-200">
+            PRD v2.0
+          </span>
+        </div>
+        <p class="text-xs text-slate-500 font-medium mt-1">
+          Guias práticos, fluxos operacionais e fronteiras bioéticas para voluntários, psicólogos e coordenação.
+        </p>
+      </div>
+    </div>
+
+    <!-- Filtro de Perfis -->
+    <div class="flex items-center gap-2 bg-[#F7F9F8] p-1.5 rounded-[300px] border border-slate-200 w-full md:w-auto overflow-x-auto">
+      <button onclick="switchTab('voluntario')" id="tabBtn-voluntario" class="tab-btn px-4 py-1.5 rounded-[300px] text-xs font-bold transition-all bg-[#101625] text-[#00FB00] shadow-xs">
+        📱 Voluntário
+      </button>
+      <button onclick="switchTab('psicologia')" id="tabBtn-psicologia" class="tab-btn px-4 py-1.5 rounded-[300px] text-xs font-bold transition-all text-[#2C394C] hover:text-[#101625]">
+        🛡️ Psicologia
+      </button>
+      <button onclick="switchTab('coordenacao')" id="tabBtn-coordenacao" class="tab-btn px-4 py-1.5 rounded-[300px] text-xs font-bold transition-all text-[#2C394C] hover:text-[#101625]">
+        📊 Coordenação & D0
+      </button>
+      <button onclick="switchTab('diretoria')" id="tabBtn-diretoria" class="tab-btn px-4 py-1.5 rounded-[300px] text-xs font-bold transition-all text-[#2C394C] hover:text-[#101625]">
+        📜 Diretoria & Relatórios
+      </button>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO 1: VOLUNTÁRIO -->
+  <div id="content-voluntario" class="tutorial-pane space-y-6">
+    
+    <!-- Banner de Destaque com Métricas de Sucesso -->
+    <div class="bg-gradient-to-r from-[#101625] to-[#1E2538] text-white rounded-[24px] p-6 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div>
+        <span class="px-2.5 py-0.5 rounded-[300px] text-[10px] font-black uppercase tracking-wider bg-[#00FB00] text-[#101625]">
+          Meta Operacional: &lt; 3 Minutos
+        </span>
+        <h2 class="text-xl font-black mt-2 font-montserrat">Rotina Rápida de Campo aos Sábados</h2>
+        <p class="text-xs text-slate-300 max-w-xl mt-1 leading-relaxed">
+          Você marca presença com 1 toque e registra 3 indicadores socioemocionais em escalas fechadas (1 a 5). Sem caixas de texto livre e com total suporte offline.
+        </p>
+      </div>
+      <a href="/campo" class="btn-primary-pill text-xs px-5 py-2.5 shadow-sm whitespace-nowrap flex items-center gap-2">
+        <span>Abrir Chamada de Campo</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+
+    <!-- Passos em Cartões -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      
+      <!-- Passo 1 -->
+      <div class="bg-white border border-slate-200/80 rounded-[20px] p-5 shadow-xs flex flex-col justify-between">
+        <div class="space-y-3">
+          <div class="w-8 h-8 rounded-full bg-[#101625] text-[#00FB00] flex items-center justify-center font-black text-sm">
+            1
+          </div>
+          <h3 class="font-bold text-sm text-[#101625]">Chamada Rápida</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Ao abrir sua turma, toque nas crianças presentes. O card fica verde e o contador do topo atualiza na hora. Ausentes ficam desmarcados.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] text-emerald-700 font-semibold">
+          <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+          <span>1 toque por criança</span>
+        </div>
+      </div>
+
+      <!-- Passo 2 -->
+      <div class="bg-white border border-slate-200/80 rounded-[20px] p-5 shadow-xs flex flex-col justify-between">
+        <div class="space-y-3">
+          <div class="w-8 h-8 rounded-full bg-[#101625] text-[#00FB00] flex items-center justify-center font-black text-sm">
+            2
+          </div>
+          <h3 class="font-bold text-sm text-[#101625]">3 Indicadores Fechados</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Para cada criança presente, selecione de 1 a 5 nos eixos: <strong>Autonomia</strong>, <strong>Convivência</strong> e <strong>Participação</strong>. Se não puder avaliar, marque <em>"Não observado"</em>.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] text-[#101625] font-semibold">
+          <i data-lucide="shield" class="w-3.5 h-3.5 text-[#00FB00]"></i>
+          <span>Zero caixas de texto</span>
+        </div>
+      </div>
+
+      <!-- Passo 3 -->
+      <div class="bg-white border border-slate-200/80 rounded-[20px] p-5 shadow-xs flex flex-col justify-between">
+        <div class="space-y-3">
+          <div class="w-8 h-8 rounded-full bg-[#101625] text-[#00FB00] flex items-center justify-center font-black text-sm">
+            3
+          </div>
+          <h3 class="font-bold text-sm text-[#101625]">Modo Offline & Envio D0</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Se acabar a internet na quadra, o sistema salva no celular com segurança. Assim que o sinal voltar, ele sincroniza automaticamente.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] text-blue-700 font-semibold">
+          <i data-lucide="wifi-off" class="w-3.5 h-3.5"></i>
+          <span>Flush automático</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Simulação Interativa da Rubrica -->
+    <div class="bg-white border border-slate-200 rounded-[24px] p-6 shadow-xs space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="font-black text-base text-[#101625]">Simulação Prática da Escala dos 3 Indicadores</h3>
+          <p class="text-xs text-slate-500">Experimente como a escala rápida funciona na prática de sala de aula:</p>
+        </div>
+        <span class="text-xs font-bold text-slate-400">Escala de 1 a 5</span>
+      </div>
+
+      <div class="bg-[#F7F9F8] p-4 rounded-[20px] border border-slate-200 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-[#101625]">Criança Simulação: EBZ-026 (Participante Sol)</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Presente</span>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div>
+            <label class="block text-[11px] font-bold text-slate-600 mb-1">1. Autonomia:</label>
+            <div class="flex gap-1" id="sim-autonomia">
+              <button onclick="setSimScore('autonomia', 1)" class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-xs font-bold hover:bg-slate-100">1</button>
+              <button onclick="setSimScore('autonomia', 2)" class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-xs font-bold hover:bg-slate-100">2</button>
+              <button onclick="setSimScore('autonomia', 3)" class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-xs font-bold hover:bg-slate-100">3</button>
+              <button onclick="setSimScore('autonomia', 4)" class="w-8 h-8 rounded-lg bg-[#101625] text-[#00FB00] text-xs font-bold">4</button>
+              <button onclick="setSimScore('autonomia', 5)" class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-xs font-bold hover:bg-slate-100">5</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold text-slate-600 mb-1">2. Convivência em Grupo:</label>
+            <div class="flex gap-1" id="sim-convivencia">
+              <button onclick="setSimScore('convivencia', 1)" class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-xs font-bold hover:bg-slate-100">1</button>
+              <button onclick="setSimScore('convivencia', 2)" class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-xs font-bold hover:bg-slate-100">2</button>
+              <button onclick="setSimScore('convivencia', 3)" class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-xs font-bold hover:bg-slate-100">3</button>
+              <button onclick="setSimScore('convivencia', 4)" class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-xs font-bold hover:bg-slate-100">4</button>
+              <button onclick="setSimScore('convivencia', 5)" class="w-8 h-8 rounded-lg bg-[#101625] text-[#00FB00] text-xs font-bold">5</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold text-slate-600 mb-1">3. Participação Ativa:</label>
+            <div class="flex gap-1" id="sim-participacao">
+              <button onclick="setSimScore('participacao', 1)" class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-xs font-bold hover:bg-slate-100">1</button>
+              <button onclick="setSimScore('participacao', 2)" class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-xs font-bold hover:bg-slate-100">2</button>
+              <button onclick="setSimScore('participacao', 3)" class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-xs font-bold hover:bg-slate-100">3</button>
+              <button onclick="setSimScore('participacao', 4)" class="w-8 h-8 rounded-lg bg-[#101625] text-[#00FB00] text-xs font-bold">4</button>
+              <button onclick="setSimScore('participacao', 5)" class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-xs font-bold hover:bg-slate-100">5</button>
+            </div>
+          </div>
+        </div>
+
+        <p id="sim-feedback" class="text-[11px] text-emerald-700 font-semibold bg-emerald-50 p-2.5 rounded-xl border border-emerald-200">
+          ✓ Indicadores calibrados! Esse preenchimento leva cerca de 6 a 8 segundos por aluno.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTEÚDO 2: PSICOLOGIA -->
+  <div id="content-psicologia" class="tutorial-pane hidden space-y-6">
+    
+    <div class="bg-gradient-to-r from-[#101625] to-[#1E2538] text-white rounded-[24px] p-6 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div>
+        <span class="px-2.5 py-0.5 rounded-[300px] text-[10px] font-black uppercase tracking-wider bg-[#00FB00] text-[#101625]">
+          Blindagem Bioética (CFP nº 001/2009 & LGPD)
+        </span>
+        <h2 class="text-xl font-black mt-2 font-montserrat">Metadados Institucionais sem Sigilo Violado</h2>
+        <p class="text-xs text-slate-300 max-w-xl mt-1 leading-relaxed">
+          O módulo da psicologia nunca registra nomes, prontuários, CIDs ou relatos individuais de acolhimento. Apenas metadados agregados de execução.
+        </p>
+      </div>
+      <a href="/psicologia" class="btn-primary-pill text-xs px-5 py-2.5 shadow-sm whitespace-nowrap flex items-center gap-2">
+        <span>Abrir Módulo da Psicologia</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      
+      <div class="bg-white border border-emerald-200 rounded-[20px] p-5 shadow-xs space-y-3">
+        <div class="flex items-center gap-2 text-emerald-700 font-bold text-sm">
+          <i data-lucide="check-circle" class="w-5 h-5"></i>
+          <h4>O que DEVE ser registrado:</h4>
+        </div>
+        <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside">
+          <li><strong>Ocorrência da sessão</strong> (Realizada: Sim / Não)</li>
+          <li><strong>Duração em minutos</strong> (ex: 60 minutos de vivência coletiva)</li>
+          <li><strong>Total agregado de presentes</strong> (ex: 15 participantes na roda)</li>
+          <li><strong>Checklist de infraestrutura</strong> (sala acústica, materiais lúdicos, ventilação)</li>
+          <li><strong>Tópicos pedagógicos em taxonomia fechada</strong> (ex: Regulação emocional, Autocuidado)</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border border-rose-200 rounded-[20px] p-5 shadow-xs space-y-3">
+        <div class="flex items-center gap-2 text-rose-700 font-bold text-sm">
+          <i data-lucide="x-circle" class="w-5 h-5"></i>
+          <h4>O que NUNCA entra na plataforma:</h4>
+        </div>
+        <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside">
+          <li><strong>Prontuários e anotações clínicas</strong> individuais de crianças ou famílias</li>
+          <li><strong>Diagnósticos (CIDs)</strong> ou hipóteses psicopatológicas</li>
+          <li><strong>Narrativas e desabafos</strong> ocorridos durante a escuta</li>
+          <li><strong>Associação nominal</strong> entre crianças específicas e conteúdos clínicos</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- CONTEÚDO 3: COORDENAÇÃO -->
+  <div id="content-coordenacao" class="tutorial-pane hidden space-y-6">
+    
+    <div class="bg-gradient-to-r from-[#101625] to-[#1E2538] text-white rounded-[24px] p-6 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div>
+        <span class="px-2.5 py-0.5 rounded-[300px] text-[10px] font-black uppercase tracking-wider bg-[#00FB00] text-[#101625]">
+          Ritual Semanal: &le; 1 Hora/Semana
+        </span>
+        <h2 class="text-xl font-black mt-2 font-montserrat">Painel D0 & Cadastro Mestre (MDM)</h2>
+        <p class="text-xs text-slate-300 max-w-xl mt-1 leading-relaxed">
+          Acompanhamento imediato das oficinas no encerramento do sábado, notificação em 1 clique e governança de matrículas múltiplas sem duplicidades.
+        </p>
+      </div>
+      <div class="flex gap-2">
+        <a href="/coordenacao" class="btn-primary-pill text-xs px-4 py-2.5 shadow-sm whitespace-nowrap">
+          Painel D0
+        </a>
+        <a href="/cadastro" class="btn-navy-pill text-xs px-4 py-2.5 shadow-sm whitespace-nowrap bg-white/10 hover:bg-white/20">
+          Cadastro Mestre
+        </a>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-white border border-slate-200/80 rounded-[20px] p-5 shadow-xs space-y-2">
+        <div class="w-8 h-8 rounded-full bg-[#EFF3F8] text-[#101625] flex items-center justify-center font-black text-sm">
+          <i data-lucide="bell-ring" class="w-4 h-4"></i>
+        </div>
+        <h3 class="font-bold text-sm text-[#101625]">Cobrança em 1 Clique</h3>
+        <p class="text-xs text-slate-500 leading-relaxed">
+          Se uma turma do sábado não enviou a chamada até as 17h, o painel destaca o status <code>PENDENTE</code>. Um clique aciona o lembrete para o voluntário.
+        </p>
+      </div>
+
+      <div class="bg-white border border-slate-200/80 rounded-[20px] p-5 shadow-xs space-y-2">
+        <div class="w-8 h-8 rounded-full bg-[#EFF3F8] text-[#101625] flex items-center justify-center font-black text-sm">
+          <i data-lucide="layers" class="w-4 h-4"></i>
+        </div>
+        <h3 class="font-bold text-sm text-[#101625]">Múltiplas Matrículas</h3>
+        <p class="text-xs text-slate-500 leading-relaxed">
+          Crianças que participam do <em>Laboratório de Sonhos</em> e também do <em>Reforço Escolar</em> mantêm o mesmo código único (ex: <code>EBZ-026</code>), evitando duplicações nos relatórios.
+        </p>
+      </div>
+
+      <div class="bg-white border border-slate-200/80 rounded-[20px] p-5 shadow-xs space-y-2">
+        <div class="w-8 h-8 rounded-full bg-[#EFF3F8] text-[#101625] flex items-center justify-center font-black text-sm">
+          <i data-lucide="user-check" class="w-4 h-4"></i>
+        </div>
+        <h3 class="font-bold text-sm text-[#101625]">Controle de Acessos</h3>
+        <p class="text-xs text-slate-500 leading-relaxed">
+          Pelo painel de gestão de acessos, a coordenação autoriza novos voluntários, ativa/inativa educadores e define quem tem permissão para cada oficina.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTEÚDO 4: DIRETORIA -->
+  <div id="content-diretoria" class="tutorial-pane hidden space-y-6">
+    
+    <div class="bg-gradient-to-r from-[#101625] to-[#1E2538] text-white rounded-[24px] p-6 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div>
+        <span class="px-2.5 py-0.5 rounded-[300px] text-[10px] font-black uppercase tracking-wider bg-[#00FB00] text-[#101625]">
+          Portão G4: Publicação Segura
+        </span>
+        <h2 class="text-xl font-black mt-2 font-montserrat">Transparência & Relatórios para Financiadores</h2>
+        <p class="text-xs text-slate-300 max-w-xl mt-1 leading-relaxed">
+          Dados analíticos agregados com supressão mandatória de amostras pequenas (n &lt; 10) e aprovação formal em 4 etapas antes de qualquer divulgação externa.
+        </p>
+      </div>
+      <a href="/relatorios" class="btn-primary-pill text-xs px-5 py-2.5 shadow-sm whitespace-nowrap flex items-center gap-2">
+        <span>Abrir Relatórios</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      
+      <div class="bg-white border border-slate-200/80 rounded-[20px] p-5 shadow-xs space-y-3">
+        <h3 class="font-bold text-sm text-[#101625] flex items-center gap-2">
+          <i data-lucide="shield-alert" class="w-4 h-4 text-amber-500"></i>
+          Regra de Supressão Estatística (n &lt; 10)
+        </h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Para garantir que nenhuma criança seja reidentificada em turmas com poucos participantes, grupos com menos de 10 educandos têm seus gráficos suprimidos com a menção de salvaguarda de privacidade.
+        </p>
+      </div>
+
+      <div class="bg-white border border-slate-200/80 rounded-[20px] p-5 shadow-xs space-y-3">
+        <h3 class="font-bold text-sm text-[#101625] flex items-center gap-2">
+          <i data-lucide="stamp" class="w-4 h-4 text-emerald-600"></i>
+          Fluxo de Aprovação Humana em 4 Etapas
+        </h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Nenhum painel expõe links diretos à base viva:
+          <br>
+          <span class="font-mono text-[11px] bg-slate-100 px-2 py-0.5 rounded text-[#101625] font-bold">GERADO &rarr; REVISADO_COORDENACAO &rarr; APROVADO_DIRETORIA &rarr; ARQUIVADO</span>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  function switchTab(role) {
+    document.querySelectorAll('.tutorial-pane').forEach(el => el.classList.add('hidden'));
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.remove('bg-[#101625]', 'text-[#00FB00]', 'shadow-xs');
+      btn.classList.add('text-[#2C394C]');
+    });
+
+    const activePane = document.getElementById(`content-${role}`);
+    if (activePane) activePane.classList.remove('hidden');
+
+    const activeBtn = document.getElementById(`tabBtn-${role}`);
+    if (activeBtn) {
+      activeBtn.classList.remove('text-[#2C394C]');
+      activeBtn.classList.add('bg-[#101625]', 'text-[#00FB00]', 'shadow-xs');
+    }
+  }
+
+  function setSimScore(indicator, score) {
+    const parent = document.getElementById(`sim-${indicator}`);
+    if (!parent) return;
+    const buttons = parent.querySelectorAll('button');
+    buttons.forEach((b, idx) => {
+      if (idx + 1 === score) {
+        b.className = "w-8 h-8 rounded-lg bg-[#101625] text-[#00FB00] text-xs font-bold";
+      } else {
+        b.className = "w-8 h-8 rounded-lg bg-white border border-slate-200 text-xs font-bold hover:bg-slate-100";
+      }
+    });
+  }
+</script>
+{% endblock %}

@@ -313,6 +313,16 @@
         </a>
         {% endif %}
 
+        {% if not user or user.role in ['DIRETORIA', 'COORDENACAO', 'ADMIN'] %}
+        <a href="/gestao-acessos" class="px-4 py-2 rounded-[300px] transition-all {% if active_page == 'gestao_acessos' %}bg-[#101625] text-[#00FB00] shadow-xs ring-1 ring-[#00FB00]/30{% else %}text-[#2C394C] hover:text-[#101625] hover:bg-white{% endif %}">
+          🛡️ Controle de Acessos
+        </a>
+        {% endif %}
+
+        <a href="/tutorial" class="px-4 py-2 rounded-[300px] transition-all {% if active_page == 'tutorial' %}bg-[#101625] text-[#00FB00] shadow-xs ring-1 ring-[#00FB00]/30{% else %}text-[#2C394C] hover:text-[#101625] hover:bg-white{% endif %}">
+          📖 Tutorial
+        </a>
+
         {% if user and user.role in ['COORDENACAO', 'DIRETORIA', 'ADMIN'] %}
         <a href="/perfis" class="ml-auto px-3 py-1.5 rounded-[300px] text-[11px] font-semibold border border-slate-200 text-slate-500 hover:text-[#101625] hover:bg-white transition flex items-center gap-1">
           <i data-lucide="users" class="w-3.5 h-3.5"></i>
@@ -346,6 +356,8 @@
       </div>
 
       <div class="flex flex-wrap items-center gap-4 sm:gap-6 text-xs font-semibold text-slate-300">
+        <a href="/tutorial" class="hover:text-[#00FB00] transition-colors">Tutorial</a>
+        <a href="/gestao-acessos" class="hover:text-[#00FB00] transition-colors">Controle de Acessos</a>
         <a href="/campo" class="hover:text-[#00FB00] transition-colors">Voluntário</a>
         <a href="/coordenacao" class="hover:text-[#00FB00] transition-colors">Coordenação D0</a>
         <a href="/psicologia" class="hover:text-[#00FB00] transition-colors">Psicologia (CFP)</a>
