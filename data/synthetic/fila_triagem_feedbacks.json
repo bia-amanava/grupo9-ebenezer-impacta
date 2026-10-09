@@ -34,33 +34,5 @@
     "status_triagem": "PROTOCOLO_EXTERNO",
     "categoria_fechada": null,
     "coordenador_aprovador_id": "COORD-MARIA"
-  },
-  {
-    "feedback_id": "FB-E2E-001",
-    "participant_id": "EBZ-026",
-    "tipo_origem": "RESPONSAVEL_FAMILIAR",
-    "tipo_midia": "TEXTO",
-    "conteudo_ou_referencia": "A criança demonstra muito entusiasmo aos sábados.",
-    "consentimento_registrado": true,
-    "data_recebimento": "2026-10-09T15:22:42.385899+00:00",
-    "status_triagem": "APROVEITADO_CATEGORIA_PEDAGOGICA",
-    "categoria_fechada": "ENGAJAMENTO_FAMILIAR_POSITIVO",
-    "coordenador_aprovador_id": "COORD-MARIA",
-    "data_moderacao": "2026-10-09T15:22:42.386531+00:00"
-  },
-  {
-    "feedback_id": "FB-TEST-01",
-    "participant_id": "EBZ-044",
-    "tipo_origem": "RESPONSAVEL_FAMILIAR",
-    "tipo_midia": "TEXTO",
-    "conteudo_ou_referencia": "Criança relata gostar muito das oficinas de sábado.",
-    "consentimento_registrado": true,
-    "data_recebimento": "2026-10-09T15:22:42.406983+00:00",
-    "status_triagem": "ENCAMINHADO_PROTOCOLO_EXTERNO",
-    "categoria_fechada": "ENGAJAMENTO_FAMILIAR_POSITIVO",
-    "coordenador_aprovador_id": "COORD-MARIA",
-    "data_moderacao": "2026-10-09T15:22:42.409768+00:00",
-    "motivo": "VIOLACAO_DE_DIREITOS_ENCAMINHADA_EXTERNAMENTE",
-    "alerta_protocolo": "Caso encaminhado ao protocolo institucional externo (Assistência Social/Conselho Tutelar)."
   }
 ]

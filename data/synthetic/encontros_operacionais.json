@@ -298,15 +298,5 @@
     "educador_id": "VOL-CIA-01",
     "data_envio_registro": "2026-09-26T11:45:00",
     "status_lancamento": "D0_NO_PRAZO"
-  },
-  {
-    "encontro_id": "ENC-E2E-TEST",
-    "programa_id": "PROG-SONHOS",
-    "data_encontro": "2026-10-03",
-    "horario_inicio": "09:00",
-    "horario_fim": "11:00",
-    "educador_id": "VOL-SABADO-01",
-    "data_envio_registro": "2026-10-09T15:22:42.360346+00:00",
-    "status_lancamento": "D0_NO_PRAZO"
   }
 ]

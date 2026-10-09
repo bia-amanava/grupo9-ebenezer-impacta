@@ -5,9 +5,9 @@
 {% block content %}
 <div class="max-w-md mx-auto space-y-4">
 
-  <!-- Faixa de Aviso Superior (Idêntica aos Mockups) -->
-  <div class="bg-[#f9d984] text-[#714d02] px-4 py-1.5 rounded-xl text-center text-xs font-bold shadow-xs">
-    Ambiente demonstrativo — dados sintéticos.
+  <!-- Faixa de Aviso Superior (G2 Design System) -->
+  <div class="bg-[#101625] text-[#00FB00] px-4 py-1.5 rounded-[300px] text-center text-xs font-bold border border-[#00FB00]/25 shadow-xs">
+    Ambiente demonstrativo — dados sintéticos (Portão G1).
   </div>
 
   <!-- ========================================================================= -->
@@ -17,14 +17,14 @@
     <!-- Cabeçalho -->
     <div class="flex items-center justify-between">
       <div class="flex items-center space-x-2">
-        <a href="/coordenacao" class="p-2 rounded-full hover:bg-cream transition text-ink">
+        <a href="/coordenacao" class="p-2 rounded-full hover:bg-slate-100 transition text-ink">
           <i data-lucide="arrow-left" class="w-5 h-5"></i>
         </a>
-        <h1 class="text-xl font-extrabold text-forest2 font-outfit">Confirmar encontro</h1>
+        <h1 class="text-xl font-extrabold text-forest2 font-montserrat">Confirmar encontro</h1>
       </div>
       <div class="text-right">
         <span class="text-[10px] font-bold text-muted uppercase">Meta Chamada</span>
-        <div id="step1Timer" class="font-mono text-xs font-black text-forest bg-[#edf5f1] px-2 py-0.5 rounded-full">
+        <div id="step1Timer" class="font-mono text-xs font-black text-[#101625] bg-[#00FB00] px-2.5 py-0.5 rounded-[300px] shadow-xs">
           &lt; 3 min
         </div>
       </div>
@@ -94,10 +94,10 @@
 
       <!-- Botões de Navegação -->
       <div class="pt-2 flex items-center space-x-3">
-        <a href="/coordenacao" class="w-1/2 py-3 text-center rounded-full border border-line font-bold text-ink text-xs hover:bg-cream transition">
+        <a href="/coordenacao" class="w-1/2 py-3 text-center rounded-[300px] border border-slate-300 font-bold text-ink text-xs hover:bg-slate-100 transition">
           Voltar
         </a>
-        <button type="button" onclick="goToStepChamada()" class="w-1/2 py-3 bg-[#123b34] hover:bg-forest text-white rounded-full font-bold text-xs shadow-md transition flex items-center justify-center space-x-1">
+        <button type="button" onclick="goToStepChamada()" class="w-1/2 py-3 btn-primary-pill text-xs shadow-md flex items-center justify-center space-x-1">
           <span>Continuar</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </button>
@@ -146,12 +146,12 @@
       <!-- Inserido dinamicamente via JavaScript -->
     </div>
 
-    <!-- Barra de Ação Fixa Inferior (Idêntica à Tela 2) -->
-    <div class="fixed bottom-4 left-4 right-4 max-w-md mx-auto bg-white/95 backdrop-blur-md p-3.5 rounded-3xl border border-line shadow-xl flex items-center space-x-3 z-30">
-      <button type="button" onclick="saveDraft()" class="w-1/2 py-3 rounded-full border border-line font-bold text-ink text-xs hover:bg-cream transition">
+    <!-- Barra de Ação Fixa Inferior (G2 Design System) -->
+    <div class="fixed bottom-4 left-4 right-4 max-w-md mx-auto bg-white/95 backdrop-blur-md p-3.5 rounded-[24px] border border-slate-200 shadow-xl flex items-center space-x-3 z-30">
+      <button type="button" onclick="saveDraft()" class="w-1/2 py-3 rounded-[300px] border border-slate-300 font-bold text-ink text-xs hover:bg-slate-100 transition">
         Salvar rascunho
       </button>
-      <button type="button" id="btnAvancar" onclick="submitChamada()" class="w-1/2 py-3 bg-[#123b34] hover:bg-forest text-white rounded-full font-bold text-xs shadow-md transition flex items-center justify-center space-x-1">
+      <button type="button" id="btnAvancar" onclick="submitChamada()" class="w-1/2 py-3 btn-primary-pill text-xs shadow-md flex items-center justify-center space-x-1">
         <span id="btnAvancarLabel">Avançar (0)</span>
         <i data-lucide="arrow-right" class="w-4 h-4"></i>
       </button>
