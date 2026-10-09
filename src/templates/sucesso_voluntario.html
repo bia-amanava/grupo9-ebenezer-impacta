@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Registro Enviado com Sucesso | Ebenézer Impacta{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto space-y-5 pt-3 text-center">
+
+  <!-- Faixa de Aviso Superior -->
+  <div class="bg-[#f9d984] text-[#714d02] px-4 py-1.5 rounded-xl text-center text-xs font-bold shadow-xs">
+    Ambiente demonstrativo — dados sintéticos.
+  </div>
+
+  <!-- Círculo com Checkmark Duplo Verde/Laranja (Idêntico ao Figma) -->
+  <div class="pt-4">
+    <div class="w-24 h-24 rounded-full border-4 border-[#ea580c] bg-white flex items-center justify-center mx-auto shadow-md relative">
+      <div class="w-20 h-20 rounded-full bg-[#1b7a69] flex items-center justify-center text-white">
+        <i data-lucide="check" class="w-10 h-10 stroke-[3]"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Título e Subtítulo -->
+  <div class="space-y-1">
+    <h1 class="text-2xl font-black text-forest2 font-outfit tracking-tight">
+      Registro enviado com sucesso!
+    </h1>
+    <p class="text-xs text-muted leading-relaxed px-4">
+      Chamada e indicadores do <strong>Laboratório de Sonhos — Turma A</strong> foram salvos com sucesso.
+    </p>
+  </div>
+
+  <!-- Card: Resumo do Encontro (3 Indicadores) -->
+  <div class="bg-white rounded-3xl p-5 border border-line shadow-xs space-y-3">
+    <span class="text-[10px] font-bold text-muted uppercase tracking-wider block text-left">
+      RESUMO DO ENCONTRO
+    </span>
+
+    <div class="grid grid-cols-3 gap-2">
+      <!-- Crianças -->
+      <div class="bg-[#eff6ff] p-3 rounded-2xl flex flex-col items-center space-y-1">
+        <i data-lucide="users" class="w-4 h-4 text-[#2563eb]"></i>
+        <span class="font-outfit font-black text-lg text-[#1e40af]">18</span>
+        <span class="text-[9px] font-bold uppercase text-[#1e40af]">Crianças</span>
+      </div>
+
+      <!-- Presentes -->
+      <div class="bg-[#ecfdf5] p-3 rounded-2xl flex flex-col items-center space-y-1">
+        <i data-lucide="user-check" class="w-4 h-4 text-forest"></i>
+        <span class="font-outfit font-black text-lg text-forest">14</span>
+        <span class="text-[9px] font-bold uppercase text-forest">Presentes</span>
+      </div>
+
+      <!-- Indicadores -->
+      <div class="bg-[#fffbeb] p-3 rounded-2xl flex flex-col items-center space-y-1">
+        <i data-lucide="check-square" class="w-4 h-4 text-[#d97706]"></i>
+        <span class="font-outfit font-black text-lg text-[#b45309]">14</span>
+        <span class="text-[9px] font-bold uppercase text-[#b45309]">Indicadores</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tempo de Envio -->
+  <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#edf5f1] text-forest border border-[#c2dbce]">
+    <i data-lucide="clock" class="w-3.5 h-3.5 text-forest"></i>
+    <span>Tempo de envio: 4 min (Dentro da meta)</span>
+  </div>
+
+  <!-- Mensagem de Agradecimento Voluntário -->
+  <p class="text-xs text-muted leading-relaxed px-4">
+    Obrigado por contribuir voluntariamente com os dados do <strong>Instituto Ebenézer</strong>. Seu tempo transforma vidas!
+  </p>
+
+  <!-- Botões de Ação -->
+  <div class="space-y-2.5 pt-2 pb-6">
+    <a href="/campo/home" class="block w-full py-3.5 bg-[#123b34] hover:bg-forest text-white rounded-full font-bold text-xs shadow-md transition">
+      Voltar ao início
+    </a>
+
+    <a href="/campo" class="block text-xs font-bold text-[#ea580c] hover:underline">
+      Ver meus registros anteriores
+    </a>
+  </div>
+
+</div>
+{% endblock %}

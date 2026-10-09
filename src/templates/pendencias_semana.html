@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+{% block title %}Pendências da Semana • Coordenação | Ebenézer Impacta{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto space-y-4">
+
+  <!-- Faixa de Aviso Superior -->
+  <div class="bg-[#f9d984] text-[#714d02] px-4 py-1.5 rounded-xl text-center text-xs font-bold shadow-xs">
+    Ambiente demonstrativo — dados sintéticos.
+  </div>
+
+  <!-- Header -->
+  <div class="flex items-center space-x-2 pt-1">
+    <a href="/coordenacao" class="p-2 rounded-full hover:bg-cream transition text-ink">
+      <i data-lucide="arrow-left" class="w-5 h-5"></i>
+    </a>
+    <div>
+      <h1 class="text-xl font-extrabold text-forest2 font-outfit leading-tight">
+        Pendências da Semana
+      </h1>
+      <p class="text-xs text-muted">Acompanhamento de registros pendentes</p>
+    </div>
+  </div>
+
+  <!-- Abas de Filtro -->
+  <div class="flex items-center space-x-1.5 text-xs font-bold overflow-x-auto pb-1 scrollbar-none">
+    <button class="px-3.5 py-1.5 rounded-full bg-[#123b34] text-white shadow-xs">Todas (3)</button>
+    <button class="px-3.5 py-1.5 rounded-full bg-white text-muted border border-line hover:text-ink">Chamada</button>
+    <button class="px-3.5 py-1.5 rounded-full bg-white text-muted border border-line hover:text-ink">Indicadores</button>
+    <button class="px-3.5 py-1.5 rounded-full bg-white text-muted border border-line hover:text-ink">Vivência Terapêutica</button>
+  </div>
+
+  <!-- Lista de 3 Pendências (Idêntico ao Figma) -->
+  <div class="space-y-3">
+    <!-- Pendência 1: Reforço Escolar -->
+    <div class="bg-white rounded-3xl p-4 border-l-4 border-[#ea580c] border-y border-r border-line shadow-xs space-y-2.5">
+      <div class="flex justify-between items-start">
+        <div>
+          <h2 class="font-outfit font-black text-sm text-forest2 leading-tight">Reforço Escolar — Turma 2</h2>
+          <span class="text-[11px] font-bold text-[#ea580c] flex items-center space-x-1 mt-0.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span>
+            <span>Chamada não concluída</span>
+          </span>
+        </div>
+      </div>
+      <p class="text-xs text-muted">Responsável: Voluntário J.</p>
+      <button onclick="notificarPendencia('Reforço Escolar - T2')" class="w-full py-2.5 rounded-2xl border-1.5 border-[#ea580c] text-[#ea580c] font-bold text-xs flex items-center justify-center space-x-1.5 hover:bg-[#ea580c]/10 transition">
+        <i data-lucide="bell" class="w-3.5 h-3.5"></i>
+        <span>Notificar</span>
+      </button>
+    </div>
+
+    <!-- Pendência 2: Laboratório de Sonhos -->
+    <div class="bg-white rounded-3xl p-4 border-l-4 border-[#ca8a04] border-y border-r border-line shadow-xs space-y-2.5">
+      <div class="flex justify-between items-start">
+        <div>
+          <h2 class="font-outfit font-black text-sm text-forest2 leading-tight">Laboratório de Sonhos — Turma A</h2>
+          <span class="text-[11px] font-bold text-[#ca8a04] flex items-center space-x-1 mt-0.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#ca8a04]"></span>
+            <span>Indicadores incompletos (4 de 18)</span>
+          </span>
+        </div>
+      </div>
+      <!-- Progress Bar -->
+      <div class="w-full bg-[#f0e8d8] rounded-full h-1.5 overflow-hidden">
+        <div class="bg-[#ca8a04] h-1.5 rounded-full" style="width: 22%"></div>
+      </div>
+      <p class="text-xs text-muted">Responsável: Voluntário M.</p>
+      <a href="/campo" class="w-full py-2.5 rounded-2xl bg-[#123b34] text-white font-bold text-xs flex items-center justify-center space-x-1.5 hover:bg-forest transition">
+        <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+        <span>Revisar</span>
+      </a>
+    </div>
+
+    <!-- Pendência 3: Vivência Terapêutica -->
+    <div class="bg-white rounded-3xl p-4 border-l-4 border-[#dc2626] border-y border-r border-line shadow-xs space-y-2.5">
+      <div class="flex justify-between items-start">
+        <div>
+          <h2 class="font-outfit font-black text-sm text-forest2 leading-tight">Vivência Terapêutica — Turma 1</h2>
+          <span class="text-[11px] font-bold text-[#dc2626] flex items-center space-x-1 mt-0.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#dc2626]"></span>
+            <span>Registro operacional atrasado</span>
+          </span>
+        </div>
+      </div>
+      <p class="text-xs text-muted">Responsável: Dra. Camila N.</p>
+      <button onclick="notificarPendencia('Vivência Terapêutica - T1')" class="w-full py-2.5 rounded-2xl border-1.5 border-[#ea580c] text-[#ea580c] font-bold text-xs flex items-center justify-center space-x-1.5 hover:bg-[#ea580c]/10 transition">
+        <i data-lucide="bell" class="w-3.5 h-3.5"></i>
+        <span>Notificar</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Card: Cobertura Geral de Registros (89%) -->
+  <div class="bg-white rounded-3xl p-5 border border-line shadow-xs space-y-2">
+    <div class="flex justify-between items-center text-xs font-bold">
+      <span class="text-muted">Cobertura geral de registros</span>
+      <span class="bg-paper border border-line px-2 py-0.5 rounded-full text-[10px] text-muted">Semanal</span>
+    </div>
+    <div class="flex items-baseline space-x-2">
+      <span class="font-outfit font-black text-3xl text-forest2">89%</span>
+      <span class="text-xs text-muted font-medium">Meta do Programa: 95%</span>
+    </div>
+    <div class="relative w-full bg-[#f0e8d8] rounded-full h-2 overflow-hidden">
+      <div class="bg-forest h-2 rounded-full" style="width: 89%"></div>
+    </div>
+  </div>
+
+  <!-- Histórico de Notificações -->
+  <div class="bg-white rounded-3xl p-5 border border-line shadow-xs space-y-3 pb-8">
+    <div class="flex items-center justify-between border-b border-line/60 pb-2">
+      <h3 class="font-outfit font-black text-xs text-forest2 flex items-center space-x-1.5">
+        <i data-lucide="clock" class="w-4 h-4 text-forest"></i>
+        <span>Histórico de Notificações</span>
+      </h3>
+    </div>
+
+    <div class="space-y-3 text-xs">
+      <div class="flex items-start space-x-2.5">
+        <span class="w-2 h-2 rounded-full bg-[#ea580c] mt-1 shrink-0"></span>
+        <div>
+          <span class="font-bold text-ink block">29/08 14:32 — Lembrete enviado</span>
+          <span class="text-[11px] text-muted">Para Vol. J. (Reforço Escolar)</span>
+        </div>
+      </div>
+
+      <div class="flex items-start space-x-2.5">
+        <span class="w-2 h-2 rounded-full bg-[#ca8a04] mt-1 shrink-0"></span>
+        <div>
+          <span class="font-bold text-ink block">28/08 09:15 — Lembrete enviado</span>
+          <span class="text-[11px] text-muted">Para Vol. M. (Lab. de Sonhos)</span>
+        </div>
+      </div>
+
+      <div class="flex items-start space-x-2.5">
+        <span class="w-2 h-2 rounded-full bg-[#dc2626] mt-1 shrink-0"></span>
+        <div>
+          <span class="font-bold text-ink block">27/08 16:40 — Notificação automática</span>
+          <span class="text-[11px] text-muted">Aviso de prazo 48h (Vivência Terapêutica)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  function notificarPendencia(oficina) {
+    alert(`✓ Notificação de cobrança D0 enviada com sucesso para o responsável da oficina: ${oficina}.`);
+  }
+</script>
+{% endblock %}

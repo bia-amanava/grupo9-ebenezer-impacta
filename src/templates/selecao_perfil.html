@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}Selecione seu Perfil • Ebenézer Impacta{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto space-y-6 pt-2">
+
+  <!-- Header Institucional -->
+  <div class="flex items-center space-x-2.5">
+    <div class="w-10 h-10 rounded-2xl bg-[#ea580c] text-white flex items-center justify-center font-extrabold text-sm font-outfit shadow-sm">
+      IE
+    </div>
+    <span class="font-outfit font-extrabold text-base text-forest2">
+      Instituto Ebenézer
+    </span>
+  </div>
+
+  <!-- Saudação e Título -->
+  <div class="space-y-1">
+    <h1 class="text-3xl font-black text-forest2 font-outfit tracking-tight">
+      Olá, Ana Beatriz
+    </h1>
+    <p class="text-xs text-muted font-medium">
+      Selecione seu perfil de acesso hoje:
+    </p>
+  </div>
+
+  <!-- Grid de Perfis de Acesso (2x2) -->
+  <div class="grid grid-cols-2 gap-3.5 pt-2">
+    <!-- Card Voluntário -->
+    <a href="/campo" class="bg-white rounded-3xl p-5 border border-line shadow-xs hover:border-forest transition flex flex-col justify-between space-y-4 group">
+      <div class="w-10 h-10 rounded-2xl bg-[#fff7ed] text-[#ea580c] flex items-center justify-center">
+        <i data-lucide="hand-heart" class="w-5 h-5"></i>
+      </div>
+      <div>
+        <h2 class="font-outfit font-extrabold text-sm text-forest2 group-hover:text-forest transition">Voluntário</h2>
+        <p class="text-[11px] text-muted leading-snug mt-1">
+          Registrar chamada e indicadores de oficina.
+        </p>
+      </div>
+    </a>
+
+    <!-- Card Coordenação -->
+    <a href="/coordenacao" class="bg-white rounded-3xl p-5 border border-line shadow-xs hover:border-forest transition flex flex-col justify-between space-y-4 group">
+      <div class="w-10 h-10 rounded-2xl bg-[#ecfdf5] text-forest flex items-center justify-center">
+        <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+      </div>
+      <div>
+        <h2 class="font-outfit font-extrabold text-sm text-forest2 group-hover:text-forest transition">Coordenação</h2>
+        <p class="text-[11px] text-muted leading-snug mt-1">
+          Gerenciar cadastros, turmas e pendências.
+        </p>
+      </div>
+    </a>
+
+    <!-- Card Psicóloga -->
+    <a href="/psicologia" class="bg-white rounded-3xl p-5 border border-line shadow-xs hover:border-forest transition flex flex-col justify-between space-y-4 group">
+      <div class="w-10 h-10 rounded-2xl bg-[#eff6ff] text-[#2563eb] flex items-center justify-center">
+        <i data-lucide="shield-check" class="w-5 h-5"></i>
+      </div>
+      <div>
+        <h2 class="font-outfit font-extrabold text-sm text-forest2 group-hover:text-forest transition">Psicóloga</h2>
+        <p class="text-[11px] text-muted leading-snug mt-1">
+          Registro operacional da vivência terapêutica.
+        </p>
+      </div>
+    </a>
+
+    <!-- Card Diretoria -->
+    <a href="/relatorios" class="bg-white rounded-3xl p-5 border border-line shadow-xs hover:border-forest transition flex flex-col justify-between space-y-4 group">
+      <div class="w-10 h-10 rounded-2xl bg-[#fefce8] text-[#ca8a04] flex items-center justify-center">
+        <i data-lucide="trending-up" class="w-5 h-5"></i>
+      </div>
+      <div>
+        <h2 class="font-outfit font-extrabold text-sm text-forest2 group-hover:text-forest transition">Diretoria</h2>
+        <p class="text-[11px] text-muted leading-snug mt-1">
+          Dashboard executivo e relatórios de impacto.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Box de Segurança e Governança com Cadeado -->
+  <div class="bg-[#edf5f9] border border-[#d0e4f2] rounded-3xl p-4 flex items-start space-x-3 text-xs text-[#204963]">
+    <i data-lucide="lock" class="w-4 h-4 text-forest shrink-0 mt-0.5"></i>
+    <p class="leading-relaxed text-[11px]">
+      Cada perfil acessa apenas os dados permitidos ao seu papel — nenhum perfil visualiza registros clínicos individuais.
+    </p>
+  </div>
+
+  <!-- Link Sair da Conta -->
+  <div class="text-center pt-2 pb-6">
+    <a href="/login" class="text-xs font-bold text-forest2 hover:underline">
+      Sair da conta
+    </a>
+  </div>
+
+</div>
+{% endblock %}

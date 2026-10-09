@@ -1,0 +1,1225 @@
+[
+  {
+    "participant_id": "EBZ-001",
+    "coorte_ano": 2026,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-002",
+    "coorte_ano": 2026,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS",
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-003",
+    "coorte_ano": 2024,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-004",
+    "coorte_ano": 2024,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS",
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-005",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-006",
+    "coorte_ano": 2024,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-007",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-008",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-009",
+    "coorte_ano": 2026,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS",
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-010",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-011",
+    "coorte_ano": 2026,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-012",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-013",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-014",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-015",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-016",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-017",
+    "coorte_ano": 2024,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-018",
+    "coorte_ano": 2026,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS",
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-019",
+    "coorte_ano": 2024,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS",
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-020",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-021",
+    "coorte_ano": 2024,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-022",
+    "coorte_ano": 2025,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-023",
+    "coorte_ano": 2024,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-024",
+    "coorte_ano": 2024,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-025",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-026",
+    "coorte_ano": 2025,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-027",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-028",
+    "coorte_ano": 2024,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-029",
+    "coorte_ano": 2025,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-030",
+    "coorte_ano": 2026,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-031",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-032",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-033",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-034",
+    "coorte_ano": 2024,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-035",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-036",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-037",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-038",
+    "coorte_ano": 2026,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS",
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-039",
+    "coorte_ano": 2026,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-040",
+    "coorte_ano": 2026,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-041",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-042",
+    "coorte_ano": 2025,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS",
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-043",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-044",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-045",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-046",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-047",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-048",
+    "coorte_ano": 2025,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-049",
+    "coorte_ano": 2026,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-050",
+    "coorte_ano": 2024,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-051",
+    "coorte_ano": 2025,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-052",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-053",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-054",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-055",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-056",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-057",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-058",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-059",
+    "coorte_ano": 2026,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-060",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-061",
+    "coorte_ano": 2025,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-062",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-063",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-064",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-065",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-066",
+    "coorte_ano": 2025,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS",
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-067",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-068",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-069",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-070",
+    "coorte_ano": 2024,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-071",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-072",
+    "coorte_ano": 2025,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-073",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-074",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-075",
+    "coorte_ano": 2025,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-076",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-077",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-078",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-079",
+    "coorte_ano": 2024,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-080",
+    "coorte_ano": 2024,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS",
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-081",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-082",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-083",
+    "coorte_ano": 2026,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-084",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-085",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-086",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-087",
+    "coorte_ano": 2026,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-088",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-089",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-090",
+    "coorte_ano": 2025,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-091",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-092",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-093",
+    "coorte_ano": 2026,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-094",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-095",
+    "coorte_ano": 2024,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-096",
+    "coorte_ano": 2025,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-097",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-098",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-099",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-100",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-101",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-102",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-103",
+    "coorte_ano": 2025,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-104",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-105",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-106",
+    "coorte_ano": 2024,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS",
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-107",
+    "coorte_ano": 2026,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-108",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-109",
+    "coorte_ano": 2026,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-110",
+    "coorte_ano": 2024,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS",
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-111",
+    "coorte_ano": 2025,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-112",
+    "coorte_ano": 2026,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-113",
+    "coorte_ano": 2026,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-114",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-115",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-116",
+    "coorte_ano": 2025,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-117",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-118",
+    "coorte_ano": 2024,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-119",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-120",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-121",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-122",
+    "coorte_ano": 2025,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-123",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-124",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-125",
+    "coorte_ano": 2024,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS",
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-126",
+    "coorte_ano": 2026,
+    "faixa_etaria": "PRIMEIRA_INFANCIA",
+    "matriculas_ativas": [
+      "PROG-INFANCIA"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-127",
+    "coorte_ano": 2026,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-128",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-129",
+    "coorte_ano": 2024,
+    "faixa_etaria": "CRIANCA",
+    "matriculas_ativas": [
+      "PROG-REFORCO",
+      "PROG-SONHOS"
+    ],
+    "status": "ATIVO"
+  },
+  {
+    "participant_id": "EBZ-130",
+    "coorte_ano": 2026,
+    "faixa_etaria": "ADOLESCENTE",
+    "matriculas_ativas": [
+      "PROG-SONHOS",
+      "PROG-REFORCO"
+    ],
+    "status": "ATIVO"
+  }
+]

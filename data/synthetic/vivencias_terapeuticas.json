@@ -1,0 +1,276 @@
+[
+  {
+    "vivencia_id": "VIV-20260725",
+    "data": "2026-07-25",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 60,
+    "total_presentes_agregado": 21,
+    "topicos_pedagogicos": [
+      "PROJETO_DE_VIDA_E_SONHOS",
+      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20260801",
+    "data": "2026-08-01",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 90,
+    "total_presentes_agregado": 25,
+    "topicos_pedagogicos": [
+      "ESCUTA_E_EXPRESSAO_DE_SENTIMENTOS",
+      "REGULACAO_EMOCIONAL",
+      "CONVIVENCIA_E_VINCULO"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20260808",
+    "data": "2026-08-08",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 60,
+    "total_presentes_agregado": 23,
+    "topicos_pedagogicos": [
+      "REGULACAO_EMOCIONAL",
+      "AUTOCUIDADO_E_HIGIENE",
+      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20260815",
+    "data": "2026-08-15",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 90,
+    "total_presentes_agregado": 20,
+    "topicos_pedagogicos": [
+      "RESOLUCAO_PACIFICA_DE_CONFLITOS",
+      "PROJETO_DE_VIDA_E_SONHOS",
+      "REGULACAO_EMOCIONAL"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20260822",
+    "data": "2026-08-22",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 60,
+    "total_presentes_agregado": 18,
+    "topicos_pedagogicos": [
+      "AUTOCUIDADO_E_HIGIENE",
+      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20260829",
+    "data": "2026-08-29",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 60,
+    "total_presentes_agregado": 22,
+    "topicos_pedagogicos": [
+      "AUTOCUIDADO_E_HIGIENE",
+      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20260905",
+    "data": "2026-09-05",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 120,
+    "total_presentes_agregado": 24,
+    "topicos_pedagogicos": [
+      "REGULACAO_EMOCIONAL",
+      "AUTOCUIDADO_E_HIGIENE",
+      "CONVIVENCIA_E_VINCULO"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20260912",
+    "data": "2026-09-12",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 60,
+    "total_presentes_agregado": 19,
+    "topicos_pedagogicos": [
+      "ESCUTA_E_EXPRESSAO_DE_SENTIMENTOS",
+      "PROJETO_DE_VIDA_E_SONHOS"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20260919",
+    "data": "2026-09-19",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 90,
+    "total_presentes_agregado": 25,
+    "topicos_pedagogicos": [
+      "AUTOCUIDADO_E_HIGIENE",
+      "REGULACAO_EMOCIONAL",
+      "PROJETO_DE_VIDA_E_SONHOS"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20260926",
+    "data": "2026-09-26",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 60,
+    "total_presentes_agregado": 22,
+    "topicos_pedagogicos": [
+      "ESCUTA_E_EXPRESSAO_DE_SENTIMENTOS",
+      "RESOLUCAO_PACIFICA_DE_CONFLITOS",
+      "PROJETO_DE_VIDA_E_SONHOS"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20261005",
+    "data": "2026-10-05",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 120,
+    "total_presentes_agregado": 25,
+    "topicos_pedagogicos": [
+      "CONVIVENCIA_E_VINCULO",
+      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20261003",
+    "data": "2026-10-03",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 90,
+    "total_presentes_agregado": 21,
+    "topicos_pedagogicos": [
+      "AUTOCUIDADO_E_HIGIENE",
+      "REGULACAO_EMOCIONAL"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20261005",
+    "data": "2026-10-05",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 120,
+    "total_presentes_agregado": 25,
+    "topicos_pedagogicos": [
+      "CONVIVENCIA_E_VINCULO",
+      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20261003",
+    "data": "2026-10-03",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 90,
+    "total_presentes_agregado": 21,
+    "topicos_pedagogicos": [
+      "AUTOCUIDADO_E_HIGIENE",
+      "REGULACAO_EMOCIONAL"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20261005",
+    "data": "2026-10-05",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 120,
+    "total_presentes_agregado": 25,
+    "topicos_pedagogicos": [
+      "CONVIVENCIA_E_VINCULO",
+      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20261006",
+    "data": "2026-10-06",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 90,
+    "total_presentes_agregado": 20,
+    "topicos_pedagogicos": [
+      "AUTOCUIDADO_E_HIGIENE",
+      "REGULACAO_EMOCIONAL",
+      "CONVIVENCIA_E_VINCULO",
+      "RESOLUCAO_PACIFICA_DE_CONFLITOS",
+      "PROJETO_DE_VIDA_E_SONHOS",
+      "ESCUTA_E_EXPRESSAO_DE_SENTIMENTOS"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20261003",
+    "data": "2026-10-03",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 90,
+    "total_presentes_agregado": 21,
+    "topicos_pedagogicos": [
+      "AUTOCUIDADO_E_HIGIENE",
+      "REGULACAO_EMOCIONAL"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20261005",
+    "data": "2026-10-05",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 120,
+    "total_presentes_agregado": 25,
+    "topicos_pedagogicos": [
+      "CONVIVENCIA_E_VINCULO",
+      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20261003",
+    "data": "2026-10-03",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 90,
+    "total_presentes_agregado": 21,
+    "topicos_pedagogicos": [
+      "AUTOCUIDADO_E_HIGIENE",
+      "REGULACAO_EMOCIONAL"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20261005",
+    "data": "2026-10-05",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 120,
+    "total_presentes_agregado": 25,
+    "topicos_pedagogicos": [
+      "CONVIVENCIA_E_VINCULO",
+      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20261003",
+    "data": "2026-10-03",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 90,
+    "total_presentes_agregado": 21,
+    "topicos_pedagogicos": [
+      "AUTOCUIDADO_E_HIGIENE",
+      "REGULACAO_EMOCIONAL"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20261008",
+    "data": "2026-10-08",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 120,
+    "total_presentes_agregado": 25,
+    "topicos_pedagogicos": [
+      "CONVIVENCIA_E_VINCULO",
+      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20261003",
+    "data": "2026-10-03",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 90,
+    "total_presentes_agregado": 21,
+    "topicos_pedagogicos": [
+      "AUTOCUIDADO_E_HIGIENE",
+      "REGULACAO_EMOCIONAL"
+    ]
+  },
+  {
+    "vivencia_id": "VIV-20261008",
+    "data": "2026-10-08",
+    "psicologa_responsavel": "CRP-06/98765-SP",
+    "duracao_minutos": 120,
+    "total_presentes_agregado": 25,
+    "topicos_pedagogicos": [
+      "CONVIVENCIA_E_VINCULO",
+      "RESOLUCAO_PACIFICA_DE_CONFLITOS"
+    ]
+  }
+]

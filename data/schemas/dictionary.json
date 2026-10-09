@@ -1,0 +1,95 @@
+{
+  "versao_dicionario": "1.1",
+  "instituicao": "Instituto Social Ebenézer",
+  "projeto": "Ebenézer Impacta",
+  "plataforma_alvo": "Google Workspace for Nonprofits & AppSheet",
+  "custo_licenca": "R$ 0,00",
+  "tabelas": [
+    {
+      "nome_tabela": "MDM_PARTICIPANTES",
+      "descricao": "Base unificada pseudonimizada de educandos (Golden Record).",
+      "visibilidade": "Geral (Coordenação e Voluntários)",
+      "campos": [
+        {"nome": "participant_id", "tipo": "String", "chave": "PK", "exemplo": "EBZ-001", "regras": "Único, imutável, pseudonimizado"},
+        {"nome": "coorte_ano", "tipo": "Integer", "exemplo": 2025, "regras": "Ano de ingresso no Instituto"},
+        {"nome": "faixa_etaria", "tipo": "Enum", "opcoes": ["PRIMEIRA_INFANCIA", "CRIANCA", "ADOLESCENTE"]},
+        {"nome": "matriculas_ativas", "tipo": "List[String]", "exemplo": "PROG-SONHOS,PROG-REFORCO"},
+        {"nome": "status", "tipo": "Enum", "opcoes": ["ATIVO", "INATIVO", "EGRESSO"]}
+      ]
+    },
+    {
+      "nome_tabela": "CADASTRO_CIVIL_RESTRITO",
+      "descricao": "Base segregada de identificação pessoal civil. Acesso restrito exclusivo da Coordenação.",
+      "visibilidade": "Restrita (Coordenação Geral)",
+      "campos": [
+        {"nome": "civil_id", "tipo": "UUID", "chave": "PK"},
+        {"nome": "participant_id", "tipo": "String", "chave": "FK", "referencia": "MDM_PARTICIPANTES.participant_id"},
+        {"nome": "nome_completo_crianca", "tipo": "String", "sensivel": true},
+        {"nome": "data_nascimento", "tipo": "Date", "sensivel": true},
+        {"nome": "nome_responsavel", "tipo": "String", "sensivel": true},
+        {"nome": "parentesco", "tipo": "Enum", "opcoes": ["MAE", "PAI", "AVO", "TUTOR_LEGAL", "OUTRO"]},
+        {"nome": "telefone_contato", "tipo": "String", "sensivel": true},
+        {"nome": "endereco_bairro", "tipo": "String", "exemplo": "Jardim Ângela"},
+        {"nome": "termo_consentimento_lgpd", "tipo": "Boolean", "obrigatorio": true}
+      ]
+    },
+    {
+      "nome_tabela": "AVALIACOES_SOCIOEMOCIONAIS",
+      "descricao": "Registros de chamada e pontuação dos 3 indicadores coletados via AppSheet.",
+      "visibilidade": "Operacional e Analítica",
+      "campos": [
+        {"nome": "avaliacao_id", "tipo": "UUID", "chave": "PK"},
+        {"nome": "encontro_id", "tipo": "String", "chave": "FK"},
+        {"nome": "participant_id", "tipo": "String", "chave": "FK"},
+        {"nome": "presenca", "tipo": "Boolean"},
+        {"nome": "score_autonomia", "tipo": "Integer", "escala": "1 a 5", "nulo_se_ausente": true},
+        {"nome": "score_convivencia", "tipo": "Integer", "escala": "1 a 5", "nulo_se_ausente": true},
+        {"nome": "score_participacao", "tipo": "Integer", "escala": "1 a 5", "nulo_se_ausente": true},
+        {"nome": "timestamp_registro", "tipo": "DateTime"}
+      ],
+      "restricao_etica": "Sem campos de texto aberto ou áudio nesta tabela."
+    },
+    {
+      "nome_tabela": "VIVENCIAS_TERAPEUTICAS_METADADOS",
+      "descricao": "Metadados agregados de sessões de suporte psicossocial (Código de Ética CFP).",
+      "visibilidade": "Psicologia e Coordenação",
+      "campos": [
+        {"nome": "vivencia_id", "tipo": "UUID", "chave": "PK"},
+        {"nome": "data", "tipo": "Date"},
+        {"nome": "psicologa_responsavel", "tipo": "String"},
+        {"nome": "duracao_minutos", "tipo": "Integer", "min": 15, "max": 240},
+        {"nome": "total_presentes_agregado", "tipo": "Integer", "min": 1},
+        {"nome": "topicos_pedagogicos", "tipo": "List[String]", "taxonomia_fechada": true}
+      ],
+      "restricao_etica": "Proibido qualquer dado nominal, prontuário clínico individual ou diagnóstico."
+    },
+    {
+      "nome_tabela": "ENTRADA_FEEDBACK_RESTRITA",
+      "descricao": "Quarentena de escuta facultativa de responsáveis e oficineiros.",
+      "visibilidade": "Isolada / Coordenação em Triagem",
+      "campos": [
+        {"nome": "feedback_id", "tipo": "UUID", "chave": "PK"},
+        {"nome": "participant_id", "tipo": "String", "chave": "FK"},
+        {"nome": "tipo_origem", "tipo": "Enum", "opcoes": ["RESPONSAVEL_FAMILIAR", "OFICINEIRO"]},
+        {"nome": "tipo_midia", "tipo": "Enum", "opcoes": ["TEXTO", "AUDIO"]},
+        {"nome": "data_recebimento", "tipo": "DateTime"},
+        {"nome": "status_triagem", "tipo": "Enum", "opcoes": ["RECEBIDO", "EM_TRIAGEM", "APROVEITADO", "DESCARTADO", "PROTOCOLO_EXTERNO"]},
+        {"nome": "referencia_arquivo", "tipo": "String", "quarentena": true}
+      ]
+    },
+    {
+      "nome_tabela": "SINTESE_PEDAGOGICA",
+      "descricao": "Categorias pedagógicas aprovadas pós-triagem humana para enriquecimento analítico.",
+      "visibilidade": "Analítica (Looker Studio)",
+      "campos": [
+        {"nome": "sintese_id", "tipo": "UUID", "chave": "PK"},
+        {"nome": "feedback_id", "tipo": "UUID", "chave": "FK"},
+        {"nome": "categoria_fechada", "tipo": "String"},
+        {"nome": "periodo_letivo", "tipo": "String"},
+        {"nome": "programa_id", "tipo": "String"},
+        {"nome": "coordenador_aprovador_id", "tipo": "String"},
+        {"nome": "data_aprovacao", "tipo": "DateTime"}
+      ]
+    }
+  ]
+}

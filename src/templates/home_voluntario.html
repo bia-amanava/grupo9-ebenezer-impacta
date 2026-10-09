@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}Início • Voluntário | Ebenézer Impacta{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto space-y-4">
+
+  <!-- Faixa de Aviso Superior -->
+  <div class="bg-[#f9d984] text-[#714d02] px-4 py-1.5 rounded-xl text-center text-xs font-bold shadow-xs">
+    Ambiente demonstrativo — dados sintéticos.
+  </div>
+
+  <!-- Header do Voluntário (Figma Batch 4 Tela 2) -->
+  <div class="flex items-center justify-between pt-1">
+    <div class="flex items-center space-x-2.5">
+      <div class="w-9 h-9 rounded-2xl bg-[#ea580c] text-white flex items-center justify-center font-extrabold text-sm font-outfit shadow-sm">
+        E
+      </div>
+      <span class="font-outfit font-extrabold text-sm text-forest2">
+        Instituto Ebenézer
+      </span>
+    </div>
+    <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#edf5f1] text-forest border border-[#c2dbce]">
+      <span class="w-1.5 h-1.5 rounded-full bg-forest"></span>
+      <span>Voluntário</span>
+    </span>
+  </div>
+
+  <!-- Saudação e Data -->
+  <div class="space-y-0.5">
+    <h1 class="text-2xl font-black text-forest2 font-outfit tracking-tight">
+      Bom sábado, Voluntário!
+    </h1>
+    <div class="flex items-center space-x-1 text-xs text-muted font-medium">
+      <i data-lucide="calendar" class="w-3.5 h-3.5 text-forest"></i>
+      <span>30 de Agosto, 2026</span>
+    </div>
+  </div>
+
+  <!-- Card Destaque: Atividade de Hoje -->
+  <div class="bg-white rounded-3xl p-5 border-l-4 border-[#ea580c] border-y border-r border-line shadow-sm space-y-3">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center space-x-1.5 text-[#ea580c] font-black text-xs uppercase tracking-wider font-outfit">
+        <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+        <span>ATIVIDADE DE HOJE</span>
+      </div>
+      <span class="text-[10px] font-mono font-bold bg-[#fef3c7] text-[#92400e] px-2 py-0.5 rounded-full">
+        EBZ-026
+      </span>
+    </div>
+
+    <div>
+      <h2 class="font-outfit font-black text-lg text-forest2 leading-tight">
+        Laboratório de Sonhos — Turma A
+      </h2>
+      <div class="flex items-center space-x-3 text-xs text-muted mt-1 font-medium">
+        <span class="flex items-center space-x-1">
+          <i data-lucide="clock" class="w-3.5 h-3.5 text-forest"></i>
+          <span>09h00</span>
+        </span>
+        <span>•</span>
+        <span class="flex items-center space-x-1">
+          <i data-lucide="users" class="w-3.5 h-3.5 text-forest"></i>
+          <span>18 crianças matriculadas</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="pt-1">
+      <a href="/campo" class="w-full py-3.5 bg-[#123b34] hover:bg-forest text-white rounded-2xl font-bold text-xs shadow-md transition flex items-center justify-center space-x-2">
+        <i data-lucide="play" class="w-4 h-4 fill-current text-gold"></i>
+        <span>Iniciar registro do encontro</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Seção: Outras Atividades da Semana -->
+  <div class="space-y-2.5 pt-2">
+    <h3 class="text-sm font-extrabold text-forest2 font-outfit">Outras atividades da semana</h3>
+
+    <!-- Card Reforço Escolar -->
+    <div class="bg-white rounded-3xl p-4 border border-line shadow-xs space-y-1.5">
+      <div class="flex items-center justify-between">
+        <h4 class="font-outfit font-black text-xs text-forest2">Reforço Escolar — Terça e Quinta</h4>
+        <span class="bg-paper text-muted border border-line px-2 py-0.5 rounded-full text-[10px] font-bold">
+          Fora do seu turno
+        </span>
+      </div>
+      <p class="text-[11px] text-muted leading-relaxed">
+        Acompanhamento de alfabetização básica.
+      </p>
+    </div>
+
+    <!-- Card Vivência Terapêutica -->
+    <div class="bg-white rounded-3xl p-4 border border-line shadow-xs space-y-1.5">
+      <div class="flex items-center justify-between">
+        <h4 class="font-outfit font-black text-xs text-forest2">Vivência Terapêutica</h4>
+        <span class="bg-[#f3edf9] text-[#5e2b85] border border-[#e2d5f0] px-2 py-0.5 rounded-full text-[10px] font-bold">
+          Exclusivo da Psicóloga
+        </span>
+      </div>
+      <p class="text-[11px] text-muted leading-relaxed">
+        Sessões de escuta e acolhimento com a Participante Sol e demais integrantes.
+      </p>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

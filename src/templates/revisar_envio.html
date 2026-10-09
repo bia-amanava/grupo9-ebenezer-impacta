@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block title %}Revisar antes de enviar • Laboratório de Sonhos | Ebenézer Impacta{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto space-y-4">
+
+  <!-- Faixa de Aviso Superior -->
+  <div class="bg-[#f9d984] text-[#714d02] px-4 py-1.5 rounded-xl text-center text-xs font-bold shadow-xs">
+    Ambiente demonstrativo — dados sintéticos.
+  </div>
+
+  <!-- Header -->
+  <div class="flex items-center space-x-2 pt-1">
+    <a href="/campo" class="p-2 rounded-full hover:bg-cream transition text-ink">
+      <i data-lucide="arrow-left" class="w-5 h-5"></i>
+    </a>
+    <div>
+      <h1 class="text-xl font-extrabold text-forest2 font-outfit leading-tight">
+        Revisar antes de enviar
+      </h1>
+      <p class="text-xs text-muted">
+        Laboratório de Sonhos • Turma A • 30/08/2026
+      </p>
+    </div>
+  </div>
+
+  <!-- Status Bar do Resumo -->
+  <div class="flex items-center justify-between text-xs font-bold pt-1">
+    <span class="text-muted uppercase tracking-wider text-[10px]">RESUMO DO ENCONTRO</span>
+    <span class="text-forest flex items-center space-x-1">
+      <span>Pronto para envio</span>
+      <span class="w-2 h-2 rounded-full bg-forest animate-pulse"></span>
+    </span>
+  </div>
+
+  <!-- Card 1: Presença -->
+  <div class="bg-white rounded-3xl p-4 border border-line shadow-xs flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-2xl bg-[#eff6ff] text-[#2563eb] flex items-center justify-center">
+        <i data-lucide="users" class="w-5 h-5"></i>
+      </div>
+      <div>
+        <span class="text-[10px] font-bold text-muted uppercase tracking-wider block">PRESENÇA</span>
+        <span class="text-xs font-bold text-ink block mt-0.5">
+          Presença: <strong class="text-forest">14 presentes</strong> / <strong class="text-terracotta">3 ausentes</strong> / <strong class="text-[#ca8a04]">1 justificada</strong>
+        </span>
+      </div>
+    </div>
+    <a href="/campo" class="p-2 text-muted hover:text-ink">
+      <i data-lucide="pencil" class="w-4 h-4"></i>
+    </a>
+  </div>
+
+  <!-- Card 2: Indicadores -->
+  <div class="bg-white rounded-3xl p-4 border border-line shadow-xs flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-2xl bg-[#ecfdf5] text-forest flex items-center justify-center">
+        <i data-lucide="check-square" class="w-5 h-5"></i>
+      </div>
+      <div>
+        <span class="text-[10px] font-bold text-muted uppercase tracking-wider block">INDICADORES</span>
+        <span class="text-xs font-bold text-ink block mt-0.5">
+          Indicadores preenchidos: <strong class="text-forest">14 de 14 participantes</strong>
+        </span>
+      </div>
+    </div>
+    <div class="p-2 text-forest">
+      <i data-lucide="check" class="w-4 h-4"></i>
+    </div>
+  </div>
+
+  <!-- Card 3: Observações Operacionais -->
+  <div class="bg-white rounded-3xl p-4 border border-line shadow-xs flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-2xl bg-[#f8fafc] text-muted flex items-center justify-center">
+        <i data-lucide="file-text" class="w-5 h-5"></i>
+      </div>
+      <div>
+        <span class="text-[10px] font-bold text-muted uppercase tracking-wider block">OBSERVAÇÕES OPERACIONAIS</span>
+        <span class="text-xs font-bold text-ink block mt-0.5">
+          Espaço adequado, sem intercorrências
+        </span>
+      </div>
+    </div>
+    <a href="/campo" class="p-2 text-muted hover:text-ink">
+      <i data-lucide="pencil" class="w-4 h-4"></i>
+    </a>
+  </div>
+
+  <!-- Confirmação Bioética (Checkbox Card) -->
+  <div class="bg-white rounded-3xl p-4 border-2 border-forest shadow-xs flex items-start space-x-3">
+    <input type="checkbox" id="confirmEtica" checked class="mt-1 w-4 h-4 text-forest rounded border-gray-300 focus:ring-forest cursor-pointer">
+    <label for="confirmEtica" class="text-xs font-bold text-forest2 leading-relaxed cursor-pointer">
+      Confirmo que os dados registrados refletem apenas observações programáticas, sem conteúdo clínico ou pessoal sensível.
+    </label>
+  </div>
+
+  <!-- Botões de Ação Inferiores -->
+  <div class="flex items-center space-x-3 pt-2 pb-6">
+    <a href="/campo" class="w-1/2 py-3.5 text-center rounded-full border border-line font-bold text-ink text-xs hover:bg-cream transition">
+      Voltar e corrigir
+    </a>
+    <button type="button" onclick="concluirEnvio()" class="w-1/2 py-3.5 bg-[#123b34] hover:bg-forest text-white rounded-full font-bold text-xs shadow-md transition flex items-center justify-center space-x-1">
+      <span>Enviar registro</span>
+    </button>
+  </div>
+
+</div>
+
+<!-- Modal de Sucesso Final -->
+<div id="finalSuccessModal" class="fixed inset-0 bg-ink/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-3xl max-w-xs w-full p-6 text-center space-y-4 shadow-2xl border border-line">
+    <div class="w-14 h-14 bg-[#edf5f1] text-forest rounded-full flex items-center justify-center mx-auto">
+      <i data-lucide="check-circle" class="w-8 h-8"></i>
+    </div>
+    <h3 class="text-lg font-extrabold text-forest2 font-outfit">Encontro Enviado em D0!</h3>
+    <p class="text-xs text-muted leading-relaxed">
+      Registro gravado e sincronizado no painel da coordenação com tempo operacional dentro da meta.
+    </p>
+    <a href="/coordenacao" class="block w-full py-2.5 btn-ds-primary text-xs shadow transition">
+      Ir para Painel da Coordenação
+    </a>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  function concluirEnvio() {
+    document.getElementById('finalSuccessModal').classList.remove('hidden');
+  }
+</script>
+{% endblock %}

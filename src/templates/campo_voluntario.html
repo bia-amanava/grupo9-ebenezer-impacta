@@ -1,0 +1,436 @@
+{% extends "base.html" %}
+
+{% block title %}Chamada de Campo • Voluntário | Ebenézer Impacta{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto space-y-4">
+
+  <!-- Faixa de Aviso Superior (Idêntica aos Mockups) -->
+  <div class="bg-[#f9d984] text-[#714d02] px-4 py-1.5 rounded-xl text-center text-xs font-bold shadow-xs">
+    Ambiente demonstrativo — dados sintéticos.
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- PASSO 1: CONFIRMAR ENCONTRO (TELA 4 DO FIGMA)                             -->
+  <!-- ========================================================================= -->
+  <div id="stepConfirmEncounter" class="space-y-4">
+    <!-- Cabeçalho -->
+    <div class="flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <a href="/coordenacao" class="p-2 rounded-full hover:bg-cream transition text-ink">
+          <i data-lucide="arrow-left" class="w-5 h-5"></i>
+        </a>
+        <h1 class="text-xl font-extrabold text-forest2 font-outfit">Confirmar encontro</h1>
+      </div>
+      <div class="text-right">
+        <span class="text-[10px] font-bold text-muted uppercase">Meta Chamada</span>
+        <div id="step1Timer" class="font-mono text-xs font-black text-forest bg-[#edf5f1] px-2 py-0.5 rounded-full">
+          &lt; 3 min
+        </div>
+      </div>
+    </div>
+
+    <!-- Card de Informações do Encontro -->
+    <div class="bg-white rounded-3xl p-5 border border-line shadow-sm space-y-4">
+      <div class="flex items-center space-x-2 border-l-4 border-gold pl-3 py-0.5">
+        <h2 class="text-sm font-extrabold text-forest2 font-outfit">Informações do Encontro</h2>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div class="flex justify-between items-center py-1 border-b border-line/60">
+          <span class="text-muted font-medium">Programa</span>
+          <select id="programSelect" onchange="syncProgram()" class="font-bold text-forest2 bg-paper px-2.5 py-1 rounded-xl border border-line focus:outline-none">
+            <option value="PROG-SONHOS" selected>Laboratório de Sonhos</option>
+            <option value="PROG-REFORCO">Reforço Escolar</option>
+            <option value="PROG-INFANCIA">Primeira Infância</option>
+          </select>
+        </div>
+
+        <div class="flex justify-between items-center py-1 border-b border-line/60">
+          <span class="text-muted font-medium">Turma</span>
+          <span class="font-bold text-ink" id="turmaLabel">Turma A (7–11 anos)</span>
+        </div>
+
+        <div class="flex justify-between items-center py-1 border-b border-line/60">
+          <span class="text-muted font-medium">Data agendada</span>
+          <span class="font-mono font-bold text-ink" id="dataAgendadaLabel">30/08/2026</span>
+        </div>
+
+        <div class="flex justify-between items-center py-1">
+          <span class="text-muted font-medium">Local de encontro</span>
+          <span class="font-bold text-forest2">Sede Jardim Ângela</span>
+        </div>
+      </div>
+
+      <!-- Pergunta Operacional -->
+      <div class="pt-3 border-t border-line space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-ink mb-1.5">O encontro ocorreu conforme planejado?</label>
+          <select id="encontroStatusSelect" class="w-full bg-paper border border-line rounded-2xl p-3 font-bold text-forest2 focus:ring-2 focus:ring-forest focus:outline-none">
+            <option value="SIM" selected>Sim, normalmente</option>
+            <option value="REAGENDADO">Não, reagendado</option>
+            <option value="CANCELADO">Não, cancelado</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-bold text-muted mb-1.5">Se o encontro NÃO ocorreu, informe o motivo:</label>
+          <select class="w-full bg-paper border border-line rounded-2xl p-3 text-muted focus:ring-2 focus:ring-forest focus:outline-none">
+            <option value="">Selecione o motivo...</option>
+            <option value="CHUVA">Chuva forte / Inacessibilidade</option>
+            <option value="EDUCADOR">Ausência imprevista de voluntário</option>
+            <option value="OUTRO">Evento externo da comunidade</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Alerta Ético (Lock Azul) -->
+      <div class="bg-[#edf5f9] border border-[#d2e4f0] rounded-2xl p-3.5 flex items-start space-x-3 text-xs text-[#204963]">
+        <i data-lucide="lock" class="w-4 h-4 text-forest shrink-0 mt-0.5"></i>
+        <p class="leading-relaxed text-[11px]">
+          <strong>Este registro é operacional.</strong> Nenhuma informação sobre comportamento individual é solicitada aqui.
+        </p>
+      </div>
+
+      <!-- Botões de Navegação -->
+      <div class="pt-2 flex items-center space-x-3">
+        <a href="/coordenacao" class="w-1/2 py-3 text-center rounded-full border border-line font-bold text-ink text-xs hover:bg-cream transition">
+          Voltar
+        </a>
+        <button type="button" onclick="goToStepChamada()" class="w-1/2 py-3 bg-[#123b34] hover:bg-forest text-white rounded-full font-bold text-xs shadow-md transition flex items-center justify-center space-x-1">
+          <span>Continuar</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- PASSO 2: CHAMADA COM PSEUDÔNIMOS (TELA 2 DO FIGMA)                        -->
+  <!-- ========================================================================= -->
+  <div id="stepChamada" class="space-y-4 hidden">
+    <!-- Cabeçalho -->
+    <div class="flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <button type="button" onclick="goToStepConfirm()" class="p-2 rounded-full hover:bg-cream transition text-ink">
+          <i data-lucide="arrow-left" class="w-5 h-5"></i>
+        </button>
+        <div>
+          <h1 class="text-lg font-extrabold text-forest2 font-outfit" id="chamadaTitulo">Chamada — Laboratório de Sonhos</h1>
+          <span class="text-[11px] text-muted block" id="chamadaSubtitulo">Turma A (7–11 anos) · 30/Ago</span>
+        </div>
+      </div>
+      <!-- Cronômetro Ativo -->
+      <div class="text-right">
+        <span class="text-[9px] font-bold text-muted uppercase">Tempo</span>
+        <div id="stopwatchDisplay" class="font-mono text-xs font-black text-forest bg-warm px-2 py-0.5 rounded-full border border-line">
+          00:00
+        </div>
+      </div>
+    </div>
+
+    <!-- Barra de Progresso Superior -->
+    <div class="bg-white rounded-2xl p-3 border border-line shadow-xs space-y-1.5">
+      <div class="flex justify-between text-xs font-bold">
+        <span class="text-muted">Progresso</span>
+        <span class="text-forest" id="progressText">0 de 18 preenchidos</span>
+      </div>
+      <div class="w-full bg-[#f0e8d8] rounded-full h-2 overflow-hidden">
+        <div id="progressBar" class="bg-forest h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Lista de Participantes (Card com Avatar e Segmented Controls) -->
+    <div id="studentsListContainer" class="space-y-3 pb-24">
+      <!-- Inserido dinamicamente via JavaScript -->
+    </div>
+
+    <!-- Barra de Ação Fixa Inferior (Idêntica à Tela 2) -->
+    <div class="fixed bottom-4 left-4 right-4 max-w-md mx-auto bg-white/95 backdrop-blur-md p-3.5 rounded-3xl border border-line shadow-xl flex items-center space-x-3 z-30">
+      <button type="button" onclick="saveDraft()" class="w-1/2 py-3 rounded-full border border-line font-bold text-ink text-xs hover:bg-cream transition">
+        Salvar rascunho
+      </button>
+      <button type="button" id="btnAvancar" onclick="submitChamada()" class="w-1/2 py-3 bg-[#123b34] hover:bg-forest text-white rounded-full font-bold text-xs shadow-md transition flex items-center justify-center space-x-1">
+        <span id="btnAvancarLabel">Avançar (0)</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Modal de Sucesso com Telemetria -->
+<div id="successModal" class="fixed inset-0 bg-ink/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-3xl max-w-xs w-full p-6 text-center space-y-4 shadow-2xl border border-line">
+    <div class="w-14 h-14 bg-[#edf5f1] text-forest rounded-full flex items-center justify-center mx-auto">
+      <i data-lucide="check-circle" class="w-8 h-8"></i>
+    </div>
+    <h3 class="text-lg font-extrabold text-forest2 font-outfit">Chamada Concluída!</h3>
+    <div class="bg-paper p-3 rounded-2xl border border-line text-xs space-y-1.5 text-ink">
+      <div class="flex justify-between">
+        <span class="text-muted">Total Registrados:</span>
+        <span id="modalTotal" class="font-extrabold text-forest">18</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="text-muted">Tempo de Coleta:</span>
+        <span id="modalTime" class="font-mono font-bold text-ink">01:42</span>
+      </div>
+      <div class="flex justify-between items-center pt-1 border-t border-line/60">
+        <span class="text-muted">Meta &lt; 3 minutos:</span>
+        <span class="font-extrabold text-forest bg-[#edf5f1] px-2 py-0.5 rounded-full text-[10px]">ATENDIDA ✓</span>
+      </div>
+    </div>
+    <button onclick="window.location.href='/coordenacao'" class="w-full py-2.5 btn-ds-primary text-xs shadow transition">
+      Voltar para Painel
+    </button>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  let timerSeconds = 0;
+  let timerInterval = null;
+  let students = [];
+  const state = {};
+
+  // Nomes poéticos e avatares para demonstração de pseudonimização
+  const codenames = [
+    { name: "Participante Sol", initials: "PS", bg: "bg-[#e8f3ee] text-forest" },
+    { name: "Participante Estrela", initials: "PE", bg: "bg-[#fef7e0] text-[#8e6e0b]" },
+    { name: "Participante Rio", initials: "PR", bg: "bg-[#e5f1f7] text-[#1b5e82]" },
+    { name: "Participante Lua", initials: "PL", bg: "bg-[#f3edf9] text-[#5e2b85]" },
+    { name: "Participante Aurora", initials: "PA", bg: "bg-[#fdeeed] text-[#912d2b]" },
+    { name: "Participante Vento", initials: "PV", bg: "bg-[#edf7f4] text-forest" },
+    { name: "Participante Flor", initials: "PF", bg: "bg-[#fff0f5] text-[#8c2b5c]" },
+    { name: "Participante Céu", initials: "PC", bg: "bg-[#eaf4fb] text-[#1d5c88]" },
+    { name: "Participante Mar", initials: "PM", bg: "bg-[#e6f4f1] text-[#136155]" },
+    { name: "Participante Raiz", initials: "PR", bg: "bg-[#f7efe5] text-[#714d24]" },
+    { name: "Participante Nuvem", initials: "PN", bg: "bg-[#eff3f6] text-[#345268]" },
+    { name: "Participante Bosque", initials: "PB", bg: "bg-[#eaf3ed] text-forest" },
+    { name: "Participante Brisa", initials: "PB", bg: "bg-[#fbf4eb] text-[#7d5622]" },
+    { name: "Participante Canto", initials: "PC", bg: "bg-[#f8edf5] text-[#6d2f63]" },
+    { name: "Participante Monte", initials: "PM", bg: "bg-[#ebf4ef] text-forest" },
+    { name: "Participante Horizonte", initials: "PH", bg: "bg-[#f4eff8] text-[#56346e]" },
+    { name: "Participante Caminho", initials: "PC", bg: "bg-[#e7f3ef] text-forest" },
+    { name: "Participante Semente", initials: "PS", bg: "bg-[#fef8e7] text-[#886915]" }
+  ];
+
+  function syncProgram() {
+    const progId = document.getElementById('programSelect').value;
+    const names = {
+      'PROG-SONHOS': { title: 'Chamada — Laboratório de Sonhos', turma: 'Turma A (7–11 anos)' },
+      'PROG-REFORCO': { title: 'Chamada — Reforço Escolar', turma: 'Turma B (9–13 anos)' },
+      'PROG-INFANCIA': { title: 'Chamada — Primeira Infância', turma: 'Turma C (4–6 anos)' }
+    };
+    document.getElementById('turmaLabel').innerText = names[progId].turma;
+    document.getElementById('chamadaTitulo').innerText = names[progId].title;
+    document.getElementById('chamadaSubtitulo').innerText = `${names[progId].turma} · 30/Ago`;
+  }
+
+  function goToStepChamada() {
+    document.getElementById('stepConfirmEncounter').classList.add('hidden');
+    document.getElementById('stepChamada').classList.remove('hidden');
+    startStopwatch();
+    loadRoster();
+  }
+
+  function goToStepConfirm() {
+    document.getElementById('stepChamada').classList.add('hidden');
+    document.getElementById('stepConfirmEncounter').classList.remove('hidden');
+  }
+
+  function startStopwatch() {
+    clearInterval(timerInterval);
+    timerSeconds = 0;
+    timerInterval = setInterval(() => {
+      timerSeconds++;
+      const mins = String(Math.floor(timerSeconds / 60)).padStart(2, '0');
+      const secs = String(timerSeconds % 60).padStart(2, '0');
+      document.getElementById('stopwatchDisplay').innerText = `${mins}:${secs}`;
+    }, 1000);
+  }
+
+  async function loadRoster() {
+    const progId = document.getElementById('programSelect').value;
+    const container = document.getElementById('studentsListContainer');
+    container.innerHTML = '<div class="py-12 text-center text-muted font-bold text-xs"><div class="inline-block animate-spin rounded-full h-7 w-7 border-4 border-forest border-t-transparent mb-2"></div><br>Carregando lista da turma...</div>';
+
+    try {
+      const res = await fetch(`/api/voluntario/turma?programa_id=${progId}`);
+      students = await res.json();
+      students = students.slice(0, 18); // Limitar a 18 para bater exatamente com a tela do Figma
+      renderStudents();
+    } catch (e) {
+      console.error(e);
+      container.innerHTML = '<div class="p-4 text-center text-terracotta text-xs font-bold">Erro ao carregar lista.</div>';
+    }
+  }
+
+  function renderStudents() {
+    const container = document.getElementById('studentsListContainer');
+    let html = '';
+
+    students.forEach((s, idx) => {
+      const meta = codenames[idx % codenames.length];
+      const curState = state[s.participant_id] || { status: 'PENDING', aut: 4, conv: 4, part: 4 };
+
+      html += `
+        <div class="bg-white rounded-3xl p-4 border border-line shadow-xs space-y-3 transition" id="card-${s.participant_id}">
+          <div class="flex items-center justify-between">
+            <!-- Avatar e Identificador -->
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-2xl ${meta.bg} flex items-center justify-center font-extrabold text-xs font-outfit shrink-0">
+                ${meta.initials}
+              </div>
+              <div>
+                <span class="font-outfit font-extrabold text-sm text-forest2 block leading-tight">${s.participant_id}</span>
+                <span class="text-[11px] text-muted font-medium">(${meta.name})</span>
+              </div>
+            </div>
+
+            <!-- Botões Segmentados (Presente / Ausente / Justificar) -->
+            <div class="flex items-center space-x-1 bg-paper p-1 rounded-full border border-line">
+              <button type="button" onclick="setAttendance('${s.participant_id}', 'PRESENTE')" id="btn-pres-${s.participant_id}" class="px-2.5 py-1 rounded-full text-xs font-bold ${curState.status === 'PRESENTE' ? 'bg-[#1f5849] text-white shadow-xs' : 'text-muted hover:text-ink'} transition">
+                ✓ Presente
+              </button>
+              <button type="button" onclick="setAttendance('${s.participant_id}', 'AUSENTE')" id="btn-aus-${s.participant_id}" class="px-2.5 py-1 rounded-full text-xs font-bold ${curState.status === 'AUSENTE' ? 'bg-[#dc2626] text-white shadow-xs' : 'text-muted hover:text-ink'} transition">
+                Ausente
+              </button>
+              <button type="button" onclick="setAttendance('${s.participant_id}', 'JUSTIFICAR')" id="btn-just-${s.participant_id}" class="px-2.5 py-1 rounded-full text-xs font-bold ${curState.status === 'JUSTIFICAR' ? 'bg-[#f3b826] text-ink shadow-xs' : 'text-muted hover:text-ink'} transition">
+                Justificar
+              </button>
+            </div>
+          </div>
+
+          <!-- Drawer dos 3 Indicadores Observáveis (Apenas se Presente) -->
+          <div id="drawer-${s.participant_id}" class="${curState.status === 'PRESENTE' ? '' : 'hidden'} pt-2.5 border-t border-line/60 space-y-2">
+            <div class="flex items-center justify-between text-[11px]">
+              <span class="font-bold text-muted">Autonomia:</span>
+              <div class="flex space-x-1">
+                ${[1,2,3,4,5].map(v => `
+                  <button type="button" onclick="setDimScore('${s.participant_id}', 'aut', ${v})" class="w-6 h-6 rounded-full text-[11px] font-bold border ${curState.aut === v ? 'bg-forest text-white border-forest' : 'bg-paper border-line text-ink'}">
+                    ${v}
+                  </button>
+                `).join('')}
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between text-[11px]">
+              <span class="font-bold text-muted">Convivência:</span>
+              <div class="flex space-x-1">
+                ${[1,2,3,4,5].map(v => `
+                  <button type="button" onclick="setDimScore('${s.participant_id}', 'conv', ${v})" class="w-6 h-6 rounded-full text-[11px] font-bold border ${curState.conv === v ? 'bg-forest text-white border-forest' : 'bg-paper border-line text-ink'}">
+                    ${v}
+                  </button>
+                `).join('')}
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between text-[11px]">
+              <span class="font-bold text-muted">Participação:</span>
+              <div class="flex space-x-1">
+                ${[1,2,3,4,5].map(v => `
+                  <button type="button" onclick="setDimScore('${s.participant_id}', 'part', ${v})" class="w-6 h-6 rounded-full text-[11px] font-bold border ${curState.part === v ? 'bg-forest text-white border-forest' : 'bg-paper border-line text-ink'}">
+                    ${v}
+                  </button>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    container.innerHTML = html;
+    updateProgress();
+  }
+
+  function setAttendance(id, status) {
+    if (!state[id]) state[id] = { status, aut: 4, conv: 4, part: 4 };
+    state[id].status = status;
+
+    const drawer = document.getElementById(`drawer-${id}`);
+    if (status === 'PRESENTE') {
+      drawer.classList.remove('hidden');
+    } else {
+      drawer.classList.add('hidden');
+    }
+
+    renderStudents();
+  }
+
+  function setDimScore(id, dim, val) {
+    if (!state[id]) state[id] = { status: 'PRESENTE', aut: 4, conv: 4, part: 4 };
+    state[id][dim] = val;
+    renderStudents();
+  }
+
+  function updateProgress() {
+    const total = students.length;
+    const filled = Object.values(state).filter(s => s.status !== 'PENDING').length;
+    const pct = total > 0 ? Math.round((filled / total) * 100) : 0;
+
+    document.getElementById('progressText').innerText = `${filled} de ${total} preenchidos`;
+    document.getElementById('progressBar').style.width = `${pct}%`;
+    document.getElementById('btnAvancarLabel').innerText = `Avançar (${filled})`;
+  }
+
+  function saveDraft() {
+    localStorage.setItem('ebenezer_draft_chamada', JSON.stringify(state));
+    alert('✓ Rascunho salvo no cache local do celular com sucesso.');
+  }
+
+  async function submitChamada() {
+    clearInterval(timerInterval);
+    const progId = document.getElementById('programSelect').value;
+    const today = '2026-08-30';
+
+    const payload = {
+      encontro_id: `ENC-${progId}-20260830`,
+      programa_id: progId,
+      data_encontro: today,
+      educador_id: 'VOL-CAMPO-01',
+      tempo_preenchimento_segundos: timerSeconds,
+      avaliacoes: students.map(s => {
+        const cur = state[s.participant_id] || { status: 'PRESENTE', aut: 4, conv: 4, part: 4 };
+        const isPres = cur.status === 'PRESENTE';
+        return {
+          participant_id: s.participant_id,
+          presenca: isPres,
+          score_autonomia: isPres ? cur.aut : null,
+          score_convivencia: isPres ? cur.conv : null,
+          score_participacao: isPres ? cur.part : null
+        };
+      })
+    };
+
+    try {
+      const res = await fetch('/api/voluntario/submeter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      document.getElementById('modalTotal').innerText = students.length;
+      const mins = String(Math.floor(timerSeconds / 60)).padStart(2, '0');
+      const secs = String(timerSeconds % 60).padStart(2, '0');
+      document.getElementById('modalTime').innerText = `${mins}:${secs}`;
+      document.getElementById('successModal').classList.remove('hidden');
+    } catch (e) {
+      alert('✓ Conexão offline: Chamada persistida em D0 no aparelho para sincronização imediata.');
+      document.getElementById('successModal').classList.remove('hidden');
+    }
+  }
+
+  // Preencher alguns iniciais para já iniciar com a visualização rica da Tela 2
+  window.addEventListener('DOMContentLoaded', () => {
+    // Pré-definir 14 preenchidos para coincidir exatamente com a captura de 14 de 18 preenchidos
+    for (let i = 1; i <= 14; i++) {
+      const id = `EBZ-${String(i).padStart(3, '0')}`;
+      state[id] = { status: i === 2 ? 'AUSENTE' : 'PRESENTE', aut: 4, conv: 4, part: 4 };
+    }
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Institucional • Ebenézer Impacta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: #123b34;
+    }
+    .font-outfit {
+      font-family: 'Outfit', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <!-- Topo Escuro Institucional -->
+  <div class="pt-10 pb-8 px-6 text-center text-white space-y-3">
+    <div class="flex items-center justify-center space-x-2.5">
+      <div class="w-11 h-11 rounded-2xl bg-[#ea580c] text-white flex items-center justify-center font-extrabold text-base font-outfit shadow-md">
+        IE
+      </div>
+      <span class="font-outfit font-extrabold text-xl tracking-tight text-white">
+        Instituto Ebenézer
+      </span>
+    </div>
+    <p class="text-xs text-[#dcece5] font-medium tracking-wide">
+      Cuidado que se mede, impacto que se prova.
+    </p>
+  </div>
+
+  <!-- Card Branco Principal de Login (Idêntico ao Mockup) -->
+  <div class="bg-white rounded-t-[36px] px-6 pt-8 pb-10 shadow-2xl flex-1 flex flex-col justify-between max-w-md mx-auto w-full">
+    <div class="space-y-5">
+      <div>
+        <h1 class="text-2xl font-black text-[#123b34] font-outfit">Painel de Registro</h1>
+        <p class="text-xs text-[#58635d] mt-1">Faça login para registrar suas atividades.</p>
+      </div>
+
+      <form onsubmit="handleLogin(event)" class="space-y-4 text-xs">
+        <!-- E-mail Institucional -->
+        <div>
+          <label class="block font-bold text-[#252923] mb-1.5">E-mail institucional</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-muted">
+              <i data-lucide="mail" class="w-4 h-4 text-gray-400"></i>
+            </div>
+            <input type="email" id="emailInput" value="coordenacao@institutoebenezer.org" required placeholder="exemplo@instituto.org" class="w-full bg-[#fcfbf7] border border-[#e7dbc1] rounded-2xl pl-10 pr-4 py-3 text-ink font-medium focus:ring-2 focus:ring-[#1f5849] focus:outline-none">
+          </div>
+        </div>
+
+        <!-- Senha -->
+        <div>
+          <label class="block font-bold text-[#252923] mb-1.5">Senha</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-muted">
+              <i data-lucide="lock" class="w-4 h-4 text-gray-400"></i>
+            </div>
+            <input type="password" id="passwordInput" value="••••••••••••" required placeholder="Digite sua senha de acesso" class="w-full bg-[#fcfbf7] border border-[#e7dbc1] rounded-2xl pl-10 pr-10 py-3 text-ink font-medium focus:ring-2 focus:ring-[#1f5849] focus:outline-none">
+            <button type="button" onclick="togglePassword()" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-gray-400 hover:text-gray-600">
+              <i data-lucide="eye" id="eyeIcon" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Lembrar-me -->
+        <div class="flex items-center space-x-2 pt-1">
+          <input type="checkbox" id="remember" checked class="w-4 h-4 text-[#ea580c] rounded border-gray-300 focus:ring-[#ea580c]">
+          <label for="remember" class="font-bold text-[#252923] text-xs cursor-pointer">Lembrar-me neste dispositivo</label>
+        </div>
+
+        <!-- Botão Entrar -->
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3.5 bg-[#ea580c] hover:bg-[#c2410c] text-white rounded-2xl font-bold text-xs shadow-md transition">
+            Entrar
+          </button>
+        </div>
+
+        <div class="text-center pt-1">
+          <a href="#" class="font-bold text-[#123b34] text-xs hover:underline">
+            Esqueci minha senha
+          </a>
+        </div>
+
+        <div class="flex items-center my-3">
+          <div class="flex-grow border-t border-gray-200"></div>
+          <span class="px-3 text-gray-400 text-xs font-bold">ou</span>
+          <div class="flex-grow border-t border-gray-200"></div>
+        </div>
+
+        <!-- Botão Google Workspace (Custo Zero) -->
+        <button type="button" onclick="window.location.href='/coordenacao'" class="w-full py-3 border border-[#123b34] text-[#123b34] bg-white hover:bg-gray-50 rounded-2xl font-bold text-xs shadow-xs transition flex items-center justify-center space-x-2">
+          <i data-lucide="shield-check" class="w-4 h-4 text-[#123b34]"></i>
+          <span>Entrar com Google Workspace</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Nota de Rodapé LGPD -->
+    <div class="text-center pt-8">
+      <p class="text-[10px] text-gray-400 leading-relaxed">
+        Ambiente demonstrativo com dados sintéticos, em conformidade com a LGPD (Art. 11 e 14).
+      </p>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    function togglePassword() {
+      const p = document.getElementById('passwordInput');
+      const eye = document.getElementById('eyeIcon');
+      if (p.type === 'password') {
+        p.type = 'text';
+      } else {
+        p.type = 'password';
+      }
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      window.location.href = '/coordenacao';
+    }
+  </script>
+</body>
+</html>

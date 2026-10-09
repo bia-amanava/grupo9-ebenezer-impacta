@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+
+{% block title %}Participantes com Múltiplas Matrículas | Ebenézer Impacta{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto space-y-4">
+
+  <!-- Faixa de Aviso Superior -->
+  <div class="bg-[#f9d984] text-[#714d02] px-4 py-1.5 rounded-xl text-center text-xs font-bold shadow-xs">
+    Ambiente demonstrativo — dados sintéticos.
+  </div>
+
+  <!-- Header -->
+  <div class="pt-1">
+    <div class="flex items-center space-x-1.5 text-xs text-muted font-bold mb-1">
+      <a href="/coordenacao" class="hover:text-forest flex items-center space-x-1">
+        <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+        <span>Painel do Coordenador</span>
+      </a>
+    </div>
+    <h1 class="text-xl font-extrabold text-forest2 font-outfit leading-tight">
+      Participantes com Múltiplas Matrículas
+    </h1>
+    <p class="text-xs text-muted">Crianças vinculadas a mais de um programa</p>
+  </div>
+
+  <!-- Box Informativo de Deduplicação (Azul Claro) -->
+  <div class="bg-[#edf5f9] border border-[#d0e4f2] rounded-3xl p-4 flex items-start space-x-3 text-xs text-[#204963]">
+    <i data-lucide="info" class="w-5 h-5 text-forest shrink-0 mt-0.5"></i>
+    <p class="leading-relaxed text-[11px]">
+      Para garantir relatórios consolidados e precisos, identificamos que <strong>23 de 120 participantes únicos (19%)</strong> estão matriculados em mais de um programa simultaneamente.
+    </p>
+  </div>
+
+  <!-- Lista de Participantes com Múltiplas Matrículas -->
+  <div class="space-y-3">
+    <!-- Participante 1: EBZ-026 -->
+    <div class="bg-white rounded-3xl p-4 border border-line shadow-xs space-y-2.5">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-2xl bg-[#0d5c4d] text-white flex items-center justify-center font-extrabold text-xs font-outfit shrink-0">
+            PS
+          </div>
+          <div>
+            <span class="font-outfit font-black text-sm text-forest2 block leading-tight">EBZ-026</span>
+            <span class="text-xs font-bold text-ink block mt-0.5">Participante Sol</span>
+          </div>
+        </div>
+        <span class="text-xs font-black text-forest bg-[#edf5f1] px-2.5 py-1 rounded-full">
+          86% Freq.
+        </span>
+      </div>
+
+      <div class="text-[11px] text-muted">
+        Faixa Etária: 7–11 anos
+      </div>
+
+      <div class="flex flex-wrap gap-1.5">
+        <span class="bg-[#123b34] text-white px-2.5 py-1 rounded-full text-[10px] font-bold">
+          Laboratório de Sonhos
+        </span>
+        <span class="bg-[#eef2ff] text-[#3730a3] border border-[#c7d2fe] px-2.5 py-1 rounded-full text-[10px] font-bold">
+          Reforço Escolar
+        </span>
+      </div>
+
+      <div class="pt-2 border-t border-line/50 flex justify-between items-center text-xs">
+        <a href="/participante/EBZ-026" class="font-bold text-ink hover:text-forest flex items-center justify-between w-full">
+          <span>Ver linha do tempo</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-muted"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Participante 2: EBZ-031 -->
+    <div class="bg-white rounded-3xl p-4 border border-line shadow-xs space-y-2.5">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-2xl bg-[#1b7a69] text-white flex items-center justify-center font-extrabold text-xs font-outfit shrink-0">
+            PV
+          </div>
+          <div>
+            <span class="font-outfit font-black text-sm text-forest2 block leading-tight">EBZ-031</span>
+            <span class="text-xs font-bold text-ink block mt-0.5">Participante Vento</span>
+          </div>
+        </div>
+        <span class="text-xs font-black text-forest bg-[#edf5f1] px-2.5 py-1 rounded-full">
+          92% Freq.
+        </span>
+      </div>
+
+      <div class="text-[11px] text-muted">
+        Faixa Etária: 7–11 anos
+      </div>
+
+      <div class="flex flex-wrap gap-1.5">
+        <span class="bg-[#123b34] text-white px-2.5 py-1 rounded-full text-[10px] font-bold">
+          Reforço Escolar
+        </span>
+        <span class="bg-[#f3edf9] text-[#5e2b85] border border-[#e2d5f0] px-2.5 py-1 rounded-full text-[10px] font-bold">
+          Vivência Terapêutica
+        </span>
+      </div>
+
+      <div class="pt-2 border-t border-line/50 flex justify-between items-center text-xs">
+        <a href="/participante/EBZ-031" class="font-bold text-ink hover:text-forest flex items-center justify-between w-full">
+          <span>Ver linha do tempo</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-muted"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Participante 3: EBZ-052 -->
+    <div class="bg-white rounded-3xl p-4 border border-line shadow-xs space-y-2.5">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-2xl bg-[#254d68] text-white flex items-center justify-center font-extrabold text-xs font-outfit shrink-0">
+            PM
+          </div>
+          <div>
+            <span class="font-outfit font-black text-sm text-forest2 block leading-tight">EBZ-052</span>
+            <span class="text-xs font-bold text-ink block mt-0.5">Participante Mar</span>
+          </div>
+        </div>
+        <span class="text-xs font-black text-[#b45309] bg-[#fef3c7] px-2.5 py-1 rounded-full">
+          78% Freq.
+        </span>
+      </div>
+
+      <div class="text-[11px] text-muted">
+        Faixa Etária: 7–11 anos
+      </div>
+
+      <div class="flex flex-wrap gap-1.5">
+        <span class="bg-[#123b34] text-white px-2.5 py-1 rounded-full text-[10px] font-bold">
+          Laboratório de Sonhos
+        </span>
+        <span class="bg-[#f3edf9] text-[#5e2b85] border border-[#e2d5f0] px-2.5 py-1 rounded-full text-[10px] font-bold">
+          Vivência Terapêutica
+        </span>
+      </div>
+
+      <div class="pt-2 border-t border-line/50 flex justify-between items-center text-xs">
+        <a href="/participante/EBZ-052" class="font-bold text-ink hover:text-forest flex items-center justify-between w-full">
+          <span>Ver linha do tempo</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-muted"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card: Distribuição de Sobreposição (Idêntico ao Figma) -->
+  <div class="bg-white rounded-3xl p-5 border border-line shadow-xs space-y-3">
+    <div>
+      <h3 class="text-sm font-extrabold text-forest2 font-outfit">Distribuição de Sobreposição</h3>
+      <p class="text-[11px] text-muted">Visualização de alunos únicos vs multi-matriculados</p>
+    </div>
+
+    <div class="space-y-2.5 text-xs">
+      <div>
+        <div class="flex justify-between font-bold mb-1">
+          <span class="text-ink">Lab. Sonhos</span>
+          <span class="text-[#ea580c] font-mono">35% (14)</span>
+        </div>
+        <div class="w-full bg-[#e7dbc1] rounded-full h-2.5 overflow-hidden flex">
+          <div class="bg-[#123b34] h-2.5" style="width: 65%"></div>
+          <div class="bg-[#ea580c] h-2.5" style="width: 35%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between font-bold mb-1">
+          <span class="text-ink">Reforço Escolar</span>
+          <span class="text-[#ea580c] font-mono">45% (18)</span>
+        </div>
+        <div class="w-full bg-[#e7dbc1] rounded-full h-2.5 overflow-hidden flex">
+          <div class="bg-[#123b34] h-2.5" style="width: 55%"></div>
+          <div class="bg-[#ea580c] h-2.5" style="width: 45%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between font-bold mb-1">
+          <span class="text-ink">Vivência Terap.</span>
+          <span class="text-[#ea580c] font-mono">30% (10)</span>
+        </div>
+        <div class="w-full bg-[#e7dbc1] rounded-full h-2.5 overflow-hidden flex">
+          <div class="bg-[#123b34] h-2.5" style="width: 70%"></div>
+          <div class="bg-[#ea580c] h-2.5" style="width: 30%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between font-bold mb-1">
+          <span class="text-ink">Primeira Infância</span>
+          <span class="text-[#ea580c] font-mono">5% (2)</span>
+        </div>
+        <div class="w-full bg-[#e7dbc1] rounded-full h-2.5 overflow-hidden flex">
+          <div class="bg-[#123b34] h-2.5" style="width: 95%"></div>
+          <div class="bg-[#ea580c] h-2.5" style="width: 5%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legenda -->
+    <div class="flex items-center justify-center space-x-4 pt-2 border-t border-line/60 text-[11px] font-bold">
+      <span class="flex items-center space-x-1.5 text-forest2">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#123b34] inline-block"></span>
+        <span>Programa Único</span>
+      </span>
+      <span class="flex items-center space-x-1.5 text-[#ea580c]">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#ea580c] inline-block"></span>
+        <span>Multi-matrícula</span>
+      </span>
+    </div>
+
+    <p class="text-[10px] text-muted text-center pt-1 leading-relaxed">
+      Esta visão evita contagem duplicada de crianças em relatórios agregados.
+    </p>
+  </div>
+
+</div>
+{% endblock %}

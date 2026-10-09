@@ -1,0 +1,332 @@
+[
+  {
+    "encontro_id": "ENC-PROG-SONHOS-20260725",
+    "programa_id": "PROG-SONHOS",
+    "data_encontro": "2026-07-25",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-HOS-01",
+    "data_envio_registro": "2026-07-25T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-REFORCO-20260725",
+    "programa_id": "PROG-REFORCO",
+    "data_encontro": "2026-07-25",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-RCO-01",
+    "data_envio_registro": "2026-07-25T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-INFANCIA-20260725",
+    "programa_id": "PROG-INFANCIA",
+    "data_encontro": "2026-07-25",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-CIA-01",
+    "data_envio_registro": "2026-07-25T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-SONHOS-20260801",
+    "programa_id": "PROG-SONHOS",
+    "data_encontro": "2026-08-01",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-HOS-01",
+    "data_envio_registro": "2026-08-01T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-REFORCO-20260801",
+    "programa_id": "PROG-REFORCO",
+    "data_encontro": "2026-08-01",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-RCO-01",
+    "data_envio_registro": "2026-08-01T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-INFANCIA-20260801",
+    "programa_id": "PROG-INFANCIA",
+    "data_encontro": "2026-08-01",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-CIA-01",
+    "data_envio_registro": "2026-08-01T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-SONHOS-20260808",
+    "programa_id": "PROG-SONHOS",
+    "data_encontro": "2026-08-08",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-HOS-01",
+    "data_envio_registro": "2026-08-08T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-REFORCO-20260808",
+    "programa_id": "PROG-REFORCO",
+    "data_encontro": "2026-08-08",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-RCO-01",
+    "data_envio_registro": "2026-08-08T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-INFANCIA-20260808",
+    "programa_id": "PROG-INFANCIA",
+    "data_encontro": "2026-08-08",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-CIA-01",
+    "data_envio_registro": "2026-08-08T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-SONHOS-20260815",
+    "programa_id": "PROG-SONHOS",
+    "data_encontro": "2026-08-15",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-HOS-01",
+    "data_envio_registro": "2026-08-15T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-REFORCO-20260815",
+    "programa_id": "PROG-REFORCO",
+    "data_encontro": "2026-08-15",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-RCO-01",
+    "data_envio_registro": "2026-08-15T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-INFANCIA-20260815",
+    "programa_id": "PROG-INFANCIA",
+    "data_encontro": "2026-08-15",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-CIA-01",
+    "data_envio_registro": "2026-08-15T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-SONHOS-20260822",
+    "programa_id": "PROG-SONHOS",
+    "data_encontro": "2026-08-22",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-HOS-01",
+    "data_envio_registro": "2026-08-22T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-REFORCO-20260822",
+    "programa_id": "PROG-REFORCO",
+    "data_encontro": "2026-08-22",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-RCO-01",
+    "data_envio_registro": "2026-08-22T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-INFANCIA-20260822",
+    "programa_id": "PROG-INFANCIA",
+    "data_encontro": "2026-08-22",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-CIA-01",
+    "data_envio_registro": "2026-08-22T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-SONHOS-20260829",
+    "programa_id": "PROG-SONHOS",
+    "data_encontro": "2026-08-29",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-HOS-01",
+    "data_envio_registro": "2026-08-29T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-REFORCO-20260829",
+    "programa_id": "PROG-REFORCO",
+    "data_encontro": "2026-08-29",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-RCO-01",
+    "data_envio_registro": "2026-08-31T18:00:00",
+    "status_lancamento": "ATRASADO"
+  },
+  {
+    "encontro_id": "ENC-PROG-INFANCIA-20260829",
+    "programa_id": "PROG-INFANCIA",
+    "data_encontro": "2026-08-29",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-CIA-01",
+    "data_envio_registro": "2026-08-29T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-SONHOS-20260905",
+    "programa_id": "PROG-SONHOS",
+    "data_encontro": "2026-09-05",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-HOS-01",
+    "data_envio_registro": "2026-09-05T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-REFORCO-20260905",
+    "programa_id": "PROG-REFORCO",
+    "data_encontro": "2026-09-05",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-RCO-01",
+    "data_envio_registro": "2026-09-05T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-INFANCIA-20260905",
+    "programa_id": "PROG-INFANCIA",
+    "data_encontro": "2026-09-05",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-CIA-01",
+    "data_envio_registro": "2026-09-05T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-SONHOS-20260912",
+    "programa_id": "PROG-SONHOS",
+    "data_encontro": "2026-09-12",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-HOS-01",
+    "data_envio_registro": "2026-09-12T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-REFORCO-20260912",
+    "programa_id": "PROG-REFORCO",
+    "data_encontro": "2026-09-12",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-RCO-01",
+    "data_envio_registro": "2026-09-12T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-INFANCIA-20260912",
+    "programa_id": "PROG-INFANCIA",
+    "data_encontro": "2026-09-12",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-CIA-01",
+    "data_envio_registro": "2026-09-12T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-SONHOS-20260919",
+    "programa_id": "PROG-SONHOS",
+    "data_encontro": "2026-09-19",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-HOS-01",
+    "data_envio_registro": "2026-09-19T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-REFORCO-20260919",
+    "programa_id": "PROG-REFORCO",
+    "data_encontro": "2026-09-19",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-RCO-01",
+    "data_envio_registro": "2026-09-19T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-INFANCIA-20260919",
+    "programa_id": "PROG-INFANCIA",
+    "data_encontro": "2026-09-19",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-CIA-01",
+    "data_envio_registro": "2026-09-19T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-SONHOS-20260926",
+    "programa_id": "PROG-SONHOS",
+    "data_encontro": "2026-09-26",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-HOS-01",
+    "data_envio_registro": "2026-09-26T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-REFORCO-20260926",
+    "programa_id": "PROG-REFORCO",
+    "data_encontro": "2026-09-26",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-RCO-01",
+    "data_envio_registro": "2026-09-26T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-INFANCIA-20260926",
+    "programa_id": "PROG-INFANCIA",
+    "data_encontro": "2026-09-26",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-CIA-01",
+    "data_envio_registro": "2026-09-26T11:45:00",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-E2E-TEST",
+    "programa_id": "PROG-SONHOS",
+    "data_encontro": "2026-10-03",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-SABADO-01",
+    "data_envio_registro": "2026-10-08T17:38:03.691326",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-INFANCIA-20261006",
+    "programa_id": "PROG-INFANCIA",
+    "data_encontro": "2026-10-06",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-SABADO-01",
+    "data_envio_registro": "2026-10-06T01:41:58.260848",
+    "status_lancamento": "D0_NO_PRAZO"
+  },
+  {
+    "encontro_id": "ENC-PROG-REFORCO-20261006",
+    "programa_id": "PROG-REFORCO",
+    "data_encontro": "2026-10-06",
+    "horario_inicio": "09:00",
+    "horario_fim": "11:00",
+    "educador_id": "VOL-SABADO-01",
+    "data_envio_registro": "2026-10-06T01:42:28.469789",
+    "status_lancamento": "D0_NO_PRAZO"
+  }
+]

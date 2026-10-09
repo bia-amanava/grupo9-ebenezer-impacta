@@ -1,0 +1,295 @@
+{% extends "base.html" %}
+
+{% block title %}Fila de Triagem & Moderação | Ebenézer Impacta{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+
+  <!-- Header da Triagem -->
+  <div class="ds-card p-5 md:p-6 bg-white flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div>
+      <span class="ds-pill bg-warm text-ink font-black border border-line">
+        Canal de Escuta Facultativa & Salvaguardas (RF-05 / RF-06 / RF-07)
+      </span>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-forest2 mt-1.5 font-outfit">
+        Fila Privada de Triagem & Moderação Humana
+      </h2>
+      <p class="text-xs md:text-sm text-muted mt-0.5">
+        Fluxo em quarentena de relatos de responsáveis e oficineiros antes de qualquer uso analítico.
+      </p>
+    </div>
+    <div>
+      <span class="ds-pill bg-[#edf5f1] text-forest font-bold">
+        Isolamento de Áudio e Texto Ativo
+      </span>
+    </div>
+  </div>
+
+  <!-- Alerta de Segurança e Proteção de Menores (Ribbon Warning do Design System) -->
+  <div class="ds-ribbon ds-ribbon-warning space-y-1 text-xs shadow-sm">
+    <div class="font-bold flex items-center space-x-1.5 text-terracotta uppercase tracking-wider font-outfit">
+      <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+      <span>Regra Constitucional de Quarentena:</span>
+    </div>
+    <p class="text-ink/80 leading-relaxed">
+      Nenhum relato aberto ou áudio alimenta dashboards diretamente. Caso a moderação humana identifique temas sensíveis (saúde mental, conflitos, violência), a mensagem é <strong>retirada do fluxo de monitoramento</strong> e encaminhada ao protocolo institucional externo (Assistência Social/Conselho Tutelar).
+    </p>
+  </div>
+
+  <!-- Grid com 2 colunas: Fila de Moderação (Esquerda) e Formulário de Simulação de Envio (Direita) -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+    <!-- Coluna da Fila de Triagem -->
+    <div class="lg:col-span-2 ds-card p-5 md:p-6 bg-white space-y-4">
+      <div class="flex items-center justify-between border-b border-line pb-3">
+        <h3 class="font-extrabold text-forest2 text-base font-outfit flex items-center space-x-2">
+          <i data-lucide="inbox" class="w-5 h-5 text-forest"></i>
+          <span>Mensagens em Quarentena</span>
+        </h3>
+        <span class="ds-pill bg-cream text-ink text-[11px] border border-line" id="triageCount">Carregando...</span>
+      </div>
+
+      <div id="triageList" class="space-y-3.5">
+        <div class="text-center py-8 text-muted text-xs">Carregando mensagens da quarentena...</div>
+      </div>
+    </div>
+
+    <!-- Coluna de Envio Opcional (Simulador do Canal das Famílias/Oficineiros) -->
+    <div class="ds-card p-5 md:p-6 bg-white space-y-4">
+      <div class="border-b border-line pb-3">
+        <h3 class="font-extrabold text-forest2 text-base font-outfit flex items-center space-x-2">
+          <i data-lucide="message-square-plus" class="w-5 h-5 text-forest"></i>
+          <span>Enviar Relato Opcional</span>
+        </h3>
+        <p class="text-[11px] text-muted mt-1">Canal facultativo de escuta com consentimento prévio documentado.</p>
+      </div>
+
+      <form id="submissionForm" onsubmit="submitOptionalFeedback(event)" class="space-y-3.5 text-xs">
+        <div>
+          <label class="block font-bold text-muted mb-1 uppercase tracking-wider text-[11px]">Origem:</label>
+          <select id="subOrigem" class="w-full bg-paper border border-line rounded-2xl px-3.5 py-2.5 text-ink font-bold focus:outline-none focus:ring-2 focus:ring-forest">
+            <option value="RESPONSAVEL_FAMILIAR">Responsável Familiar (Família)</option>
+            <option value="OFICINEIRO">Oficineiro / Educador (Voz/Texto)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-bold text-muted mb-1 uppercase tracking-wider text-[11px]">Código do Participante (MDM):</label>
+          <input type="text" id="subParticipant" value="EBZ-026" required class="w-full bg-paper border border-line rounded-2xl px-3.5 py-2.5 font-mono text-ink font-bold focus:outline-none focus:ring-2 focus:ring-forest">
+        </div>
+
+        <div>
+          <label class="block font-bold text-muted mb-1 uppercase tracking-wider text-[11px]">Tipo de Mídia:</label>
+          <select id="subMidia" class="w-full bg-paper border border-line rounded-2xl px-3.5 py-2.5 text-ink font-bold focus:outline-none focus:ring-2 focus:ring-forest">
+            <option value="TEXTO">Texto Curto</option>
+            <option value="AUDIO">Áudio Fictício (.wav em quarentena)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-bold text-muted mb-1 uppercase tracking-wider text-[11px]">Conteúdo do Relato:</label>
+          <textarea id="subConteudo" rows="3" required placeholder="Descreva percepções neutras sobre participação ou mudanças observáveis..." class="w-full bg-paper border border-line rounded-2xl p-3 text-ink font-medium focus:outline-none focus:ring-2 focus:ring-forest"></textarea>
+          <span class="text-[10px] text-muted mt-1 block">Aviso: Não enviar diagnósticos de saúde ou dados sensíveis.</span>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3 btn-ds-primary text-xs shadow-md transition flex items-center justify-center space-x-1.5">
+            <i data-lucide="send" class="w-4 h-4 text-gold"></i>
+            <span>Submeter para Quarentena</span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Modal de Ação de Moderação -->
+<div id="moderateModal" class="fixed inset-0 bg-ink/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-3xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-line">
+    <div class="flex items-center justify-between border-b border-line pb-3">
+      <h3 class="font-extrabold text-forest2 text-base font-outfit">Moderar Mensagem em Quarentena</h3>
+      <button onclick="closeModerateModal()" class="text-muted hover:text-ink font-bold">✕</button>
+    </div>
+
+    <div class="bg-paper p-3.5 rounded-2xl border border-line text-xs text-ink space-y-1">
+      <div><strong>Feedback ID:</strong> <span id="modFbId" class="font-mono text-forest">--</span></div>
+      <div><strong>Educando:</strong> <span id="modPartId" class="font-mono font-bold">--</span></div>
+      <div><strong>Conteúdo:</strong> <p id="modText" class="italic text-muted mt-1"></p></div>
+    </div>
+
+    <div class="space-y-3.5 text-xs">
+      <div>
+        <label class="block font-bold text-muted mb-1 uppercase tracking-wider text-[11px]">Decisão da Coordenação:</label>
+        <select id="modDecisao" onchange="toggleCategorySelect()" class="w-full bg-paper border border-line rounded-2xl px-3.5 py-2.5 text-ink font-bold focus:outline-none focus:ring-2 focus:ring-forest">
+          <option value="APROVEITADO_CATEGORIA_PEDAGOGICA">Aprovar como Categoria Pedagógica (Não Clínica)</option>
+          <option value="DESCARTADO">Descartar (Irrelevante / Ruído)</option>
+          <option value="ENCAMINHADO_PROTOCOLO_EXTERNO">Encaminhar ao Protocolo Institucional Externo</option>
+        </select>
+      </div>
+
+      <div id="categoryGroup">
+        <label class="block font-bold text-muted mb-1 uppercase tracking-wider text-[11px]">Categoria Fechada para Relatório:</label>
+        <select id="modCategoria" class="w-full bg-paper border border-line rounded-2xl px-3.5 py-2.5 text-ink font-bold focus:outline-none focus:ring-2 focus:ring-forest">
+          <option value="AUTONOMIA_NO_COTIDIANO">Autonomia no Cotidiano</option>
+          <option value="ENGAJAMENTO_FAMILIAR_POSITIVO">Engajamento Familiar Positivo</option>
+          <option value="EVOLUCAO_DE_HABILIDADES_MANUAIS">Evolução de Habilidades e Expressão</option>
+          <option value="INTEGRACAO_COMUNITARIA">Integração Comunitária</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="flex space-x-2 pt-2">
+      <button onclick="closeModerateModal()" class="w-1/2 py-2.5 bg-paper hover:bg-cream text-ink border border-line rounded-full font-bold text-xs transition">
+        Cancelar
+      </button>
+      <button onclick="confirmModeration()" class="w-1/2 py-2.5 btn-ds-primary text-xs shadow transition">
+        Confirmar Decisão
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  let activeFeedbackId = null;
+
+  async function loadTriage() {
+    try {
+      const res = await fetch('/api/triagem/fila');
+      const data = await res.json();
+      document.getElementById('triageCount').innerText = `${data.length} relatos`;
+
+      const container = document.getElementById('triageList');
+      if (data.length === 0) {
+        container.innerHTML = '<div class="text-center py-6 text-muted text-xs">Fila de triagem vazia.</div>';
+        return;
+      }
+
+      let html = '';
+      data.slice().reverse().forEach(item => {
+        let badgeClass = 'bg-warm text-ink border border-line';
+        if (item.status_triagem === 'APROVEITADO_CATEGORIA_PEDAGOGICA' || item.status_triagem === 'APROVEITADO') {
+          badgeClass = 'bg-[#edf5f1] text-forest font-bold';
+        } else if (item.status_triagem === 'ENCAMINHADO_PROTOCOLO_EXTERNO') {
+          badgeClass = 'bg-[#fdf0ed] text-terracotta font-bold';
+        } else if (item.status_triagem === 'DESCARTADO') {
+          badgeClass = 'bg-slate-100 text-muted';
+        }
+
+        html += `
+          <div class="ds-card p-4 space-y-2 hover:bg-cream/20 transition">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <span class="font-bold text-xs text-forest2 font-mono">${item.feedback_id}</span>
+                <span class="text-[11px] text-muted font-mono">(${item.participant_id})</span>
+                <span class="text-[10px] bg-paper border border-line px-2 py-0.5 rounded-full text-muted uppercase font-bold">${item.tipo_origem.replace('_', ' ')}</span>
+                <span class="text-[10px] bg-cream border border-line text-ink px-2 py-0.5 rounded-full font-bold">${item.tipo_midia}</span>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold ${badgeClass}">
+                ${item.status_triagem}
+              </span>
+            </div>
+
+            <div class="text-xs text-ink bg-paper p-3 rounded-2xl border border-line">
+              ${item.conteudo_ou_referencia}
+            </div>
+
+            ${item.categoria_fechada ? `
+              <div class="text-[11px] text-forest font-bold flex items-center space-x-1">
+                <span>✓ Categoria pedagógica aprovada:</span>
+                <span class="bg-[#edf5f1] px-2.5 py-0.5 rounded-full border border-forest/20">${item.categoria_fechada.replace(/_/g, ' ')}</span>
+              </div>
+            ` : ''}
+
+            ${item.status_triagem === 'RECEBIDO' || item.status_triagem === 'EM_TRIAGEM' ? `
+              <div class="pt-1 flex justify-end">
+                <button onclick="openModerateModal('${item.feedback_id}', '${item.participant_id}', '${item.conteudo_ou_referencia.replace(/'/g, "\\'")}')" class="px-3.5 py-1.5 btn-ds-gold text-xs shadow-sm transition">
+                  Moderar Relato
+                </button>
+              </div>
+            ` : ''}
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  function openModerateModal(fbId, partId, text) {
+    activeFeedbackId = fbId;
+    document.getElementById('modFbId').innerText = fbId;
+    document.getElementById('modPartId').innerText = partId;
+    document.getElementById('modText').innerText = text;
+    document.getElementById('moderateModal').classList.remove('hidden');
+  }
+
+  function closeModerateModal() {
+    document.getElementById('moderateModal').classList.add('hidden');
+  }
+
+  function toggleCategorySelect() {
+    const dec = document.getElementById('modDecisao').value;
+    const catGroup = document.getElementById('categoryGroup');
+    if (dec === 'APROVEITADO_CATEGORIA_PEDAGOGICA') {
+      catGroup.classList.remove('hidden');
+    } else {
+      catGroup.classList.add('hidden');
+    }
+  }
+
+  async function confirmModeration() {
+    const payload = {
+      feedback_id: activeFeedbackId,
+      coordenador_id: "COORD-MARIA",
+      decisao: document.getElementById('modDecisao').value,
+      categoria_fechada: document.getElementById('modDecisao').value === 'APROVEITADO_CATEGORIA_PEDAGOGICA' ? document.getElementById('modCategoria').value : null,
+      motivo_descarte_ou_encaminhamento: document.getElementById('modDecisao').value !== 'APROVEITADO_CATEGORIA_PEDAGOGICA' ? "TRATAMENTO_RESTRITO" : null
+    };
+
+    try {
+      const res = await fetch('/api/triagem/moderar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      closeModerateModal();
+      alert("✓ Decisão de moderação humana registrada com sucesso.");
+      loadTriage();
+    } catch (e) {
+      alert("Erro ao moderar relato.");
+    }
+  }
+
+  async function submitOptionalFeedback(e) {
+    e.preventDefault();
+    const payload = {
+      feedback_id: `FB-${Date.now().toString().slice(-4)}`,
+      participant_id: document.getElementById('subParticipant').value,
+      tipo_origem: document.getElementById('subOrigem').value,
+      tipo_midia: document.getElementById('subMidia').value,
+      conteudo_ou_referencia: document.getElementById('subConteudo').value,
+      consentimento_registrado: true
+    };
+
+    try {
+      const res = await fetch('/api/triagem/submeter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      document.getElementById('subConteudo').value = '';
+      alert("✓ Relato facultativo submetido para quarentena segura com sucesso!");
+      loadTriage();
+    } catch (e) {
+      alert("Erro ao enviar relato facultativo.");
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', loadTriage);
+</script>
+{% endblock %}
